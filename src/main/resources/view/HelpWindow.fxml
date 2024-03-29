@@ -23,7 +23,7 @@
       <VBox fx:id="commandMessageContainer">
         <Label fx:id="commandUsageMessage" text="command message">
           <VBox.margin>
-                <Insets right="5.0" />
+            <Insets right="5.0" />
           </VBox.margin>
         </Label>
         <HBox fx:id="helpMessageContainer">

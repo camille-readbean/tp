@@ -189,9 +189,13 @@ How an `add` command is executed.
 
 ### View command
 
-This section describes how the view command works and is implemented.
+This section describes how the `view` command works and is implemented.
 
-The Object, Sequence and Activity UML diagrams belows shows the objects created as well as their interactions (e.g. method calls) when the view command is activated.
+The Object, Sequence and Activity UML diagrams belows shows the objects created as well as their interactions (e.g. method calls) when the `view` command is activated.
+
+#### Class Diagram
+
+<img src="images/ViewClassDiagram.png" width="850"/>
 
 #### Object Diagram
 
@@ -218,6 +222,67 @@ How a `view` command is executed.
    2. The `ViewCommand` Object is returned to the `AddressBookParser` and then to the `LogicManager`.
    3. The `LogicManager` executes the command and generates a `CommandResult`.
 4. `MainWindow` creates a `CommandBox` with the resulting command output, allowing the user to view a contact's information.
+
+### Delete command
+
+This section describes how the `delete` command works and is implemented.
+
+The Sequence and Activity UML diagrams belows shows the objects created as well as their interactions (e.g. method calls) when the `delete` command is activated.
+
+#### Sequence Diagram
+
+<img src="images/DeleteSequenceDiagram.png" width="550"/>
+
+#### Activity Diagram
+
+<img src="images/DeleteActivityDiagram.png" width="550"/>
+
+How a `delete` command is executed.
+1. User Input Parsing
+   1. When the user enters a command, it is first parsed by the `AddressBookParser`.
+   2. The `parseCommand(String userInput)` method in `AddressBookParser` splits the user input into the command word and arguments using a regular expression.
+   3. If the command word matches "del", the parsing is delegated to the `DeleteCommandParser`.
+2. Delete Command Parsing:
+   1. The `DeleteCommandParser` expects the arguments to contain an index, which represents the position of the client to delete in the list.
+   2. The `parse(String args)` method in `DeleteCommandParser` parses the index from the arguments using `ParserUtil.parseIndex(args)`.
+3. Command Execution
+   1. Once the index is parsed successfully, a new `DeleteCommand` object is created with the parsed index.
+   2. The `DeleteCommand` Object is returned to the `AddressBookParser` and then to the `LogicManager`.
+   3. The `LogicManager` executes the command and generates a `CommandResult`.
+4. `MainWindow` creates a `CommandBox` with the resulting command output, deleting the client at the specified index from the Address Book.
+
+### Find-Tag Command
+
+This section describes how the `find-Tag` command works and is implemented.
+
+The Sequence and Activity UML diagrams belows shows the objects created as well as their interactions (e.g. method calls) when the `find-Tag` command is activated.
+
+### Class Diagram
+
+<img src="images/FindTagClassDiagram.png" width="850"/>
+
+### Sequence Diagram
+
+<img src="images/FindTagSequenceDiagram.png" width="550"/>
+
+### Activity Diagram
+
+<img src="images/FindTagActivityDiagram.png" width="550"/>
+
+How a `find-tag` command is executed.
+1. The User inputs a command in the format of "find-tag [TAG]" to find clients by tag.
+   1. `LogicManager` receives the user command and parses the command to the `AddressBookParser`.
+   2. `AddressBookParser` parses this command to the `FindTagCommandParser`.
+   3. `FindTagCommandParser` creates a new instance of `FindTagCommand` using the tag as a predicate.
+
+<img src="images/FindTagState1.png" width="650"/>
+
+2. `FindTagCommand` instance is returned to the `LogicManager`.
+   1. `LogicManager` calls the execute() method of the `FindTagCommand` instance.
+   2. A `CommandResult` is generated and returned to `MainWindow`.
+3. `MainWindow` creates a `CommandBox` with the resulting command output, listing our all clients with the specified tag.
+
+<img src="images/FindTagState2.png" width="850"/>
 
 ### Schedule command
 

@@ -9,6 +9,15 @@ import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 import javafx.stage.Stage;
 import seedu.address.commons.core.LogsCenter;
+import seedu.address.logic.commands.AddCommand;
+import seedu.address.logic.commands.ClearCommand;
+import seedu.address.logic.commands.DeleteCommand;
+import seedu.address.logic.commands.EditCommand;
+import seedu.address.logic.commands.ExitCommand;
+import seedu.address.logic.commands.FindCommand;
+import seedu.address.logic.commands.FindTagCommand;
+import seedu.address.logic.commands.ListCommand;
+import seedu.address.logic.commands.ViewCommand;
 
 /**
  * Controller for a help page
@@ -16,6 +25,15 @@ import seedu.address.commons.core.LogsCenter;
 public class HelpWindow extends UiPart<Stage> {
 
     public static final String USERGUIDE_URL = "https://ay2324s2-cs2103t-t17-1.github.io/tp/UserGuide.html";
+    public static final String COMMANDS_USAGE_MESSAGE = "Available commands: \n" + AddCommand.MESSAGE_USAGE + "\n\n"
+                                                        + ClearCommand.MESSAGE_USAGE + "\n\n"
+                                                        + DeleteCommand.MESSAGE_USAGE + "\n\n"
+                                                        + EditCommand.MESSAGE_USAGE + "\n\n"
+                                                        + ExitCommand.MESSAGE_USAGE + "\n\n"
+                                                        + FindCommand.MESSAGE_USAGE + "\n\n"
+                                                        + FindTagCommand.MESSAGE_USAGE + "\n\n"
+                                                        + ListCommand.MESSAGE_USAGE + "\n\n"
+                                                        + ViewCommand.MESSAGE_USAGE + "\n\n";
     public static final String HELP_MESSAGE = "Refer to the user guide: " + USERGUIDE_URL;
 
     private static final Logger logger = LogsCenter.getLogger(HelpWindow.class);
@@ -27,6 +45,9 @@ public class HelpWindow extends UiPart<Stage> {
     @FXML
     private Label helpMessage;
 
+    @FXML
+    private Label commandUsageMessage;
+
     /**
      * Creates a new HelpWindow.
      *
@@ -34,6 +55,7 @@ public class HelpWindow extends UiPart<Stage> {
      */
     public HelpWindow(Stage root) {
         super(FXML, root);
+        commandUsageMessage.setText(COMMANDS_USAGE_MESSAGE);
         helpMessage.setText(HELP_MESSAGE);
     }
 

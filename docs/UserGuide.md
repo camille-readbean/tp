@@ -73,7 +73,7 @@ This is ideal as you do not often bring a mouse out with you on site visits to c
 
 Shows a message explaning how to access the help page.
 
-![help message](images/helpMessage.png)
+![help message](images/helpWindow.png)
 
 Format: `help`
 

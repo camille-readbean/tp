@@ -4,9 +4,6 @@
 
 #copyButton {
     -fx-text-fill: white;
-}
-
-#copyButton {
     -fx-background-color: #664229;
 }
 
@@ -21,3 +18,4 @@
 #helpMessageContainer, #commandMessageContainer {
     -fx-background-color: #f8f0e3;
 }
+

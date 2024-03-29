@@ -257,15 +257,15 @@ This section describes how the `find-Tag` command works and is implemented.
 
 The Sequence and Activity UML diagrams belows shows the objects created as well as their interactions (e.g. method calls) when the `find-Tag` command is activated.
 
-### Class Diagram
+#### Class Diagram
 
 <img src="images/FindTagClassDiagram.png" width="850"/>
 
-### Sequence Diagram
+#### Sequence Diagram
 
 <img src="images/FindTagSequenceDiagram.png" width="550"/>
 
-### Activity Diagram
+#### Activity Diagram
 
 <img src="images/FindTagActivityDiagram.png" width="550"/>
 

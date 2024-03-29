@@ -291,5 +291,12 @@ table {
     content: "SWEE";
     font-size: 32px;
   }
-}
 
+  .page-break {
+    break-before: always;
+  }
+
+//   .block {
+//     break-inside: avoid;
+//   }
+}

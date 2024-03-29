@@ -2,12 +2,15 @@ package seedu.address.model.client;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
 import seedu.address.commons.util.ToStringBuilder;
+import seedu.address.model.appointment.Appointment;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -24,9 +27,11 @@ public class Client {
     // Data fields
     private final Address address;
     private final Set<Tag> tags = new HashSet<>();
+    private final ArrayList<Appointment> appointments = new ArrayList<Appointment>();
 
     /**
-     * Every field must be present and not null.
+     * Every field except appointments must be present and not null.
+     * <code>Appointments</code> is initialised to an empty Arraylist.
      */
     public Client(Name name, Phone phone, Email email, Address address, Set<Tag> tags) {
         requireAllNonNull(name, phone, email, address, tags);
@@ -35,6 +40,20 @@ public class Client {
         this.email = email;
         this.address = address;
         this.tags.addAll(tags);
+    }
+
+    /**
+     * Every field must be present and not null.
+     * Appointments are copied over
+     */
+    public Client(Name name, Phone phone, Email email, Address address, Set<Tag> tags, List<Appointment> appointments) {
+        requireAllNonNull(name, phone, email, address, tags, appointments);
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+        this.tags.addAll(tags);
+        this.appointments.addAll(appointments);
     }
 
     public Name getName() {
@@ -59,6 +78,14 @@ public class Client {
      */
     public Set<Tag> getTags() {
         return Collections.unmodifiableSet(tags);
+    }
+
+    /**
+     * Returns an immutable appointment list, which throws {@code UnsupportedOperationException}
+     * if modification is attempted.
+     */
+    public List<Appointment> getAppointments() {
+        return Collections.unmodifiableList(appointments);
     }
 
     /**
@@ -111,6 +138,7 @@ public class Client {
                 .add("email", email)
                 .add("address", address)
                 .add("tags", tags)
+                .add("appointments", appointments)
                 .toString();
     }
 

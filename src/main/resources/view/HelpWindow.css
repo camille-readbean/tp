@@ -1,5 +1,9 @@
 #copyButton, #helpMessage, #commandUsageMessage {
+<<<<<<< HEAD
     -fx-text-fill: black;
+=======
+    -fx-text-fill: white;
+>>>>>>> master
 }
 
 #copyButton {

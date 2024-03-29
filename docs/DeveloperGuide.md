@@ -413,6 +413,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* * *`  | Social Worker                                           | Delete a client                                   | Remove clients that I no longer work with                                         |
 | `* * *`  | Social Worker                                           | View a client's information                       | Conveniently access client's details in a easily readable manner                  |
 | `* * *`  | Social Worker                                           | List out all current client's contacts            | View all of the current contacts I have saved                                     |
+| `* * *`  | New User                                                | View all available commands in the app            | do not need to go to the browser for detailed help.                               |
 | `* * *`  | Social Worker who has physical meetings with my clients | Add appointments that I have with each client     | Keep track of the physical meetings I have with my clients                        |
 | `* * *`  | Social Worker who has physical meetings with my clients | Delete appointments that I have with each client  | Remove any appointments that I no longer have                                     |
 | `* * *`  | Social Worker who has physical meetings with my clients | View an appointment's information                 | Be informed of the details that the appointment involves                          |

@@ -219,6 +219,22 @@ How a `view` command is executed.
    3. The `LogicManager` executes the command and generates a `CommandResult`.
 4. `MainWindow` creates a `CommandBox` with the resulting command output, allowing the user to view a contact's information.
 
+### Schedule command
+
+#### Work in progress Implementation
+To keep things simple, client will keep an immutable ArrayList of Appointments
+Hence the way to schedule will functionally work like a combination of the existing add and edit command:
+  * Adding an appointment
+  * Editing a client to include the new appointments
+As we added new fields, edit command need to be edited to carry over 
+
+#### Stuff to be updated: TODO
+1. Edit Command
+2. View command changed to reflect appointments (UI)
+3. Add a view (upcoming) appointments
+4. Deleting an appointment
+5. Moidying storage to ensure appointments are stored
+
 ### \[Proposed\] Undo/redo feature
 
 #### Proposed Implementation

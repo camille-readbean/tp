@@ -157,7 +157,7 @@ This section describes some noteworthy details on how certain features are imple
 
 ### Add command
 
-This section describes how the `add` commands work which will serve as a basic understanding of how commands are implemented.  
+This section describes how the add commands work which will serve as a basic understanding of how commands are implemented.  
 
 **AddressBookParser** : [`AddressBookParser`](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/logic/parser/AddressBookParser.java)
 **AddCommandParser** : [`AddCommandParser.java`](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/logic/parser/AddCommandParser.java)
@@ -257,15 +257,15 @@ This section describes how the `find-Tag` command works and is implemented.
 
 The Sequence and Activity UML diagrams belows shows the objects created as well as their interactions (e.g. method calls) when the `find-Tag` command is activated.
 
-### Class Diagram
+#### Class Diagram
 
 <img src="images/FindTagClassDiagram.png" width="850"/>
 
-### Sequence Diagram
+#### Sequence Diagram
 
 <img src="images/FindTagSequenceDiagram.png" width="550"/>
 
-### Activity Diagram
+#### Activity Diagram
 
 <img src="images/FindTagActivityDiagram.png" width="550"/>
 
@@ -283,6 +283,22 @@ How a `find-tag` command is executed.
 3. `MainWindow` creates a `CommandBox` with the resulting command output, listing our all clients with the specified tag.
 
 <img src="images/FindTagState2.png" width="850"/>
+
+### Schedule command
+
+#### Work in progress Implementation
+To keep things simple, client will keep an immutable ArrayList of Appointments
+Hence the way to schedule will functionally work like a combination of the existing add and edit command:
+  * Adding an appointment
+  * Editing a client to include the new appointments
+As we added new fields, edit command need to be edited to carry over 
+
+#### Stuff to be updated: TODO
+1. Edit Command
+2. View command changed to reflect appointments (UI)
+3. Add a view (upcoming) appointments
+4. Deleting an appointment
+5. Moidying storage to ensure appointments are stored
 
 ### \[Proposed\] Undo/redo feature
 
@@ -413,7 +429,6 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* * *`  | Social Worker                                           | Delete a client                                   | Remove clients that I no longer work with                                         |
 | `* * *`  | Social Worker                                           | View a client's information                       | Conveniently access client's details in a easily readable manner                  |
 | `* * *`  | Social Worker                                           | List out all current client's contacts            | View all of the current contacts I have saved                                     |
-| `* * *`  | New User                                                | View all available commands in the app            | do not need to go to the browser for detailed help.                               |
 | `* * *`  | Social Worker who has physical meetings with my clients | Add appointments that I have with each client     | Keep track of the physical meetings I have with my clients                        |
 | `* * *`  | Social Worker who has physical meetings with my clients | Delete appointments that I have with each client  | Remove any appointments that I no longer have                                     |
 | `* * *`  | Social Worker who has physical meetings with my clients | View an appointment's information                 | Be informed of the details that the appointment involves                          |
@@ -472,8 +487,6 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **Extensions**
 
 * 2a. The list is empty.
-
-   * 2a1. SWEE shows an error message.
 
   Use case ends.
 
@@ -556,13 +569,13 @@ testers are expected to do more *exploratory* testing.
 
    1. Prerequisites: List all clients using the `list` command. Multiple clients in the list.
 
-   1. Test case: `del 1`<br>
+   1. Test case: `delete 1`<br>
       Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
 
-   1. Test case: `del 0`<br>
+   1. Test case: `delete 0`<br>
       Expected: No client is deleted. Error details shown in the status message. Status bar remains the same.
 
-   1. Other incorrect delete commands to try: `del`, `del x`, `...` (where x is larger than the list size)<br>
+   1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
       Expected: Similar to previous.
 
 1. _{ more test cases …​ }_

@@ -120,7 +120,9 @@ Format: `edit INDEX [--name=NAME] [--phone=PHONE] [--email=EMAIL] [--addr=ADDRES
 * Edits the client at the specified `INDEX`. The index refers to the index number shown in the displayed client list. The index **must be a positive integer** 1, 2, 3, …​
 * At least one of the optional fields must be provided.
 * Existing values will be updated to the input values.
-* When editing tags, the existing tags of the client will be removed i.e adding of tags is not cumulative.
+* When editing tags for a client, any pre-existing tags will be directly replaced with the new ones provided in the command.<br>
+  This means that the tag update is not cumulative; unless a tag is specified in the new command, it will not be retained from the previous set of tags.<br>
+  If the tag option is not specified, i.e. `--tags=`, the existing tags will be left as is
 * You can remove all the client’s tags by typing `--tags=` without
     specifying any tags after it.
 
@@ -135,7 +137,7 @@ Examples:
 
 Finds clients whose names contain any of the given keywords.
 
-Format: `find KEYWORD [MORE_KEYWORDS]`
+Format: `find-name KEYWORD [MORE_KEYWORDS]`
 
 * The search is case-insensitive. e.g `hans` will match `Hans`
 * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
@@ -145,8 +147,8 @@ Format: `find KEYWORD [MORE_KEYWORDS]`
   e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
 
 Examples:
-* `find John` returns `john` and `John Doe`
-* `find alex david` returns `Alex Yeoh`, `David Li`<br>
+* `find-name John` returns `john` and `John Doe`
+* `find-name alex david` returns `Alex Yeoh`, `David Li`<br>
   ![result for 'find alex david'](images/findAlexDavidResult.png)
 
 

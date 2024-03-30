@@ -7,8 +7,6 @@ Social Worker's Efficiency Enhancer (**SWEE**) is a **desktop application for ma
 If you can type fast, SWEE can get your contact management tasks done faster than traditional GUI apps.  
 This is ideal as you do not often bring a mouse out with you on site visits to clients or on the go. 
 
- * It is named `Social Worker's Efficiency Enhancer` (`SWEE` for short) because it a play on the acronym SWE (software engineering), what the course aims to teach, and [swee (Singapore slang)](http://www.mysmu.edu/faculty/jacklee/singlish_S.htm)
- 
 --- 
 
 * Table of Contents
@@ -16,17 +14,20 @@ This is ideal as you do not often bring a mouse out with you on site visits to c
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div class="page-break"></div>
+
 ## Quick start
 
-1. Ensure you have Java `11` or above installed in your Computer.
+1. Ensure you have Java `11` or above installed in your Computer. You can find a copy [here](https://adoptium.net/temurin/releases/?version=11).  
+   Java is needed to run the applications.
 
-1. Download the latest `addressbook.jar` from [here](https://github.com/se-edu/addressbook-level3/releases).
+1. Download the latest `addressbook.jar` from [here](https://github.com/AY2324S2-CS2103T-T17-1/tp/releases).
 
 1. Copy the file to the folder you want to use as the _home folder_ for your AddressBook.
 
-1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar addressbook.jar` command to run the application.<br>
-   A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
-   ![Ui](images/Ui.png)
+   1. Open the address book file in a way that suits your operating system. For example, on Windows, you can just double-click the file.<br>
+      Shortly after, a graphical interface (GUI) like the one shown below should pop up. Take note that the app already includes some example data for you to see.<br>
+      ![Ui](images/Ui.png)
 
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
@@ -44,6 +45,8 @@ This is ideal as you do not often bring a mouse out with you on site visits to c
 1. Refer to the [Features](#features) below for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div class="page-break"></div>
 
 ## Features
 
@@ -69,6 +72,9 @@ This is ideal as you do not often bring a mouse out with you on site visits to c
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </div>
 
+
+<div class="page-break"></div>
+
 ### Viewing help : `help`
 
 Shows a message explaning how to access the help page.
@@ -77,6 +83,8 @@ Shows a message explaning how to access the help page.
 
 Format: `help`
 
+
+<div class="page-break"></div>
 
 ### Adding a client: `add`
 
@@ -100,6 +108,9 @@ Shows a list of all clients in the address book.
 
 Format: `list`
 
+
+<div class="page-break"></div>
+
 ### Editing a client : `edit`
 
 Edits an existing client in the address book.
@@ -109,7 +120,9 @@ Format: `edit INDEX [--name=NAME] [--phone=PHONE] [--email=EMAIL] [--addr=ADDRES
 * Edits the client at the specified `INDEX`. The index refers to the index number shown in the displayed client list. The index **must be a positive integer** 1, 2, 3, …​
 * At least one of the optional fields must be provided.
 * Existing values will be updated to the input values.
-* When editing tags, the existing tags of the client will be removed i.e adding of tags is not cumulative.
+* When editing tags for a client, any pre-existing tags will be directly replaced with the new ones provided in the command.<br>
+  This means that the tag update is not cumulative; unless a tag is specified in the new command, it will not be retained from the previous set of tags.<br>
+  If the tag option is not specified, i.e. `--tags=`, the existing tags will be left as is
 * You can remove all the client’s tags by typing `--tags=` without
     specifying any tags after it.
 
@@ -117,11 +130,14 @@ Examples:
 *  `edit 1 --phone=91234567 --email=johndoe@example.com` Edits the phone number and email address of the 1st client to be `91234567` and `johndoe@example.com` respectively.
 *  `edit 2 --name=Betsy Crower --tags=` Edits the name of the 2nd client to be `Betsy Crower` and clears all existing tags.
 
+
+<div class="page-break"></div>
+
 ### Locating clients by name: `find`
 
 Finds clients whose names contain any of the given keywords.
 
-Format: `find KEYWORD [MORE_KEYWORDS]`
+Format: `find-name KEYWORD [MORE_KEYWORDS]`
 
 * The search is case-insensitive. e.g `hans` will match `Hans`
 * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
@@ -131,9 +147,12 @@ Format: `find KEYWORD [MORE_KEYWORDS]`
   e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
 
 Examples:
-* `find John` returns `john` and `John Doe`
-* `find alex david` returns `Alex Yeoh`, `David Li`<br>
+* `find-name John` returns `john` and `John Doe`
+* `find-name alex david` returns `Alex Yeoh`, `David Li`<br>
   ![result for 'find alex david'](images/findAlexDavidResult.png)
+
+
+<div class="page-break"></div>
 
 ### Deleting a client : `del`
 
@@ -161,6 +180,9 @@ Exits the program.
 
 Format: `exit`
 
+
+<div class="page-break"></div>
+
 ### Saving the data
 
 SWEE data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
@@ -177,6 +199,9 @@ Furthermore, certain edits can cause the SWEE to behave in unexpected ways (e.g.
 
 --------------------------------------------------------------------------------------------------------------------
 
+
+<div class="page-break"></div>
+
 ## FAQ
 
 **Q**: How do I transfer my data to another Computer?<br>
@@ -189,6 +214,9 @@ Furthermore, certain edits can cause the SWEE to behave in unexpected ways (e.g.
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 
 --------------------------------------------------------------------------------------------------------------------
+
+
+<div class="page-break"></div>
 
 ## Command summary
 

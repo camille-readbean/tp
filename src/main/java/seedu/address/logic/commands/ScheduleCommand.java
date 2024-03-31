@@ -39,7 +39,7 @@ public class ScheduleCommand extends Command {
             + PREFIX_TO + "14/03/2024 15:20 "
             + PREFIX_ADDRESS + "Meeting Room A, 358 Clementi Ave 2 #01-285 Singapore 120358";
 
-    public static final String MESSAGE_SUCCESS = "New appointment added: %1$s";
+    public static final String MESSAGE_SUCCESS = "New appointment scheduled: %1$s";
 
     private Logger logger = LogsCenter.getLogger(getClass());
     private final Appointment appointmentToAdd;

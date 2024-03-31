@@ -13,6 +13,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
 
+import seedu.address.commons.core.index.Index;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.commands.exceptions.CommandException;
@@ -97,6 +98,14 @@ public class Client {
         return Collections.unmodifiableList(appointments);
     }
 
+    public Appointment getAppointment(Index index) throws IndexOutOfBoundsException {
+        int zbIndex = index.getZeroBased();
+        if (zbIndex < 0 || zbIndex >= appointments.size()) {
+            throw new IndexOutOfBoundsException("Invalid index: " + index);
+        }
+        return appointments.get(zbIndex);
+    }
+
     /**
      * Returns an appointment is already inside the current list.
      */
@@ -127,14 +136,11 @@ public class Client {
      * Creates and returns a new {@code Client} with an appointment removed from the current list of appointments.
      * The appointment to be removed is specified by its index in the list.
      *
-     * @param index The index of the appointment to be removed in the appointments list.
+     * @param index The 0-based index of the appointment to be removed in the appointments list.
      * @return A new {@code Client} instance with the specified appointment removed.
-     * @throws IndexOutOfBoundsException if the index is out of range (index < 0 || index >= size of appointment list).
      */
-    public Client removeAppointment(int index) throws IndexOutOfBoundsException {
-        if (index < 0 || index >= appointments.size()) {
-            throw new IndexOutOfBoundsException("Invalid index: " + index);
-        }
+    public Client removeAppointment(int index) {
+        assert !(index < 0 && index >= appointments.size());
 
         ArrayList<Appointment> updatedAppointments = new ArrayList<>(appointments);
         updatedAppointments.remove(index);

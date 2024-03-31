@@ -16,4 +16,5 @@ public class CliSyntax {
     public static final Prefix PREFIX_TITLE = new Prefix("--title=");
     public static final Prefix PREFIX_FROM = new Prefix("--from=");
     public static final Prefix PREFIX_TO = new Prefix("--to=");
+    public static final Prefix PREFIX_APPT_INDEX = new Prefix("--appt=");
 }

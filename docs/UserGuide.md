@@ -147,7 +147,7 @@ Examples:
 * `find Betsy` followed by `del 1` displays the information of
    the 1st client in the results of the `find` command.
 
-### Locating clients by name: `find`
+### Locating clients by name: `find-name`
 
 Finds clients whose names contain any of the given keywords.
 

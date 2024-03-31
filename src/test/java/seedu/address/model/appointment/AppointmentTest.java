@@ -3,6 +3,7 @@ package seedu.address.model.appointment;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_AMY;
+import static seedu.address.logic.parser.CliSyntax.DATETIME_FORMATTER;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -19,10 +20,13 @@ class AppointmentTest {
         LocalDateTime to = from.plusHours(2L);
         Address address = new Address(VALID_ADDRESS_AMY);
         Appointment apt = new Appointment(title, from, to, address);
-        String expected = "<Appointment title: \"" + title
-                + "\" from: " + from.truncatedTo(ChronoUnit.MINUTES)
-                + " to: " + to.truncatedTo(ChronoUnit.MINUTES)
-                + " at: " + address + ">";
+        String expected = "【" + title + "】 from 🕑: <"
+                + from.truncatedTo(ChronoUnit.MINUTES).format(DATETIME_FORMATTER)
+                + "> to 🕒: <"
+                + to.truncatedTo(ChronoUnit.MINUTES).format(DATETIME_FORMATTER)
+                + "> at 📌: <"
+                + address.toString()
+                + ">";
         assertEquals(expected, apt.toString());
     }
 

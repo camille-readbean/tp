@@ -1,12 +1,17 @@
 package seedu.address.ui;
 
+import static seedu.address.logic.parser.CliSyntax.DATETIME_FORMAT_STR;
+
+import java.time.format.DateTimeFormatter;
 import java.util.Comparator;
+import java.util.Optional;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
+import seedu.address.model.appointment.Appointment;
 import seedu.address.model.client.Client;
 
 /**
@@ -39,6 +44,10 @@ public class ClientCard extends UiPart<Region> {
     @FXML
     private Label email;
     @FXML
+    private Label numberOfAppointments;
+    @FXML
+    private Label nextAppointment;
+    @FXML
     private FlowPane tags;
 
     /**
@@ -55,5 +64,15 @@ public class ClientCard extends UiPart<Region> {
         client.getTags().stream()
                 .sorted(Comparator.comparing(tag -> tag.tagName))
                 .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
+        numberOfAppointments.setText("Appointments: " + client.getNumberOfAppointments());
+        Optional<Appointment> nextAppt = client.getNextUpcomingAppointment();
+        if (nextAppt.isPresent()) {
+            Appointment nextAppointmentDetails = nextAppt.get();
+            this.nextAppointment.setText("Next appointment: " + nextAppointmentDetails.title
+                    + " on " + nextAppointmentDetails.from.format(DateTimeFormatter.ofPattern(DATETIME_FORMAT_STR)));
+        } else {
+            this.nextAppointment.setText("Next appointment: None!");
+        }
+
     }
 }

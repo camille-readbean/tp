@@ -1,10 +1,12 @@
 package seedu.address.logic;
 
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import seedu.address.logic.parser.Prefix;
+import seedu.address.model.appointment.Appointment;
 import seedu.address.model.client.Client;
 
 /**
@@ -46,6 +48,20 @@ public class Messages {
                 .append(client.getAddress())
                 .append("; Tags: ");
         client.getTags().forEach(builder::append);
+        builder.append("\n");
+
+        List<Appointment> appointments = client.getAppointments();
+        builder.append("Appointments: \n");
+        if (appointments.isEmpty()) {
+            builder.append("None");
+        }
+        for (int i = 0; i < appointments.size(); i++) {
+            builder.append(i + 1) // 1-based index
+                    .append(": ")
+                    .append(appointments.get(i))
+                    .append("\n");
+        }
+
         return builder.toString();
     }
 

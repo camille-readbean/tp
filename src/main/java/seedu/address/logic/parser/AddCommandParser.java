@@ -36,7 +36,6 @@ public class AddCommandParser implements Parser<AddCommand> {
 
         if (!arePrefixesPresent(argMultimap, PREFIX_NAME, PREFIX_ADDRESS, PREFIX_PHONE, PREFIX_EMAIL)
                 || !argMultimap.getPreamble().isEmpty()) {
-            // TODO: update to use Apache Commons CLI for parsing
             ArrayList<String> missingFields = new ArrayList<String>();
             if (argMultimap.getValue(PREFIX_NAME).isEmpty()) {
                 missingFields.add("name");

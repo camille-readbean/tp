@@ -1,21 +1,26 @@
 package seedu.address.testutil;
 
+import static seedu.address.logic.commands.CommandTestUtil.MEETING_PLACEA;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_FROM_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_FRIEND;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_TITLE;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_TO_BOB;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import seedu.address.model.AddressBook;
+import seedu.address.model.appointment.Appointment;
 import seedu.address.model.client.Client;
 
 /**
@@ -30,7 +35,9 @@ public class TypicalClients {
     public static final Client BENSON = new ClientBuilder().withName("Benson Meier")
             .withAddress("311, Clementi Ave 2, #02-25")
             .withEmail("johnd@example.com").withPhone("98765432")
-            .withTags("owesMoney", "friends").build();
+            .withTags("owesMoney", "friends").build()
+            .withNewAppointment(
+                    new Appointment(VALID_TITLE, VALID_FROM_BOB, VALID_TO_BOB, MEETING_PLACEA));
     public static final Client CARL = new ClientBuilder().withName("Carl Kurz").withPhone("95352563")
             .withEmail("heinz@example.com").withAddress("wall street").build();
     public static final Client DANIEL = new ClientBuilder().withName("Daniel Meier").withPhone("87652533")
@@ -56,6 +63,10 @@ public class TypicalClients {
             .build();
     public static final Client BOB_WITH_TAGS = new ClientBuilder(BOB)
             .withTags(VALID_TAG_HUSBAND, VALID_TAG_FRIEND).build();
+
+    public static final Client BOB_WITH_TAGS_AND_APPOINTMENTS = new ClientBuilder(BOB)
+            .withTags(VALID_TAG_HUSBAND, VALID_TAG_FRIEND).build()
+            .withNewAppointment(new Appointment(VALID_TITLE, VALID_FROM_BOB, VALID_TO_BOB, MEETING_PLACEA));
 
     public static final String KEYWORD_MATCHING_MEIER = "Meier"; // A keyword that matches MEIER
 

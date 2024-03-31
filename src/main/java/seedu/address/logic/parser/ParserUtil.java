@@ -2,6 +2,9 @@ package seedu.address.logic.parser;
 
 import static java.util.Objects.requireNonNull;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -120,5 +123,35 @@ public class ParserUtil {
             tagSet.add(parseTag(tagName));
         }
         return tagSet;
+    }
+
+    /**
+     * Parses a {@code String dateTime} into a {@code LocalDateTime}.
+     * The dateTime is expected to be in the format of "dd-MM-yyyy HH:mm".
+     * @throws ParseException if the given {@code dateTime} is an invalid format.
+     */
+    public static LocalDateTime parseDateTime(String dateTime) throws ParseException {
+        requireNonNull(dateTime);
+        try {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+            return LocalDateTime.parse(dateTime, formatter);
+        } catch (DateTimeParseException e) {
+            throw new ParseException("Invalid date and time format. Expected format: dd/MM/yyyy HH:mm");
+        }
+    }
+
+    /**
+     * Parses a {@code String s} into a {@code String}.
+     * Leading and trailing whitespaces will be trimmed.
+     * Ensures alphanumeric with no characters
+     * @throws ParseException if the given {@code name} is invalid.
+     */
+    public static String parseString(String s) throws ParseException {
+        requireNonNull(s);
+        String trimmedS = s.trim();
+        if (!trimmedS.matches("[A-Za-z0-9 ]+")) {
+            throw new ParseException("Invalid format: Only alphanumeric characters and spaces are allowed");
+        }
+        return trimmedS;
     }
 }

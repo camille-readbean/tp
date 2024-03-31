@@ -9,13 +9,15 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
+import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.commons.util.ToStringBuilder;
+import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.appointment.Appointment;
 import seedu.address.model.tag.Tag;
 
 /**
  * Represents a Client in the address book.
- * Guarantees: details are present and not null, field values are validated, immutable.
+ * Guarantees: details are present and not null, field values are validated, immutable. Appointments are unique
  */
 public class Client {
 
@@ -86,6 +88,54 @@ public class Client {
      */
     public List<Appointment> getAppointments() {
         return Collections.unmodifiableList(appointments);
+    }
+
+    /**
+     * Returns an appointment is already inside the current list.
+     */
+    public boolean hasAppointment(Appointment appointment) {
+        return appointments.contains(appointment);
+    }
+
+    /**
+     * Creates and returns a {@code Client} with the details of {@code clientToUpdate}
+     * updated with {@code newAppointment}.
+     * Guarantees that the appointments are unique
+     *
+     * @param newAppointment created appointment.
+     * @return Immutable copy of the client with the appointment added.
+     */
+    public Client withNewAppointment(Appointment newAppointment) {
+        assert newAppointment != null;
+        assert !hasAppointment(newAppointment);
+
+        ArrayList<Appointment> updatedAppointments = new ArrayList<>(appointments);
+        updatedAppointments.add(newAppointment);
+
+        return new Client(name, phone, email, address, tags, updatedAppointments);
+    }
+
+    /**
+     * Creates and returns a new {@code Client} with an appointment removed from the current list of appointments.
+     * The appointment to be removed is specified by its index in the list.
+     *
+     * @param index The index of the appointment to be removed in the appointments list.
+     * @return A new {@code Client} instance with the specified appointment removed.
+     * @throws IndexOutOfBoundsException if the index is out of range (index < 0 || index >= size of appointment list).
+     */
+    public Client removeAppointment(int index) throws IndexOutOfBoundsException {
+        if (index < 0 || index >= appointments.size()) {
+            throw new IndexOutOfBoundsException("Invalid index: " + index);
+        }
+
+        ArrayList<Appointment> updatedAppointments = new ArrayList<>(appointments);
+        updatedAppointments.remove(index);
+
+        return new Client(name, phone, email, address, tags, updatedAppointments);
+    }
+
+    public int numberOfAppointments() {
+        return appointments.size();
     }
 
     /**

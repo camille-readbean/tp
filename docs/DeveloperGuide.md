@@ -165,7 +165,8 @@ This section describes how the add commands work which will serve as a basic und
 
 The sequence diagram below illustrates the interactions within the `Logic` component, taking `execute("add --name=Name --phone=2103 --email=hello@Test --addr=Address --tags=hello --tags=Hi")` API call as an example.
 
-<img src="images/AddSequenceDiagram.png" width="550"/>
+[//]: # (<img src="images/AddSequenceDiagram.png" width="600"/>)
+![Interactions Inside the Logic Component for the `add [ARGS]` Command](images/AddSequenceDiagram.png)
 
 <div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `AddCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline continues till the end of diagram.
 </div>

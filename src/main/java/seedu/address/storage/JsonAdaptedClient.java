@@ -64,7 +64,7 @@ class JsonAdaptedClient {
                 .map(JsonAdaptedTag::new)
                 .collect(Collectors.toList()));
         appointments.addAll(source.getAppointments().stream()
-                .map(JsonAdaptedAppointment::JsonAdaptedAppointmentBuilder)
+                .map(JsonAdaptedAppointment::jsonAdaptedAppointmentBuilder)
                 .collect(Collectors.toList()));
     }
 

@@ -1,10 +1,9 @@
 package seedu.address.logic.parser;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.logic.parser.CliSyntax.DATETIME_FORMAT_STR;
+import static seedu.address.logic.parser.CliSyntax.DATETIME_FORMATTER;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Collection;
 import java.util.HashSet;
@@ -134,8 +133,7 @@ public class ParserUtil {
     public static LocalDateTime parseDateTime(String dateTime) throws ParseException {
         requireNonNull(dateTime);
         try {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATETIME_FORMAT_STR);
-            return LocalDateTime.parse(dateTime, formatter);
+            return LocalDateTime.parse(dateTime, DATETIME_FORMATTER);
         } catch (DateTimeParseException e) {
             throw new ParseException("Invalid date and time format. Expected format: dd/MM/yyyy HH:mm");
         }

@@ -2,7 +2,6 @@ package seedu.address.model.client;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,9 +13,7 @@ import java.util.Optional;
 import java.util.Set;
 
 import seedu.address.commons.core.index.Index;
-import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.commons.util.ToStringBuilder;
-import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.appointment.Appointment;
 import seedu.address.model.tag.Tag;
 
@@ -158,7 +155,7 @@ public class Client {
     }
 
     /**
-     * Gets the <code>Optional<Appointment></code>next upcoming appointment.
+     * Gets the <code>Optional&lt;Appointment&gt;</code>next upcoming appointment.
      * Defined as the Appointment with the lowest from DateTime after now.
      *
      * @return Optional with the next upcoming appointment

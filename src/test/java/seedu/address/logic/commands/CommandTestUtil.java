@@ -2,6 +2,7 @@ package seedu.address.logic.commands;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static seedu.address.logic.parser.CliSyntax.DATETIME_FORMATTER;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_FROM;
@@ -9,11 +10,9 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TO;
-import static seedu.address.logic.parser.CliSyntax.DATETIME_FORMAT_STR;
 import static seedu.address.testutil.Assert.assertThrows;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -64,7 +63,6 @@ public class CommandTestUtil {
     public static final String PREAMBLE_NON_EMPTY = "NonEmptyPreamble";
 
     // Appointment related stuff
-    public static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
     public static final String VALID_TITLE = "Meeting A";
     public static final String VALID_TITLE2 = " Meeting B ";
     public static final LocalDateTime now = LocalDateTime.now();
@@ -77,14 +75,14 @@ public class CommandTestUtil {
     public static final Address MEETING_PLACEA = new Address("Meeting Room A, 853 Clementi Ave 3 Singapore 120853");
     public static final Address MEETING_PLACEB = new Address("Conference Room B, 3 Computing Drive, NUS, Singapore");
     // Valid date and time strings
-    public static final String VALID_FROM_AMY_DESC = " " + PREFIX_FROM + VALID_FROM_AMY.format(formatter);
-    public static final String VALID_TO_AMY_DESC = " " + PREFIX_TO + VALID_TO_AMY.format(formatter);
+    public static final String VALID_FROM_AMY_DESC = " " + PREFIX_FROM + VALID_FROM_AMY.format(DATETIME_FORMATTER);
+    public static final String VALID_TO_AMY_DESC = " " + PREFIX_TO + VALID_TO_AMY.format(DATETIME_FORMATTER);
 
-    public static final String VALID_FROM_BOB_DESC = " " + PREFIX_FROM + VALID_FROM_BOB.format(formatter);
-    public static final String VALID_TO_BOB_DESC = " " + PREFIX_TO + VALID_TO_BOB.format(formatter);
+    public static final String VALID_FROM_BOB_DESC = " " + PREFIX_FROM + VALID_FROM_BOB.format(DATETIME_FORMATTER);
+    public static final String VALID_TO_BOB_DESC = " " + PREFIX_TO + VALID_TO_BOB.format(DATETIME_FORMATTER);
 
-    public static final String VALID_FROM_BOB2_DESC = " " + PREFIX_FROM + VALID_FROM_BOB2.format(formatter);
-    public static final String VALID_TO_BOB2_DESC = " " + PREFIX_TO + VALID_TO_BOB2.format(formatter);
+    public static final String VALID_FROM_BOB2_DESC = " " + PREFIX_FROM + VALID_FROM_BOB2.format(DATETIME_FORMATTER);
+    public static final String VALID_TO_BOB2_DESC = " " + PREFIX_TO + VALID_TO_BOB2.format(DATETIME_FORMATTER);
 
     // Invalid date and time strings (wrong format)
     public static final String INVALID_FROM_DESC = " " + PREFIX_FROM + "12-04-2024 09:00";
@@ -92,7 +90,7 @@ public class CommandTestUtil {
 
     // 'To' datetime before 'From' datetime
     public static final String INVALID_TO_BOB_DESC_BEFORE_FROM = " " + PREFIX_TO
-            + VALID_FROM_BOB.minusHours(1).format(formatter);
+            + VALID_FROM_BOB.minusHours(1).format(DATETIME_FORMATTER);
 
 
 

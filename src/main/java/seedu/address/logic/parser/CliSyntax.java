@@ -1,11 +1,14 @@
 package seedu.address.logic.parser;
 
+import java.time.format.DateTimeFormatter;
+
 /**
  * Contains Command Line Interface (CLI) syntax definitions common to multiple commands
  */
 public class CliSyntax {
 
     public static final String DATETIME_FORMAT_STR = "dd/MM/yyyy HH:mm";
+    public static final DateTimeFormatter DATETIME_FORMATTER = DateTimeFormatter.ofPattern(DATETIME_FORMAT_STR);
 
     /* Prefix definitions */
     public static final Prefix PREFIX_NAME = new Prefix("--name=");

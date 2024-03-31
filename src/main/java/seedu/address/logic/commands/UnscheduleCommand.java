@@ -36,6 +36,13 @@ public class UnscheduleCommand extends Command {
     private final Index clientIndex; // index of the Client
     private final Index apptIndex; // index of the Appointment
 
+    /**
+     * Unschedules an appointment for the client.
+     * Basically a delete command for Appointments.
+     *
+     * @param clientIndex of the client in the filtered client list to edit
+     * @param apptIndex appointment to add to the client with
+     */
     public UnscheduleCommand(Index clientIndex, Index apptIndex) {
         requireAllNonNull(clientIndex, apptIndex);
         this.clientIndex = clientIndex;

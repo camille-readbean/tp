@@ -77,7 +77,7 @@ public class Appointment implements Comparable<Appointment> {
      *
      * @param o the Appointment to be compared against.
      * @return a negative integer, zero, or a positive integer as this object is less than, equal to,
-     *   or greater than the specified object.
+     *     or greater than the specified object.
      */
     @Override
     public int compareTo(Appointment o) {

@@ -32,7 +32,7 @@ public class JsonAdaptedClientTest {
             .map(JsonAdaptedTag::new)
             .collect(Collectors.toList());
     private static final List<JsonAdaptedAppointment> VALID_APPOINTMENTS = BENSON.getAppointments().stream()
-            .map(JsonAdaptedAppointment::JsonAdaptedAppointmentBuilder)
+            .map(JsonAdaptedAppointment::jsonAdaptedAppointmentBuilder)
             .collect(Collectors.toList());
 
     @Test

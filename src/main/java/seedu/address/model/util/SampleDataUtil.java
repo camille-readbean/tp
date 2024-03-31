@@ -1,11 +1,13 @@
 package seedu.address.model.util;
 
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 import seedu.address.model.AddressBook;
 import seedu.address.model.ReadOnlyAddressBook;
+import seedu.address.model.appointment.Appointment;
 import seedu.address.model.client.Address;
 import seedu.address.model.client.Client;
 import seedu.address.model.client.Email;
@@ -18,25 +20,46 @@ import seedu.address.model.tag.Tag;
  */
 public class SampleDataUtil {
     public static Client[] getSampleClients() {
+        LocalDateTime now = LocalDateTime.now();
         return new Client[] {
-            new Client(new Name("Alex Yeoh"), new Phone("87438807"), new Email("alexyeoh@example.com"),
+            new Client(new Name("Jia Tan"), new Phone("87438807"), new Email("jt@example.com"),
                 new Address("Blk 30 Geylang Street 29, #06-40"),
-                getTagSet("friends")),
-            new Client(new Name("Bernice Yu"), new Phone("99272758"), new Email("berniceyu@example.com"),
-                new Address("Blk 30 Lorong 3 Serangoon Gardens, #07-18"),
-                getTagSet("colleagues", "friends")),
-            new Client(new Name("Charlotte Oliveiro"), new Phone("93210283"), new Email("charlotte@example.com"),
-                new Address("Blk 11 Ang Mo Kio Street 74, #11-04"),
-                getTagSet("neighbours")),
-            new Client(new Name("David Li"), new Phone("91031282"), new Email("lidavid@example.com"),
-                new Address("Blk 436 Serangoon Gardens Street 26, #16-43"),
-                getTagSet("family")),
-            new Client(new Name("Irfan Ibrahim"), new Phone("92492021"), new Email("irfan@example.com"),
-                new Address("Blk 47 Tampines Street 20, #17-35"),
-                getTagSet("classmates")),
-            new Client(new Name("Roy Balakrishnan"), new Phone("92624417"), new Email("royb@example.com"),
-                new Address("Blk 45 Aljunied Street 85, #11-31"),
-                getTagSet("colleagues"))
+                getTagSet("disabled", "diabetic"))
+                .withNewAppointment(
+                        new Appointment("Medical Appointment",
+                                now,
+                                now.plusHours(1),
+                                new Address("Natasha's Clinic, Boulder Town, 6 Jarilo Avenue"))),
+            new Client(new Name("Hu Tao"), new Phone("90901555"), new Email("berniceyu@example.com"),
+                new Address("Blk 30 Liyue Habour, #07-15"),
+                getTagSet("needy", "risky"))
+                .withNewAppointment(
+                    new Appointment("Meetup",
+                            now.plusMonths(2),
+                            now.plusMonths(2).plusDays(2),
+                            new Address("Star rail restaurant")))
+                .withNewAppointment(
+                    new Appointment("Pre-trial conference",
+                            now.minusDays(2),
+                            now.minusHours(46),
+                            new Address("Family Court"))),
+            new Client(new Name("Hans Jansen"), new Phone("90241217"), new Email("hjansen@example.com"),
+                new Address("20 Commonwealth Avenue"),
+                getTagSet("diabetes", "risky")),
+            new Client(new Name("Chen Hui chieh"), new Phone("91031282"), new Email("jy@example.com"),
+                new Address("Lungmen Police Divison, #05-01"),
+                getTagSet("colleagues", "police"))
+                .withNewAppointment(
+                    new Appointment("Appreciation dinner",
+                            now.plusDays(40),
+                            now.plusDays(40).plusHours(1),
+                            new Address("Natasha's Clinic, Boulder Town, 6 Jarilo Avenue"))),
+            new Client(new Name("Natasha"), new Phone("94367465"), new Email("natasha@example.com"),
+                new Address("Natasha's Clinic, Boulder Town, 6 Jarilo Avenue"),
+                getTagSet("doctor", "colleagues", "friends")),
+            new Client(new Name("Serval Landau"), new Phone("98375615"), new Email("serval@example.com"),
+                new Address("#08-17, Tower B, Utown Residence"),
+                getTagSet("volunteer"))
         };
     }
 

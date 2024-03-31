@@ -168,23 +168,24 @@ Examples:
 
 <div class="page-break"></div>
 
-### Locating clients by tag: find-tag
+### Locating clients by tag: `find-tag`
 
 Finds clients whose tags contain any of the given keywords.
 
-Format: find-tag KEYWORD [MORE_KEYWORDS]
+Format: `find-tag KEYWORD [MORE_KEYWORDS]`
 
 * The search is case-insensitive. e.g. disabled will match Disabled
 * The order of the keywords does not matter e.g. disabled risky will match risky disabled
 * Only the Tag is searched.
 * Only full words will be matched e.g. dis will not match disabled
-* Clients matching at least one keyword will be returned (i.e. OR search)
-  e.g. disabled risky will return disabled diabetic, risky diabetic
+* Clients matching at least one keyword will be returned (i.e. at least one is present)<br>
+  e.g. `disabled risky` will return clients that has at least one tag that is `disabled` or `risky`.<br>
+  So clients with tags `disabled` and `diabetic`, and a client with `risky` and `diabetic` will be returned
 
 Examples:
-* `find-tag disabled` returns all clients who are tagged `disabled`
+* `find-tag disabled` returns all clients who are tagged `disabled`<br>
   ![result for 'find-tag disabled'](images/FindTagDisabledResult.png)
-* `find-tag disabled schizophrenic` will return `disabled`, `Schizophrenic`
+* `find-tag disabled schizophrenic` will return `disabled`, `Schizophrenic`<br>
   ![result for 'find-tag disabled schizophrenic'](images/FindTagDisabledSchizophrenicResult.png)
 
 

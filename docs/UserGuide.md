@@ -21,13 +21,15 @@ This is ideal as you do not often bring a mouse out with you on site visits to c
 1. Ensure you have Java `11` or above installed in your Computer. You can find a copy [here](https://adoptium.net/temurin/releases/?version=11).  
    Java is needed to run the applications.
 
-1. Download the latest `addressbook.jar` from [here](https://github.com/AY2324S2-CS2103T-T17-1/tp/releases).
+1. Download the latest `SWEE.jar` from [here](https://github.com/AY2324S2-CS2103T-T17-1/tp/releases).
 
 1. Copy the file to the folder you want to use as the _home folder_ for your AddressBook.
 
    1. Open the address book file in a way that suits your operating system. For example, on Windows, you can just double-click the file.<br>
       Shortly after, a graphical interface (GUI) like the one shown below should pop up. Take note that the app already includes some example data for you to see.<br>
       ![Ui](images/Ui.png)
+   2. On first launch, it will present you with some dummy placeholders clients to show you a rough idea of how clients will look like.<br>
+      Feel free to delete them and add your own.
 
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:

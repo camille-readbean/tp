@@ -165,7 +165,6 @@ This section describes how the add commands work which will serve as a basic und
 
 The sequence diagram below illustrates the interactions within the `Logic` component, taking `execute("add --name=Name --phone=2103 --email=hello@Test --addr=Address --tags=hello --tags=Hi")` API call as an example.
 
-[//]: # (<img src="images/AddSequenceDiagram.png" width="600"/>)
 ![Interactions Inside the Logic Component for the `add [ARGS]` Command](images/AddSequenceDiagram.png)
 
 <div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `AddCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline continues till the end of diagram.
@@ -196,15 +195,15 @@ The Object, Sequence and Activity UML diagrams belows shows the objects created 
 
 #### Class Diagram
 
-<img src="images/ViewClassDiagram.png" width="850"/>
+![](images/ViewClassDiagram.png)
 
 #### Sequence Diagram
 
-<img src="images/ViewSequenceDiagram.png" width="550"/>
+![](images/ViewSequenceDiagram.png)
 
 #### Activity Diagram
 
-<img src="images/ViewActivityDiagram.png" width="550"/>
+![](images/ViewActivityDiagram.png)
 
 How a `view` command is executed.
 1. User Input Parsing
@@ -228,11 +227,11 @@ The Sequence and Activity UML diagrams belows shows the objects created as well 
 
 #### Sequence Diagram
 
-<img src="images/DeleteSequenceDiagram.png" width="550"/>
+![](images/DeleteSequenceDiagram.png)
 
 #### Activity Diagram
 
-<img src="images/DeleteActivityDiagram.png" width="550"/>
+![](images/DeleteActivityDiagram.png)
 
 How a `delete` command is executed.
 1. User Input Parsing
@@ -256,15 +255,15 @@ The Sequence and Activity UML diagrams belows shows the objects created as well 
 
 #### Class Diagram
 
-<img src="images/FindTagClassDiagram.png" width="850"/>
+![](images/FindTagClassDiagram.png)
 
 #### Sequence Diagram
 
-<img src="images/FindTagSequenceDiagram.png" width="550"/>
+![](images/FindTagSequenceDiagram.png)>
 
 #### Activity Diagram
 
-<img src="images/FindTagActivityDiagram.png" width="550"/>
+![](images/FindTagActivityDiagram.png)
 
 How a `find-tag` command is executed.
 1. The User inputs a command in the format of "find-tag [TAG]" to find clients by tag.
@@ -359,7 +358,7 @@ Step 6. The user executes `clear`, which calls `Model#commitAddressBook()`. Sinc
 
 The following activity diagram summarizes what happens when a user executes a new command:
 
-<img src="images/CommitActivityDiagram.png" width="250" />
+![](images/CommitActivityDiagram.png)
 
 #### Design considerations:
 

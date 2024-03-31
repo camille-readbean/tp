@@ -65,12 +65,12 @@ public class CommandTestUtil {
     // Appointment related stuff
     public static final String VALID_TITLE = "Meeting A";
     public static final String VALID_TITLE2 = " Meeting B ";
-    public static final LocalDateTime now = LocalDateTime.now();
-    public static final LocalDateTime VALID_FROM_AMY = now.plusMinutes(30);
+    public static final LocalDateTime NOW = LocalDateTime.now();
+    public static final LocalDateTime VALID_FROM_AMY = NOW.plusMinutes(30);
     public static final LocalDateTime VALID_TO_AMY = VALID_FROM_AMY.plusMinutes(30);
-    public static final LocalDateTime VALID_FROM_BOB = now;
+    public static final LocalDateTime VALID_FROM_BOB = NOW;
     public static final LocalDateTime VALID_TO_BOB = VALID_FROM_BOB.plusHours(1);
-    public static final LocalDateTime VALID_FROM_BOB2 = now.minusDays(1);
+    public static final LocalDateTime VALID_FROM_BOB2 = NOW.minusDays(1);
     public static final LocalDateTime VALID_TO_BOB2 = VALID_FROM_BOB2.plusHours(1);
     public static final Address MEETING_PLACEA = new Address("Meeting Room A, 853 Clementi Ave 3 Singapore 120853");
     public static final Address MEETING_PLACEB = new Address("Conference Room B, 3 Computing Drive, NUS, Singapore");

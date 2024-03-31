@@ -16,7 +16,7 @@ import seedu.address.model.client.Address;
  * Represents a client's appointment in the application.
  * Guarantees: immutable; <code>from</code> is before <code>to</code>
  */
-public class Appointment {
+public class Appointment implements Comparable<Appointment> {
 
     public final Address address;
     public final LocalDateTime from;
@@ -69,6 +69,29 @@ public class Appointment {
                 && from.equals(otherTag.from)
                 && to.equals(otherTag.to)
                 && address.equals(otherTag.address);
+    }
+
+    /**
+     * Compares two appointment, returning in by lower <code>from</code>, then <code>to</code> then finally
+     * by <code>title</code>
+     *
+     * @param o the Appointment to be compared against.
+     * @return a negative integer, zero, or a positive integer as this object is less than, equal to,
+     *   or greater than the specified object.
+     */
+    @Override
+    public int compareTo(Appointment o) {
+        int fromDiff = this.from.compareTo(o.from);
+        if (fromDiff != 0) {
+            return fromDiff;
+        }
+
+        int toDiff = this.to.compareTo(o.to);
+        if (toDiff != 0) {
+            return toDiff;
+        }
+
+        return this.title.compareTo(o.title);
     }
 
     @Override

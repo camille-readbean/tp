@@ -21,7 +21,8 @@ import seedu.address.model.tag.Tag;
 
 /**
  * Represents a Client in the address book.
- * Guarantees: details are present and not null, field values are validated, immutable. Appointments are unique
+ * Guarantees: details are present and not null, field values are validated, immutable.<br>
+ * Appointments are unique and sorted
  */
 public class Client {
 
@@ -33,6 +34,7 @@ public class Client {
     // Data fields
     private final Address address;
     private final Set<Tag> tags = new HashSet<>();
+    // appointments guaranteed to be in sorted order in best-effort manner as long as proper methods are used
     private final ArrayList<Appointment> appointments = new ArrayList<Appointment>();
 
     /**
@@ -60,6 +62,7 @@ public class Client {
         this.address = address;
         this.tags.addAll(tags);
         this.appointments.addAll(appointments);
+        appointments.sort(Appointment::compareTo);
     }
 
     public Name getName() {
@@ -115,6 +118,7 @@ public class Client {
 
         ArrayList<Appointment> updatedAppointments = new ArrayList<>(appointments);
         updatedAppointments.add(newAppointment);
+        updatedAppointments.sort(Appointment::compareTo);
 
         return new Client(name, phone, email, address, tags, updatedAppointments);
     }
@@ -134,6 +138,7 @@ public class Client {
 
         ArrayList<Appointment> updatedAppointments = new ArrayList<>(appointments);
         updatedAppointments.remove(index);
+        updatedAppointments.sort(Appointment::compareTo);
 
         return new Client(name, phone, email, address, tags, updatedAppointments);
     }
@@ -146,7 +151,7 @@ public class Client {
      * Gets the <code>Optional<Appointment></code>next upcoming appointment.
      * Defined as the Appointment with the lowest from DateTime after now.
      *
-     * @returns Optional with the next upcoming appointment
+     * @return Optional with the next upcoming appointment
      */
     public Optional<Appointment> getNextUpcomingAppointment() {
         return appointments.stream()

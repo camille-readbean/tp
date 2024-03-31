@@ -1,6 +1,7 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 import static seedu.address.logic.parser.CliSyntax.DATETIME_FORMAT_STR;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_FROM;
@@ -51,15 +52,13 @@ public class ScheduleCommand extends Command {
      * @param appt appointment to add to the client with
      */
     public ScheduleCommand(Index index, Appointment appt) {
-        requireNonNull(index);
-        requireNonNull(appt);
+        requireAllNonNull(index, appt);
         this.index = index;
         appointmentToAdd = appt;
     }
 
     @Override
     public CommandResult execute(Model model) throws CommandException {
-        requireNonNull(model);
         requireNonNull(model);
         List<Client> lastShownList = model.getFilteredClientList();
 

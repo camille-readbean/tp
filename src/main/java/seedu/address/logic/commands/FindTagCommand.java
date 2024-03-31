@@ -14,7 +14,6 @@ import seedu.address.model.client.TagContainsKeywordsPredicate;
  */
 public class FindTagCommand extends Command {
     public static final String COMMAND_WORD = "find-tag";
-
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Finds all clients whose tags contain the specified "
             + "keyword (case-insensitive) and displays them as a list with index numbers.\n"
             + "Parameters: TAG_KEYWORD\n"

@@ -174,10 +174,10 @@ Finds clients whose tags contain any of the given keywords.
 
 Format: `find-tag KEYWORD [MORE_KEYWORDS]`
 
-* The search is case-insensitive. e.g. disabled will match Disabled
-* The order of the keywords does not matter e.g. disabled risky will match risky disabled
+* The search is case-insensitive. e.g. `disabled` will match `Disabled`
+* The order of the keywords does not matter e.g. `disabled risky` will match `risky disabled`
 * Only the Tag is searched.
-* Only full words will be matched e.g. dis will not match disabled
+* Only full words will be matched e.g. `dis` will not match `disabled`
 * Clients matching at least one keyword will be returned (i.e. at least one is present)<br>
   e.g. `disabled risky` will return clients that has at least one tag that is `disabled` or `risky`.<br>
   So clients with tags `disabled` and `diabetic`, and a client with `risky` and `diabetic` will be returned

@@ -1,8 +1,10 @@
 package seedu.address.model.appointment;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
+import static seedu.address.logic.parser.CliSyntax.DATETIME_FORMAT_STR;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Objects;
 import java.util.logging.Logger;
@@ -78,10 +80,11 @@ public class Appointment {
      * Format state as text for viewing.
      */
     public String toString() {
-        return "<Appointment title: \"" + title + "\" from: "
-                + from.toString()
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern(DATETIME_FORMAT_STR);
+        return "<Appointment: \"" + title + "\" from: "
+                + from.format(dtf)
                 + " to: "
-                + to.toString()
+                + to.format(dtf)
                 + " at: "
                 + address.toString()
                 + ">";

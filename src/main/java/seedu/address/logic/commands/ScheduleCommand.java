@@ -1,6 +1,7 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.logic.parser.CliSyntax.DATETIME_FORMAT_STR;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_FROM;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TITLE;
@@ -30,7 +31,7 @@ public class ScheduleCommand extends Command {
             + PREFIX_FROM + "FROM_DATETIME "
             + PREFIX_TO + "FROM_DATETIME "
             + PREFIX_ADDRESS + "ADDRESS \n"
-            + "Date time are in dd-MM-yyyy HH:mm in 24 hours format\n"
+            + "Date time are in " + DATETIME_FORMAT_STR + " in 24 hours format\n"
             + "Example: " + COMMAND_WORD + " 1 "
             + PREFIX_TITLE + "Monthly touchbase "
             + PREFIX_FROM + "14/03/2024 15:00 "
@@ -70,7 +71,10 @@ public class ScheduleCommand extends Command {
         Client clientToEdit = lastShownList.get(index.getZeroBased());
         Client updatedClientWithAppointment = clientToEdit.withNewAppointment(appointmentToAdd);
 
-        String message = String.format(MESSAGE_SUCCESS, Messages.format(updatedClientWithAppointment));
+        model.setClient(clientToEdit, updatedClientWithAppointment);
+        model.updateFilteredClientList(Model.PREDICATE_SHOW_ALL_CLIENTS);
+
+        String message = String.format(MESSAGE_SUCCESS, appointmentToAdd);
         logger.info("sched OK: " + message);
         return new CommandResult(message);
     }

@@ -5,6 +5,8 @@ package seedu.address.logic.parser;
  */
 public class CliSyntax {
 
+    public static final String DATETIME_FORMAT_STR = "dd/MM/yyyy HH:mm";
+
     /* Prefix definitions */
     public static final Prefix PREFIX_NAME = new Prefix("--name=");
     public static final Prefix PREFIX_PHONE = new Prefix("--phone=");

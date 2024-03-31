@@ -46,6 +46,7 @@ public class Messages {
                 .append(client.getAddress())
                 .append("; Tags: ");
         client.getTags().forEach(builder::append);
+        builder.append("\n");
         client.getAppointments().forEach(appointment -> builder.append(appointment).append("\n"));
         return builder.toString();
     }

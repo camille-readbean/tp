@@ -2,11 +2,15 @@ package seedu.address.model.client;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 
 import seedu.address.commons.exceptions.IllegalValueException;
@@ -134,8 +138,20 @@ public class Client {
         return new Client(name, phone, email, address, tags, updatedAppointments);
     }
 
-    public int numberOfAppointments() {
+    public int getNumberOfAppointments() {
         return appointments.size();
+    }
+
+    /**
+     * Gets the <code>Optional<Appointment></code>next upcoming appointment.
+     * Defined as the Appointment with the lowest from DateTime after now.
+     *
+     * @returns Optional with the next upcoming appointment
+     */
+    public Optional<Appointment> getNextUpcomingAppointment() {
+        return appointments.stream()
+                .filter(appointment -> appointment.from.isAfter(LocalDateTime.now()))
+                .min(Comparator.comparing(appointment -> appointment.from));
     }
 
     /**

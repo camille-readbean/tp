@@ -134,7 +134,18 @@ Examples:
 <div class="page-break"></div>
 
 ### Viewing a client's Information: `view`
-Presents the saved information 
+Displays the saved information about a client.
+
+Format: `view INDEX`
+
+* Displays client information at the specified `INDEX`.
+* The index refers to the index number shown in the displayed client list.
+* The index **must be a positive integer** 1, 2, 3, …​
+
+Examples:
+* `list` followed by `view 2` displays the information of the 2nd client in the address book.
+* `find Betsy` followed by `del 1` displays the information of
+   the 1st client in the results of the `find` command.
 
 ### Locating clients by name: `find`
 

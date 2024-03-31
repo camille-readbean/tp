@@ -100,8 +100,12 @@ public class Client {
 
     public Appointment getAppointment(Index index) throws IndexOutOfBoundsException {
         int zbIndex = index.getZeroBased();
+        if (appointments.isEmpty()) {
+            throw new IndexOutOfBoundsException("There are no appointments.");
+        }
         if (zbIndex < 0 || zbIndex >= appointments.size()) {
-            throw new IndexOutOfBoundsException("Invalid index: " + index);
+            throw new IndexOutOfBoundsException("The appointment index: "
+                    + index.toString() + " provided is invalid: ");
         }
         return appointments.get(zbIndex);
     }

@@ -30,7 +30,7 @@ public class UnscheduleCommand extends Command {
             + PREFIX_APPT_INDEX + "2";
 
     public static final String MESSAGE_SUCCESS = "Client %1$s unscheduled: %2$s";
-    private static final String MESSAGE_INVALID_CLIENT_DISPLAYED_INDEX = "The appointment index provided is invalid";
+    public static final String MESSAGE_FAIL = "Error: Appointment not unscheduled. %1$s";
 
     private Logger logger = LogsCenter.getLogger(getClass());
     private final Index clientIndex; // index of the Client
@@ -55,12 +55,16 @@ public class UnscheduleCommand extends Command {
         Client clientToEdit = lastShownList.get(clientIndex.getZeroBased());
         Client updatedClientWithoutAppointment;
 
+
+
         String message = "";
         Appointment apptDeleted = null;
         try {
             apptDeleted = clientToEdit.getAppointment(apptIndex);
         } catch (IndexOutOfBoundsException e) {
-            throw new CommandException(MESSAGE_INVALID_CLIENT_DISPLAYED_INDEX);
+            message = String.format(MESSAGE_FAIL, e.getMessage());
+            logger.warning("unsched FAIL: " + message);
+            throw new CommandException(message);
         }
         assert apptIndex != null;
 

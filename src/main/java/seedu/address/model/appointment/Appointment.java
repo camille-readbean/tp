@@ -104,11 +104,11 @@ public class Appointment implements Comparable<Appointment> {
      */
     public String toString() {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern(DATETIME_FORMAT_STR);
-        return "<Appointment: \"" + title + "\" from: "
+        return "【" + title + "】 from 🕑: <"
                 + from.format(dtf)
-                + " to: "
+                + "> to 🕒: <"
                 + to.format(dtf)
-                + " at: "
+                + "> at 📌: <"
                 + address.toString()
                 + ">";
     }

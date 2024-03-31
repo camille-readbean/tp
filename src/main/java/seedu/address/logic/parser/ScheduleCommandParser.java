@@ -2,6 +2,7 @@ package seedu.address.logic.parser;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.address.logic.commands.ScheduleCommand.MESSAGE_FAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_FROM;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TITLE;
@@ -13,6 +14,7 @@ import java.util.stream.Stream;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.ScheduleCommand;
+import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.appointment.Appointment;
 import seedu.address.model.client.Address;
@@ -22,6 +24,9 @@ public class ScheduleCommandParser implements Parser<ScheduleCommand> {
     /**
      * Parses the given {@code String} of arguments in the context of the ScheduleCommand
      * and returns an ScheduleCommand object for execution.
+     * Appointment is created here to save complexity from parsing.
+     *
+     * @return ScheduleCommand initialized with the client index and the appointment
      * @throws ParseException if the user input does not conform the expected format
      */
     public ScheduleCommand parse(String args) throws ParseException {
@@ -62,6 +67,9 @@ public class ScheduleCommandParser implements Parser<ScheduleCommand> {
         String title = ParserUtil.parseString(argMultimap.getValue(PREFIX_TITLE).get());
         LocalDateTime fromTime = ParserUtil.parseDateTime(argMultimap.getValue(PREFIX_FROM).get());
         LocalDateTime toTime = ParserUtil.parseDateTime(argMultimap.getValue(PREFIX_TO).get());
+        if (toTime.isBefore(fromTime)) {
+            throw new ParseException(String.format(MESSAGE_FAIL, "ending time (to) is before start (from)!"));
+        }
         Address address = ParserUtil.parseAddress(argMultimap.getValue(PREFIX_ADDRESS).get());
 
         Appointment appointmentDetails = new Appointment(title, fromTime, toTime, address);

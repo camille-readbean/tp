@@ -32,7 +32,7 @@ public class UnscheduleCommand extends Command {
     public static final String MESSAGE_SUCCESS = "Client %1$s unscheduled: %2$s";
     public static final String MESSAGE_FAIL = "Error: Appointment not unscheduled. %1$s";
 
-    private Logger logger = LogsCenter.getLogger(getClass());
+    private final Logger logger = LogsCenter.getLogger(getClass());
     private final Index clientIndex; // index of the Client
     private final Index apptIndex; // index of the Appointment
 

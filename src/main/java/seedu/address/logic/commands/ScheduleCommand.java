@@ -40,6 +40,7 @@ public class ScheduleCommand extends Command {
             + PREFIX_ADDRESS + "Meeting Room A, 358 Clementi Ave 2 #01-285 Singapore 120358";
 
     public static final String MESSAGE_SUCCESS = "New appointment scheduled: %1$s";
+    public static final String MESSAGE_FAIL = "Error appointment cannot be scheduled: %1$s";
 
     private Logger logger = LogsCenter.getLogger(getClass());
     private final Appointment appointmentToAdd;

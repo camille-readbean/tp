@@ -175,7 +175,7 @@ Finds clients whose tags contain any of the given keywords.
 Format: find-tag KEYWORD [MORE_KEYWORDS]
 
 * The search is case-insensitive. e.g. disabled will match Disabled
-* The order of the keywords does not matter e.g. disabed risky will match risky disabled
+* The order of the keywords does not matter e.g. disabled risky will match risky disabled
 * Only the Tag is searched.
 * Only full words will be matched e.g. dis will not match disabled
 * Clients matching at least one keyword will be returned (i.e. OR search)

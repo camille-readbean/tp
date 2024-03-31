@@ -198,10 +198,6 @@ The Object, Sequence and Activity UML diagrams belows shows the objects created 
 
 <img src="images/ViewClassDiagram.png" width="850"/>
 
-#### Object Diagram
-
-<img src="images/ViewObjectDiagram.png" width="550"/>
-
 #### Sequence Diagram
 
 <img src="images/ViewSequenceDiagram.png" width="550"/>
@@ -275,15 +271,10 @@ How a `find-tag` command is executed.
    1. `LogicManager` receives the user command and parses the command to the `AddressBookParser`.
    2. `AddressBookParser` parses this command to the `FindTagCommandParser`.
    3. `FindTagCommandParser` creates a new instance of `FindTagCommand` using the tag as a predicate.
-
-<img src="images/FindTagState1.png" width="650"/>
-
 2. `FindTagCommand` instance is returned to the `LogicManager`.
    1. `LogicManager` calls the execute() method of the `FindTagCommand` instance.
    2. A `CommandResult` is generated and returned to `MainWindow`.
 3. `MainWindow` creates a `CommandBox` with the resulting command output, listing our all clients with the specified tag.
-
-<img src="images/FindTagState2.png" width="850"/>
 
 ### Schedule command
 

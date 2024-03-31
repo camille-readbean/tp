@@ -1,59 +1,61 @@
 @startuml
-class UiManager {
+skinparam classAttributeIconSize 0
+skinparam usecaseAttributeIconSize 0
+skinparam classAttributeFontSize 0
+skinparam usecaseAttributeFontSize 0
+
+object UiManager {
 + start(): void
 }
 
-class MainWindow {
+object MainWindow {
 + fillInnerparts(): void
 - executeCommand(commandText: String): CommandResult
 }
 
-class LogicManager {
+object LogicManager {
 + execute(commandText: String): CommandResult
 }
 
-class AddressBookParser {
+object AddressBookParser {
 + parseCommand(userInput: String): Command
 }
 
-class FindTagCommandParser {
+object FindTagCommandParser {
 + parse(args: String): FindTagCommand
 }
 
-class FindTagCommand {
+object FindTagCommand {
 + execute(model: Model): CommandResult
 }
 
-class TagContainsKeywordsPredicate {
+object TagContainsKeywordsPredicate {
 - keywords: List<String>
 }
 
-class CommandResult {
+object CommandResult {
 }
 
-class CommandBox {
+object CommandBox {
 + CommandBox(commandExecutor: CommandExecutor)
 }
 
-interface Model
-
-class ModelManager {
+object ModelManager {
 + updateFilteredClientList(predicate: predicate<Client>): void
 + getFilteredClientList(): ObservableList<Client>
 }
 
-UiManager -> MainWindow : creates >
+UiManager .> MainWindow : creates >
 MainWindow -> LogicManager
-MainWindow --> CommandBox : creates >
-LogicManager --> AddressBookParser : creates >
-Model <|-- ModelManager
-LogicManager --> Model
-AddressBookParser --> FindTagCommandParser : creates >
-FindTagCommand - FindTagCommandParser : creates <
-CommandResult <- FindTagCommand : creates <
+MainWindow ..> CommandBox : creates >
+LogicManager ..> AddressBookParser : creates >
+LogicManager --> ModelManager
+AddressBookParser ..> FindTagCommandParser : creates >
+FindTagCommand <. FindTagCommandParser : creates <
+CommandResult <. FindTagCommand : creates <
 FindTagCommand --> TagContainsKeywordsPredicate
-FindTagCommand -- ModelManager : returns filtered list <
-TagContainsKeywordsPredicate <- ModelManager
-LogicManager -- FindTagCommand : executes >
-CommandBox -- CommandResult : is used to create <
+FindTagCommand ..> ModelManager : updates client list >
+TagContainsKeywordsPredicate <. ModelManager
+LogicManager ..> FindTagCommand : executes >
+CommandBox <.. CommandResult : is used to create <
 @enduml

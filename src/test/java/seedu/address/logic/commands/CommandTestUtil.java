@@ -4,11 +4,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_FROM;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TO;
+import static seedu.address.logic.parser.CliSyntax.DATETIME_FORMAT_STR;
 import static seedu.address.testutil.Assert.assertThrows;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -17,6 +22,7 @@ import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.AddressBook;
 import seedu.address.model.Model;
+import seedu.address.model.client.Address;
 import seedu.address.model.client.Client;
 import seedu.address.model.client.NameContainsKeywordsPredicate;
 import seedu.address.testutil.EditClientDescriptorBuilder;
@@ -56,6 +62,39 @@ public class CommandTestUtil {
 
     public static final String PREAMBLE_WHITESPACE = "\t  \r  \n";
     public static final String PREAMBLE_NON_EMPTY = "NonEmptyPreamble";
+
+    // Appointment related stuff
+    public static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+    public static final String VALID_TITLE = "Meeting A";
+    public static final String VALID_TITLE2 = " Meeting B ";
+    public static final LocalDateTime now = LocalDateTime.now();
+    public static final LocalDateTime VALID_FROM_AMY = now.plusMinutes(30);
+    public static final LocalDateTime VALID_TO_AMY = VALID_FROM_AMY.plusMinutes(30);
+    public static final LocalDateTime VALID_FROM_BOB = now;
+    public static final LocalDateTime VALID_TO_BOB = VALID_FROM_BOB.plusHours(1);
+    public static final LocalDateTime VALID_FROM_BOB2 = now.minusDays(1);
+    public static final LocalDateTime VALID_TO_BOB2 = VALID_FROM_BOB2.plusHours(1);
+    public static final Address MEETING_PLACEA = new Address("Meeting Room A, 853 Clementi Ave 3 Singapore 120853");
+    public static final Address MEETING_PLACEB = new Address("Conference Room B, 3 Computing Drive, NUS, Singapore");
+    // Valid date and time strings
+    public static final String VALID_FROM_AMY_DESC = " " + PREFIX_FROM + VALID_FROM_AMY.format(formatter);
+    public static final String VALID_TO_AMY_DESC = " " + PREFIX_TO + VALID_TO_AMY.format(formatter);
+
+    public static final String VALID_FROM_BOB_DESC = " " + PREFIX_FROM + VALID_FROM_BOB.format(formatter);
+    public static final String VALID_TO_BOB_DESC = " " + PREFIX_TO + VALID_TO_BOB.format(formatter);
+
+    public static final String VALID_FROM_BOB2_DESC = " " + PREFIX_FROM + VALID_FROM_BOB2.format(formatter);
+    public static final String VALID_TO_BOB2_DESC = " " + PREFIX_TO + VALID_TO_BOB2.format(formatter);
+
+    // Invalid date and time strings (wrong format)
+    public static final String INVALID_FROM_DESC = " " + PREFIX_FROM + "12-04-2024 09:00";
+    public static final String INVALID_TO_DESC = " " + PREFIX_TO + "12-04-2024 10:00";
+
+    // 'To' datetime before 'From' datetime
+    public static final String INVALID_TO_BOB_DESC_BEFORE_FROM = " " + PREFIX_TO
+            + VALID_FROM_BOB.minusHours(1).format(formatter);
+
+
 
     public static final EditCommand.EditClientDescriptor DESC_AMY;
     public static final EditCommand.EditClientDescriptor DESC_BOB;

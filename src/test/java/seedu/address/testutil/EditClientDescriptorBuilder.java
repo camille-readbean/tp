@@ -9,6 +9,7 @@ import seedu.address.model.client.Address;
 import seedu.address.model.client.Client;
 import seedu.address.model.client.Email;
 import seedu.address.model.client.Name;
+import seedu.address.model.client.Note;
 import seedu.address.model.client.Phone;
 import seedu.address.model.tag.Tag;
 
@@ -37,6 +38,7 @@ public class EditClientDescriptorBuilder {
         descriptor.setEmail(client.getEmail());
         descriptor.setAddress(client.getAddress());
         descriptor.setTags(client.getTags());
+        descriptor.setNote(client.getNote());
     }
 
     /**
@@ -78,6 +80,14 @@ public class EditClientDescriptorBuilder {
     public EditClientDescriptorBuilder withTags(String... tags) {
         Set<Tag> tagSet = Stream.of(tags).map(Tag::new).collect(Collectors.toSet());
         descriptor.setTags(tagSet);
+        return this;
+    }
+
+    /**
+     * Sets the {@code Note} of the {@code EditClientDescriptor} that we are building.
+     */
+    public EditClientDescriptorBuilder withNote(String note) {
+        descriptor.setNote(new Note(note));
         return this;
     }
 

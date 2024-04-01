@@ -4,6 +4,7 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_NOTE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_CLIENTS;
@@ -25,6 +26,7 @@ import seedu.address.model.client.Address;
 import seedu.address.model.client.Client;
 import seedu.address.model.client.Email;
 import seedu.address.model.client.Name;
+import seedu.address.model.client.Note;
 import seedu.address.model.client.Phone;
 import seedu.address.model.tag.Tag;
 
@@ -44,6 +46,7 @@ public class EditCommand extends Command {
             + "[" + PREFIX_EMAIL + "EMAIL] "
             + "[" + PREFIX_ADDRESS + "ADDRESS] "
             + "[" + PREFIX_TAG + "TAG]...\n"
+            + "[" + PREFIX_NOTE + "NOTE]...\n"
             + "Example: " + COMMAND_WORD + " 1 "
             + PREFIX_PHONE + "91234567 "
             + PREFIX_EMAIL + "johndoe@example.com";
@@ -56,7 +59,7 @@ public class EditCommand extends Command {
     private final EditClientDescriptor editClientDescriptor;
 
     /**
-     * @param index of the client in the filtered client list to edit
+     * @param index                of the client in the filtered client list to edit
      * @param editClientDescriptor details to edit the client with
      */
     public EditCommand(Index index, EditClientDescriptor editClientDescriptor) {
@@ -100,8 +103,9 @@ public class EditCommand extends Command {
         Email updatedEmail = editClientDescriptor.getEmail().orElse(clientToEdit.getEmail());
         Address updatedAddress = editClientDescriptor.getAddress().orElse(clientToEdit.getAddress());
         Set<Tag> updatedTags = editClientDescriptor.getTags().orElse(clientToEdit.getTags());
+        Note updatedNote = editClientDescriptor.getNote().orElse(clientToEdit.getNote());
 
-        return new Client(updatedName, updatedPhone, updatedEmail, updatedAddress, updatedTags);
+        return new Client(updatedName, updatedPhone, updatedEmail, updatedAddress, updatedTags, updatedNote);
     }
 
     @Override
@@ -129,7 +133,8 @@ public class EditCommand extends Command {
     }
 
     /**
-     * Stores the details to edit the client with. Each non-empty field value will replace the
+     * Stores the details to edit the client with. Each non-empty field value will
+     * replace the
      * corresponding field value of the client.
      */
     public static class EditClientDescriptor {
@@ -138,8 +143,10 @@ public class EditCommand extends Command {
         private Email email;
         private Address address;
         private Set<Tag> tags;
+        private Note note;
 
-        public EditClientDescriptor() {}
+        public EditClientDescriptor() {
+        }
 
         /**
          * Copy constructor.
@@ -151,13 +158,14 @@ public class EditCommand extends Command {
             setEmail(toCopy.email);
             setAddress(toCopy.address);
             setTags(toCopy.tags);
+            setNote(toCopy.note);
         }
 
         /**
          * Returns true if at least one field is edited.
          */
         public boolean isAnyFieldEdited() {
-            return CollectionUtil.isAnyNonNull(name, phone, email, address, tags);
+            return CollectionUtil.isAnyNonNull(name, phone, email, address, tags, note);
         }
 
         public void setName(Name name) {
@@ -201,12 +209,21 @@ public class EditCommand extends Command {
         }
 
         /**
-         * Returns an unmodifiable tag set, which throws {@code UnsupportedOperationException}
+         * Returns an unmodifiable tag set, which throws
+         * {@code UnsupportedOperationException}
          * if modification is attempted.
          * Returns {@code Optional#empty()} if {@code tags} is null.
          */
         public Optional<Set<Tag>> getTags() {
             return (tags != null) ? Optional.of(Collections.unmodifiableSet(tags)) : Optional.empty();
+        }
+
+        public void setNote(Note note) {
+            this.note = note;
+        }
+
+        public Optional<Note> getNote() {
+            return Optional.ofNullable(note);
         }
 
         @Override
@@ -225,7 +242,8 @@ public class EditCommand extends Command {
                     && Objects.equals(phone, otherEditClientDescriptor.phone)
                     && Objects.equals(email, otherEditClientDescriptor.email)
                     && Objects.equals(address, otherEditClientDescriptor.address)
-                    && Objects.equals(tags, otherEditClientDescriptor.tags);
+                    && Objects.equals(tags, otherEditClientDescriptor.tags)
+                    && Objects.equals(note, otherEditClientDescriptor.note);
         }
 
         @Override
@@ -236,6 +254,7 @@ public class EditCommand extends Command {
                     .add("email", email)
                     .add("address", address)
                     .add("tags", tags)
+                    .add("note", note)
                     .toString();
         }
     }

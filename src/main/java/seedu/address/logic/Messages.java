@@ -61,6 +61,8 @@ public class Messages {
                     .append(appointments.get(i))
                     .append("\n");
         }
+        builder.append("\n Note: ")
+                .append(client.getNote());
 
         return builder.toString();
     }

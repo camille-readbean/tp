@@ -34,26 +34,29 @@ public class Client {
     private final Set<Tag> tags = new HashSet<>();
     // appointments guaranteed to be in sorted order in best-effort manner as long as proper methods are used
     private final ArrayList<Appointment> appointments = new ArrayList<Appointment>();
+    private final Note note;
 
     /**
      * Every field except appointments must be present and not null.
      * <code>Appointments</code> is initialised to an empty Arraylist.
      */
-    public Client(Name name, Phone phone, Email email, Address address, Set<Tag> tags) {
-        requireAllNonNull(name, phone, email, address, tags);
+    public Client(Name name, Phone phone, Email email, Address address, Set<Tag> tags, Note note) {
+        requireAllNonNull(name, phone, email, address, tags, note);
         this.name = name;
         this.phone = phone;
         this.email = email;
         this.address = address;
         this.tags.addAll(tags);
+        this.note = note;
     }
 
     /**
      * Every field must be present and not null.
      * Appointments are copied over
      */
-    public Client(Name name, Phone phone, Email email, Address address, Set<Tag> tags, List<Appointment> appointments) {
-        requireAllNonNull(name, phone, email, address, tags, appointments);
+    public Client(Name name, Phone phone, Email email, Address address, Set<Tag> tags,
+        List<Appointment> appointments, Note note) {
+        requireAllNonNull(name, phone, email, address, tags, appointments, note);
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -61,6 +64,7 @@ public class Client {
         this.tags.addAll(tags);
         this.appointments.addAll(appointments);
         appointments.sort(Appointment::compareTo);
+        this.note = note;
     }
 
     public Name getName() {
@@ -107,6 +111,10 @@ public class Client {
         return appointments.get(zbIndex);
     }
 
+    public Note getNote() {
+        return note;
+    }
+
     /**
      * Returns an appointment is already inside the current list.
      */
@@ -130,7 +138,7 @@ public class Client {
         updatedAppointments.add(newAppointment);
         updatedAppointments.sort(Appointment::compareTo);
 
-        return new Client(name, phone, email, address, tags, updatedAppointments);
+        return new Client(name, phone, email, address, tags, updatedAppointments, note);
     }
 
     /**
@@ -147,7 +155,7 @@ public class Client {
         updatedAppointments.remove(index);
         updatedAppointments.sort(Appointment::compareTo);
 
-        return new Client(name, phone, email, address, tags, updatedAppointments);
+        return new Client(name, phone, email, address, tags, updatedAppointments, note);
     }
 
     public int getNumberOfAppointments() {
@@ -199,13 +207,14 @@ public class Client {
                 && phone.equals(otherClient.phone)
                 && email.equals(otherClient.email)
                 && address.equals(otherClient.address)
-                && tags.equals(otherClient.tags);
+                && tags.equals(otherClient.tags)
+                && note.equals(otherClient.note);
     }
 
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, phone, email, address, tags);
+        return Objects.hash(name, phone, email, address, tags, note);
     }
 
     @Override
@@ -217,6 +226,7 @@ public class Client {
                 .add("address", address)
                 .add("tags", tags)
                 .add("appointments", appointments)
+                .add("note", note)
                 .toString();
     }
 

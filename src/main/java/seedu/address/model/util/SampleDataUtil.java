@@ -12,6 +12,7 @@ import seedu.address.model.client.Address;
 import seedu.address.model.client.Client;
 import seedu.address.model.client.Email;
 import seedu.address.model.client.Name;
+import seedu.address.model.client.Note;
 import seedu.address.model.client.Phone;
 import seedu.address.model.tag.Tag;
 
@@ -24,7 +25,7 @@ public class SampleDataUtil {
         return new Client[] {
             new Client(new Name("Jia Tan"), new Phone("87438807"), new Email("jt@example.com"),
                 new Address("Blk 30 Geylang Street 29, #06-40"),
-                getTagSet("disabled", "diabetic"))
+                getTagSet("disabled", "diabetic"), new Note("Patient is allergic to penicillin."))
                 .withNewAppointment(
                         new Appointment("Medical Appointment",
                                 now,
@@ -32,7 +33,7 @@ public class SampleDataUtil {
                                 new Address("Natasha's Clinic, Boulder Town, 6 Jarilo Avenue"))),
             new Client(new Name("Hu Tao"), new Phone("90901555"), new Email("berniceyu@example.com"),
                 new Address("Blk 30 Liyue Habour, #07-15"),
-                getTagSet("needy", "risky"))
+                getTagSet("needy", "risky"), new Note("Patient has a dog named Rex."))
                 .withNewAppointment(
                     new Appointment("Meetup",
                             now.plusMonths(2),
@@ -45,10 +46,10 @@ public class SampleDataUtil {
                             new Address("Family Court"))),
             new Client(new Name("Hans Jansen"), new Phone("90241217"), new Email("hjansen@example.com"),
                 new Address("20 Commonwealth Avenue"),
-                getTagSet("diabetes", "risky")),
+                getTagSet("diabetes", "risky"), new Note("Patient's daughter is the primary care giver.")),
             new Client(new Name("Chen Hui chieh"), new Phone("91031282"), new Email("jy@example.com"),
                 new Address("Lungmen Police Divison, #05-01"),
-                getTagSet("colleagues", "police"))
+                getTagSet("colleagues", "police"), new Note("Patient was a police officer."))
                 .withNewAppointment(
                     new Appointment("Appreciation dinner",
                             now.plusDays(40),
@@ -56,10 +57,10 @@ public class SampleDataUtil {
                             new Address("Natasha's Clinic, Boulder Town, 6 Jarilo Avenue"))),
             new Client(new Name("Natasha"), new Phone("94367465"), new Email("natasha@example.com"),
                 new Address("Natasha's Clinic, Boulder Town, 6 Jarilo Avenue"),
-                getTagSet("doctor", "colleagues", "friends")),
+                getTagSet("doctor", "colleagues", "friends"), new Note("Patient was a doctor.")),
             new Client(new Name("Serval Landau"), new Phone("98375615"), new Email("serval@example.com"),
                 new Address("#08-17, Tower B, Utown Residence"),
-                getTagSet("volunteer"))
+                getTagSet("volunteer"), new Note("NA"))
         };
     }
 

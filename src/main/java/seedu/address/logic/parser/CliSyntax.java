@@ -3,7 +3,8 @@ package seedu.address.logic.parser;
 import java.time.format.DateTimeFormatter;
 
 /**
- * Contains Command Line Interface (CLI) syntax definitions common to multiple commands
+ * Contains Command Line Interface (CLI) syntax definitions common to multiple
+ * commands
  */
 public class CliSyntax {
 
@@ -20,4 +21,5 @@ public class CliSyntax {
     public static final Prefix PREFIX_FROM = new Prefix("--from=");
     public static final Prefix PREFIX_TO = new Prefix("--to=");
     public static final Prefix PREFIX_APPT_INDEX = new Prefix("--appt=");
+    public static final Prefix PREFIX_NOTE = new Prefix("--note=");
 }

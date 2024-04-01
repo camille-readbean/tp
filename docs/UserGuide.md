@@ -35,14 +35,15 @@ keep track of upcoming appointments with them.
 | Java                 | Java is a platform that SWEE is built in, by installing java you give your computer the ability to understand and carry out instructions that make up this app. |
 | Application          | Aka app or software, in this user guide it mainly refer to the application, SWEE.                                                                               |
 | Parameters / Options | User given specifics for an instruction. For example the index of a client to update. Some parameters are optional meaning they can be left out.                | 
-| CLient               | Used interchangeably with contacts, in a social work setting normally refer to the person a social worker is serving.                                           |
+| Client               | Used interchangeably with contacts, in a social work setting normally refer to the person a social worker is serving.                                           |
 | Keyword              | Refers to a predefined word or series of character used to denote something.                                                                                    |
 | Command              | Instructions for SWEE to do something. They can include keywords and parameters.                                                                                | 
 | Directory            | Commonly called a folder.                                                                                                                                       |
 | Index                | Refer to the index number of something. If something is the second item, its index is 2.                                                                        |
 | GUI                  | Graphical User Interface, the desktop application the user sees                                                                                                 |
+| CLI / Command line   | An application that presents a text only interface, e.g. PowerShell, cmd, Terminal on Windows, Bash or Shell in Linux, Terminal in MacOS.                       |
 
-💡🚨 Note that some screenshots may be outdated as the application constantly evolves. However you will still be able to get the full use and understanding from the information displayed in the GUI. 
+💡🚨 Note that some screenshots may be outdated as the application constantly evolves. However, you will still be able to get the full use and understanding from the information displayed in the GUI. 
 
 <div class="page-break"></div>
 
@@ -125,9 +126,10 @@ The user interface is primarily divided into 4 regions are shown by the differen
 
 Lets start by adding a new client. You can copy the command below for an example:
 
-```
-add --name=Theodore Koo --phone=98001715 --email=theodore@example.com --addr=Prince Street, Block 144, #19-14 --tags=Disabled --note=Lactose Intolerant
-```
+<code>
+add --name=Theodore Koo --phone=98001715 --email=theodore@example.com  
+--addr=Prince Street, Block 144, #19-14 --tags=Disabled --note=Lactose Intolerant
+</code>
 
 1. `add` This is the command for adding new contacts
 2. `--name=Theodore Koo` specifies the name parameter as Theodore Koo
@@ -315,7 +317,6 @@ Action | Format, Examples
 <div class="page-break"></div>
 
 ## Features
-s
 
 ### Viewing help : `help`
 

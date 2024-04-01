@@ -15,7 +15,7 @@ import seedu.address.model.appointment.Appointment;
 import seedu.address.model.client.Client;
 
 /**
- * An UI component that displays information of a {@code Client}.
+ * A UI component that displays information of a {@code Client}.
  */
 public class ClientCard extends UiPart<Region> {
 
@@ -75,7 +75,6 @@ public class ClientCard extends UiPart<Region> {
         } else {
             this.nextAppointment.setText("Next appointment: None!");
         }
-        note.setText(client.getNote().value);
-
+        note.setText("Note: " + client.getNote().value);
     }
 }

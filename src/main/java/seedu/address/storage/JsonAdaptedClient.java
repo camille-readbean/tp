@@ -15,6 +15,7 @@ import seedu.address.model.client.Address;
 import seedu.address.model.client.Client;
 import seedu.address.model.client.Email;
 import seedu.address.model.client.Name;
+import seedu.address.model.client.Note;
 import seedu.address.model.client.Phone;
 import seedu.address.model.tag.Tag;
 
@@ -31,6 +32,7 @@ class JsonAdaptedClient {
     private final String address;
     private final List<JsonAdaptedTag> tags = new ArrayList<>();
     private final List<JsonAdaptedAppointment> appointments = new ArrayList<>();
+    private final String note;
 
     /**
      * Constructs a {@code JsonAdaptedClient} with the given client details.
@@ -39,7 +41,8 @@ class JsonAdaptedClient {
     public JsonAdaptedClient(@JsonProperty("name") String name, @JsonProperty("phone") String phone,
             @JsonProperty("email") String email, @JsonProperty("address") String address,
             @JsonProperty("tags") List<JsonAdaptedTag> tags,
-            @JsonProperty("appointsments") List<JsonAdaptedAppointment> appointments) {
+            @JsonProperty("appointsments") List<JsonAdaptedAppointment> appointments,
+            @JsonProperty("note") String note) {
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -50,6 +53,7 @@ class JsonAdaptedClient {
         if (appointments != null) {
             this.appointments.addAll(appointments);
         }
+        this.note = note;
     }
 
     /**
@@ -66,6 +70,7 @@ class JsonAdaptedClient {
         appointments.addAll(source.getAppointments().stream()
                 .map(JsonAdaptedAppointment::jsonAdaptedAppointmentBuilder)
                 .collect(Collectors.toList()));
+        note = source.getNote().value;
     }
 
     /**
@@ -117,7 +122,16 @@ class JsonAdaptedClient {
         final Address modelAddress = new Address(address);
 
         final Set<Tag> modelTags = new HashSet<>(clientTags);
-        return new Client(modelName, modelPhone, modelEmail, modelAddress, modelTags, clientAppointments);
+
+        if (note == null) {
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Note.class.getSimpleName()));
+        }
+        if (!Note.isValidNote(note)) {
+            throw new IllegalValueException(Note.MESSAGE_CONSTRAINTS);
+        }
+        final Note modelNote = new Note(note);
+
+        return new Client(modelName, modelPhone, modelEmail, modelAddress, modelTags, clientAppointments, modelNote);
     }
 
 }

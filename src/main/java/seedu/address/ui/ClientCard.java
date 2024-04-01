@@ -49,6 +49,8 @@ public class ClientCard extends UiPart<Region> {
     private Label nextAppointment;
     @FXML
     private FlowPane tags;
+    @FXML
+    private Label note;
 
     /**
      * Creates a {@code ClientCode} with the given {@code Client} and index to display.
@@ -73,6 +75,7 @@ public class ClientCard extends UiPart<Region> {
         } else {
             this.nextAppointment.setText("Next appointment: None!");
         }
+        note.setText(client.getNote().value);
 
     }
 }

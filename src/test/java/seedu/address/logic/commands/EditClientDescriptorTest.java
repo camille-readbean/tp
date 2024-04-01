@@ -8,6 +8,7 @@ import static seedu.address.logic.commands.CommandTestUtil.DESC_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_NOTE_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
 
@@ -55,6 +56,10 @@ public class EditClientDescriptorTest {
         // different tags -> returns false
         editedAmy = new EditClientDescriptorBuilder(DESC_AMY).withTags(VALID_TAG_HUSBAND).build();
         assertFalse(DESC_AMY.equals(editedAmy));
+
+        // different note -> returns false
+        editedAmy = new EditClientDescriptorBuilder(DESC_AMY).withNote(VALID_NOTE_BOB).build();
+        assertFalse(DESC_AMY.equals(editedAmy));
     }
 
     @Test
@@ -65,7 +70,8 @@ public class EditClientDescriptorTest {
                 + editClientDescriptor.getPhone().orElse(null) + ", email="
                 + editClientDescriptor.getEmail().orElse(null) + ", address="
                 + editClientDescriptor.getAddress().orElse(null) + ", tags="
-                + editClientDescriptor.getTags().orElse(null) + "}";
+                + editClientDescriptor.getTags().orElse(null) + ", note="
+                + editClientDescriptor.getNote().orElse(null) + "}";
         assertEquals(expected, editClientDescriptor.toString());
     }
 }

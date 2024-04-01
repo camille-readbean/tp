@@ -60,7 +60,9 @@ keep track of upcoming appointments with them.
       ![Ui](images/Ui.png)
    2. On first launch, it will present you with some example clients to show you a rough idea of how clients will look like.<br>
       Feel free to delete them and add your own. They are used in the [New User tutorial](#new-user-tutorial).
-   3. This _home folder_ will contain files generated and used by SWEE. 
+   3. This _home folder_ will contain files generated and used by SWEE.
+   4. 🚨 In case double clicking does not work, open a command line terminal in the home directory and run
+      `java -jar SWEE.jar`
 
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Refer to the [New user tutorial](#new-user-tutorial)

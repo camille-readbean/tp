@@ -83,7 +83,22 @@ public class TypicalClients {
         return ab;
     }
 
+    /**
+     * Returns an {@code AddressBook} with all the typical tagged clients.
+     */
+    public static AddressBook getTypicalTaggedAddressBook() {
+        AddressBook ab = new AddressBook();
+        for (Client client : getTypicalTaggedClients()) {
+            ab.addClient(client);
+        }
+        return ab;
+    }
+
     public static List<Client> getTypicalClients() {
         return new ArrayList<>(Arrays.asList(ALICE, BENSON, CARL, DANIEL, ELLE, FIONA, GEORGE));
+    }
+
+    public static List<Client> getTypicalTaggedClients() {
+        return new ArrayList<>(Arrays.asList(ALICE, BENSON, BOB_WITH_TAGS));
     }
 }

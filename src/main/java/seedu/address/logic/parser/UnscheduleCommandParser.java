@@ -40,7 +40,7 @@ public class UnscheduleCommandParser implements Parser<UnscheduleCommand> {
         if (!arePrefixesPresent(argMultimap, PREFIX_APPT_INDEX)) {
             ArrayList<String> missingFields = new ArrayList<String>();
             if (argMultimap.getValue(PREFIX_APPT_INDEX).isEmpty()) {
-                missingFields.add("index");
+                missingFields.add("appt");
             }
             String missingText = "Missing fields: "
                     + missingFields.stream().reduce((i, s) -> i + ", " + s).orElse(" ")

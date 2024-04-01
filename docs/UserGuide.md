@@ -8,9 +8,9 @@ If you can type fast, SWEE can get your contact management tasks done faster tha
 This is ideal as you do not often bring a mouse out with you on site visits to clients or on the go. 
 <br>
 ## Who is it for and what can it do for me?
-This application is intended for people involved with social work, social worker, volunteers, community partners who 
+This application is intended for people involved with social work, social workers, volunteers, and community partners who 
 have a need to manage contacts and their associated information. We offer a quick way for you to store their name, address, 
-phone number, email and notes about them. We also support tagging contacts for easy search. Additionally we offer a way to 
+phone number, email and notes about them. We also support tagging contacts for easier searching. Additionally, we offer a way to 
 keep track of upcoming appointments with them. 
 
 
@@ -33,7 +33,7 @@ keep track of upcoming appointments with them.
 | Terms                | Meaning                                                                                                                                                         |
 |----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Java                 | Java is a platform that SWEE is built in, by installing java you give your computer the ability to understand and carry out instructions that make up this app. |
-| Application          | Aka app or software, in this user guide it mainly refer to the application, SWEE.                                                                               |
+| Application          | Also known as app or software, in this user guide it mainly refer to the application, SWEE.                                                                     |
 | Parameters / Options | User given specifics for an instruction. For example the index of a client to update. Some parameters are optional meaning they can be left out.                | 
 | Client               | Used interchangeably with contacts, in a social work setting normally refer to the person a social worker is serving.                                           |
 | Keyword              | Refers to a predefined word or series of character used to denote something.                                                                                    |
@@ -87,10 +87,10 @@ This assumes a fresh installation of SWEE with the example clients serving as an
 The user interface is primarily divided into 4 regions are shown by the different boxes.
 
 1. This is the Command Box. Commands are typed here and carried out by the application. 
-2. Messages from the command that was ran are displayed here. If the command run into a problem, it will display here as well.
+2. Messages from the command that was run are displayed here. If the command runs into a problem, it will display here as well.
    For example if the user typed in an invalid command or something unexpected caused the program to not work.
 3. This is the client list. Clients are displayed here in cards, see below. It is scrollable meaning you can navigate down and up like a webpage or word document.
-4. A Client card hold information relevant to each client. The number beside the names of each user is the index. 
+4. A Client card holds information relevant to each client. The number beside the names of each user is the index. 
    This index is used in some commands to specify the client being edited. The words in brown boxes are tags a 
    client have. It shows all their details along with the number of appointments and next upcoming appointment if any.
 
@@ -150,15 +150,16 @@ If you scroll to the bottom, you should see the client card of the newly added c
 
 #### Editing a client
 
-What happens if you made a typo or if information become outdated. `edit` provides a handy way to edit a client.
+What happens if you made a typo or if information become outdated? `edit` provides a handy way to edit a client.
 
 ```
 edit 7 --name=Theo --tags=WalkingImpediment
 ```
 
-1. `edit` This is the command for editing a client
-2. `--name=Theo` specifies the name parameter as Theo. This sets the client new name.
-3. `--tags=WalkingImpediment` removes all existing tags and Theo now only have this tag.
+1. `edit` This is the command for editing a client.
+2. `7` refers to the index of the client we are editing.
+3`--name=Theo` specifies the name parameter as Theo. This sets the client new name.
+4`--tags=WalkingImpediment` removes all existing tags and Theo now only have this tag.
 
 ![](images/new-user-tutorial/editCommand.png)
 
@@ -172,10 +173,10 @@ Now we find clients by a name.
 find-name theo
 ```
 
-1. `find-name` This is the command for editing a client
+1. `find-name` This is the command for finding a client by their name.
 2. `Theo` specifies the name parameter as Theo. This sets the keyword for the search.
    1. It is possible to have more than 1 word, see [`find-name`](#locating-clients-by-name-find-name).
-3. The client list will now display every client whose name ocntains at least one word in the keywords given.
+3. The client list will now display every client whose name contains at least one word in the keywords given.
 
 ![](images/new-user-tutorial/findNameCommand.png)
 
@@ -247,7 +248,7 @@ exit
 
 #### Scheduling an appointment for clients
 
-Observe that Natasha (index 5) have no appointments. We will schedule an appointment.  
+Observe that Natasha (index 5) has no appointments. We will schedule an appointment.  
 Make **sure to set the date after today**.
 
 ```
@@ -256,11 +257,12 @@ sched 5 --title=Lunch Gathering --from=14/05/2024 15:00 --to=14/05/2024 15:20 --
 
 1. `sched` This is the command for scheduling an appointment for a client.
 2. `5` is the index of Natasha.
-3. `--from=` and `--to=` specifies the start and ending date and time respectively.
-4. The format is `dd/MM/yyyy HH:mm`: days/Months/year Hour:Minutes. The hours are in 24 hours format.
-5. If you set the date to be in the future, you realised the next appointment have changed as well.
-6. Observe the total number of appointments increased.
-7. To see all a client's appointment use the `view` command, try `view 2` to see Hu Tao's appointments.
+3. `--title=` is used to indicate the title of the appointment. 
+4. `--from=` and `--to=` specifies the start and ending date and time respectively.
+5. The format is `dd/MM/yyyy HH:mm`: days/Months/year Hour:Minutes. The hours are in 24 hours format.
+6. If you set the date to be in the future, you will realise the display of next appointment have changed as well.
+7. Observe that the total number of appointments increased.
+8. To see all of a client's appointment use the `view` command, try `view 2` to see Hu Tao's appointments.
 
 
 <div class="page-break"></div>
@@ -268,7 +270,7 @@ sched 5 --title=Lunch Gathering --from=14/05/2024 15:00 --to=14/05/2024 15:20 --
 
 #### Unscheduling an appointment for clients
 
-Observe that Hu Tao (index 2) have 2 appointments. We will unschedule an appointment.
+Observe that Hu Tao (index 2) has 2 appointments. We will unschedule an appointment.
 
 ```
 unsched 2 --appt=2 
@@ -277,7 +279,7 @@ unsched 2 --appt=2
 1. `unsched` This is the command for unscheduling an appointment for a client.
 2. `2` is the index of Natasha.
 3. `--appt=` specifies the index of the appointment to unschedule. In this case 2.
-4. Notice Hu Tao's total number of appointment decreased and she no longer have an upcoming appointment.
+4. Notice that Hu Tao's total number of appointments decreased and she no longer has an upcoming appointment.
 
 <div class="page-break"></div>
 
@@ -309,7 +311,7 @@ Action | Format, Examples
 **Find a client by name** | `find-name KEYWORD [MORE_KEYWORDS]`<br> e.g., `find-name James Jake`
 **Find a client by tag** | `find-tag KEYWORD [MORE_KEYWORDS]`<br> e.g., `find-name Disabled Risky`
 **List** all clients | `list`
-**View** client's details | `view`
+**View** client's details | `view INDEX`<br> e.g., `view 2`
 **Schedules** an appointment | `sched INDEX --title=TITLE --from=DATETIME --to=DATETIME --addr=ADDRESS`<br>DATETIME in `dd/MM/yyyy HH:mm` format<br> e.g., `sched 1 --title=Monthly touchbase --from=14/03/2024 15:00 --to=14/03/2024 15:20 --addr=Meeting Room A, 358 Clementi Ave 2 #01-285 Singapore 120358`
 **Unschedules** an appointment | `unsched CLIENT_INDEX --appt=APPT_INDEX`<br> e.g., `unsched 1 --appt=2`
 **Help** show help with link to this guide | `help`

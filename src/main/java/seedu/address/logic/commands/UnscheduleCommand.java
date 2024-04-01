@@ -77,7 +77,7 @@ public class UnscheduleCommand extends Command {
 
         updatedClientWithoutAppointment = clientToEdit.removeAppointment(apptIndex.getZeroBased());
         model.setClient(clientToEdit, updatedClientWithoutAppointment);
-        message = String.format(MESSAGE_SUCCESS, clientToEdit, apptDeleted);
+        message = String.format(MESSAGE_SUCCESS, clientToEdit.getName(), apptDeleted);
         logger.info("unsched OK: " + message);
         model.updateFilteredClientList(Model.PREDICATE_SHOW_ALL_CLIENTS);
         return new CommandResult(message);

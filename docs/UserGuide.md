@@ -158,8 +158,8 @@ edit 7 --name=Theo --tags=WalkingImpediment
 
 1. `edit` This is the command for editing a client.
 2. `7` refers to the index of the client we are editing.
-3`--name=Theo` specifies the name parameter as Theo. This sets the client new name.
-4`--tags=WalkingImpediment` removes all existing tags and Theo now only have this tag.
+3. `--name=Theo` specifies the name parameter as Theo. This sets the client's new name.
+4. `--tags=WalkingImpediment` removes all existing tags and Theo now only have this tag.
 
 ![](images/new-user-tutorial/editCommand.png)
 

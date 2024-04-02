@@ -465,6 +465,25 @@ Format: `exit`
 
 <div class="page-break"></div>
 
+### Scheduling an appointment: `sched`
+
+Schedules an appontment for a client.
+
+Format: `sched INDEX --title=TITLE --from=START --to=END --addr=ADDRESS `
+
+* The `INDEX` must be a postive integer.
+* The `START` and `END` dates/times must be in the furmat `dd/MM/yyyy HH:mm`.
+* The `END` date/time should not be erlier than the `START` date/time.
+* To view all the appointments for a klient use `view INDEX`
+
+Example:
+* `sched 1 --title=Meeting --from=05/04/2024 17:00 --to=05/04/2024 18:00 --addr=Meeting Room A, 358 Clementi Ave 2 #01-285 Singapore 120358` adds the specified appointment for the client at index 1.<br>
+  ![result for schedule appointment](images/ScheduleAppointmentResult.png)
+* `view 1` will return all the scheduled appointments for the client at index 1.<br>
+  ![result for view appointments](images/ViewAppointmentsResult.png)
+
+<div class="page-break"></div>
+
 ### Saving the data
 
 SWEE data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.

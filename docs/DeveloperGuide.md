@@ -163,7 +163,7 @@ This section describes how the add commands work which will serve as a basic und
 **AddCommandParser** : [`AddCommandParser.java`](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/logic/parser/AddCommandParser.java)
 **AddCommand** : [`AddCommand.java`](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/logic/commands/AddCommand.java)
 
-The sequence diagram below illustrates the interactions within the `Logic` component, taking `execute("add --name=Name --phone=2103 --email=hello@Test --addr=Address --tags=hello --tags=Hi")` API call as an example.
+The sequence diagram below illustrates the interactions within the `Logic` component, taking `execute("add --name=Name --phone=2103 --email=hello@Test --addr=Address --tags=hello --tags=Hi" --note=NA)` API call as an example.
 
 ![Interactions Inside the Logic Component for the `add [ARGS]` Command](images/AddSequenceDiagram.png)
 
@@ -171,11 +171,11 @@ The sequence diagram below illustrates the interactions within the `Logic` compo
 </div>
 Note: `[ARGS]` refer to the arguments of the add command that have been parsed. It have been shortened for brevity
 
-How an `add` command is executed.
+How an `add` command is executed:
 1. When Logic is called upon to execute a command, it is passed to an `AddressBookParser`.
    object which in turn creates a parser that matches the command `AddCommandParser`).
    and uses it to parse the arguments passed to the command.
-2. `AddCommand` will check that the fields; `name`, `phone`, `email`, and `address`.
+2. `AddCommand` will check that the fields: `name`, `phone`, `email`, `address` and `note` are present.
    The prefixes for these options are defined in [CliSyntax.java](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/logic/parser/CliSyntax.java).
     1. Parsing of the arguments is done by [`ArgumentTokenizer.java`](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/logic/parser/ArgumentTokenizer.java) (not shown here).
     2. This returns a [`ArgumentMultiMap`](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/fd570551588e8c9cf372ca6bc87d3c3e5e01b40a/src/main/java/seedu/address/logic/parser/ArgumentMultimap.java#L20) which supports further operations.  
@@ -205,7 +205,7 @@ The Object, Sequence and Activity UML diagrams belows shows the objects created 
 
 ![](images/ViewActivityDiagram.png)
 
-How a `view` command is executed.
+How a `view` command is executed:
 1. User Input Parsing
    1. When the user enters a command, it is first parsed by the `AddressBookParser`.
    2. The `parseCommand(String userInput)` method in `AddressBookParser` splits the user input into the command word and arguments using a regular expression.
@@ -233,7 +233,7 @@ The Sequence and Activity UML diagrams belows shows the objects created as well 
 
 ![](images/DeleteActivityDiagram.png)
 
-How a `delete` command is executed.
+How a `delete` command is executed:
 1. User Input Parsing
    1. When the user enters a command, it is first parsed by the `AddressBookParser`.
    2. The `parseCommand(String userInput)` method in `AddressBookParser` splits the user input into the command word and arguments using a regular expression.
@@ -265,7 +265,7 @@ The Sequence and Activity UML diagrams belows shows the objects created as well 
 
 ![](images/FindTagActivityDiagram.png)
 
-How a `find-tag` command is executed.
+How a `find-tag` command is executed:
 1. The User inputs a command in the format of "find-tag [TAG]" to find clients by tag.
    1. `LogicManager` receives the user command and parses the command to the `AddressBookParser`.
    2. `AddressBookParser` parses this command to the `FindTagCommandParser`.

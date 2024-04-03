@@ -467,14 +467,14 @@ Format: `exit`
 
 ### Scheduling an appointment: `sched`
 
-Schedules an appontment for a client.
+Schedules an appointment for a client.
 
 Format: `sched INDEX --title=TITLE --from=START --to=END --addr=ADDRESS `
 
-* The `INDEX` must be a postive integer.
-* The `START` and `END` dates/times must be in the furmat `dd/MM/yyyy HH:mm`.
-* The `END` date/time should not be erlier than the `START` date/time.
-* To view all the appointments for a klient use `view INDEX`
+* The `INDEX` must be a positive integer.
+* The `START` and `END` dates/times must be in the format `dd/MM/yyyy HH:mm`.
+* The `END` date/time should not be earlier than the `START` date/time.
+* To view all the appointments for a client use `view INDEX`
 
 Example:
 * `sched 1 --title=Meeting --from=05/04/2024 17:00 --to=05/04/2024 18:00 --addr=Meeting Room A, 358 Clementi Ave 2 #01-285 Singapore 120358` adds the specified appointment for the client at index 1.<br>

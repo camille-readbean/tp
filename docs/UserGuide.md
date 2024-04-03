@@ -11,7 +11,7 @@ This is ideal as you do not often bring a mouse out with you on site visits to c
 This application is intended for people involved with social work, social workers, volunteers, and community partners who 
 have a need to manage contacts and their associated information. We offer a quick way for you to store their name, address, 
 phone number, email and notes about them. We also support tagging contacts for easier searching. Additionally, we offer a way to 
-keep track of upcoming appointments with them. 
+keep track of upcoming appointments with them.
 
 
 <div class="page-break"></div>
@@ -128,7 +128,7 @@ Lets start by adding a new client. You can copy the command below for an example
 
 <code>
 add --name=Theodore Koo --phone=98001715 --email=theodore@example.com  
---addr=Prince Street, Block 144, #19-14 --tags=Disabled --note=Lactose Intolerant
+--addr=Prince Street, Block 144, #19-14 --tags=Disabled --notes=Lactose Intolerant
 </code>
 
 1. `add` This is the command for adding new contacts
@@ -137,7 +137,7 @@ add --name=Theodore Koo --phone=98001715 --email=theodore@example.com
 4. `--email=theodore@example.com` specifies the email parameter as `theodore@example.com`. 
 5. `--addr=Prince Street, Block 144, #19-14` indicates the address parameter. You are providing the address as `Prince Street, Block 144, Apartment 19-14`. 
 6. `--tags=Disabled` is used to assign a tag or label to the contact. In this case, you're labeling or tagging the contact as 'Disabled'. 
-7. `--note=Lactose Intolerant` specifies a note to be attached to this contact's information. The note here is 'Lactose Intolerant'.
+7. `--notes=Lactose Intolerant` specifies a note to be attached to this contact's information. The note here is 'Lactose Intolerant'.
    This is useful to attach additional information about an user. 
 
 You should see something similar to below. 
@@ -289,13 +289,13 @@ unsched 2 --appt=2
 We will add a new note to Serval Landau (index 6).
 
 ```
-edit 6 --note=Recently had dinner and he told me that he wants to be a doc next time  
+edit 6 --notes=Recently had dinner and he told me that he wants to be a doc next time  
 ```
 
 1. `edit` This is the command for editing a client.
 2. `6` is the index of Serval Landau.
-3. `--note=` specifies the new note to store.
-4. This can be longer than 1 word, making it ideal to store detailed notes. 
+3. `--notes=` specifies the new note to store.
+4. This can be longer than 1 words, making it ideal to store detailed notes. 
 
 <div class="page-break"></div>
 

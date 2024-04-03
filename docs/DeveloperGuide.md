@@ -470,6 +470,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1. User requests to delete a specific client in the list.
+2. User inputs the index of the client to delete.
 2. SWEE deletes the client.
 
     Use case ends.
@@ -483,8 +484,10 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * 1b. The given client index is invalid.
 
     * 1b1. SWEE shows an error message.
+    * 1b2. User inputs in the client index again.
+    * 1b3. Repeat steps 1b1-1b2 until the input is a valid index.
 
-      Use case resumes at step 1.
+      Use case resumes at step 3.
 
 ### **Use case: UC03 - View a client's information**
 
@@ -505,8 +508,10 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * 2a. The given client index is invalid.
 
     * 2a1. SWEE shows an error message.
+    * 2a2. User inputs in the client index again.
+    * 2a3. Repeat steps 2a1-2a2 until the input is a valid index.
     
-    Use case resumes at step 1.
+    Use case resumes at step 3.
 
 ### **Use case: UC04 - List all saved clients**
 
@@ -568,8 +573,10 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * 2a. The given client index is invalid.
 
     * 2a1. SWEE shows an error message.
+    * 2a2. User inputs in the client's index again.
+    * 2a3. Repeat steps 2a1-2a2 until the input is a valid index.
 
-        Use case resumes at step 2.
+        Use case resumes at step 3.
 
 * 2b. The given input format for the appointment is invalid.
 
@@ -591,17 +598,13 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Extensions**
 
-* 2a. The given client index is invalid.
+* 2a. The user's given input format is invalid.
 
     * 2a1. SWEE shows an error message.
+    * 2a2. User inputs in the client's index and appointment index again
+    * 2a3. Repeat steps 2a1-2a2 until the input is in the correct format.
 
-        Use case resumes at step 2.
-
-  * 2b. The given appointment index is invalid.
-
-      * 2b1. SWEE shows an error message
-    
-        Use case resumes at step 2.
+        Use case resumes at step 3.
 
 ### Non-Functional Requirements
 

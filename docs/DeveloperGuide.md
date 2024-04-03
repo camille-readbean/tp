@@ -579,7 +579,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case resumes at step 3.
 
-### **Use case: UC07 - Unschedule an appointment**
+### **Use case: UC08 - Unschedule an appointment**
 
 **MSS**
 

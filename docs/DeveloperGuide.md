@@ -470,9 +470,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1. USer requests to edit a client's information.
+1. User requests to edit a client's information.
 2. User inputs the fields to be edited.
-3. SWEE changed the client's information.
+3. SWEE changes the client's information.
 4. SWEE lists out all current contacts that have been saved (UC05).
 
     Use case ends.
@@ -482,7 +482,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * 2a. The user's given input format is invalid.
 
     * 2a1. SWEE shows an error message.
-    * 2a2. User inputs in the client's index and edited details again
+    * 2a2. User inputs in the client's index and edited details again.
     * 2a3. Repeat steps 2a1-2a2 until the input is in the correct format.
 
       Use case resumes at step 3.
@@ -509,7 +509,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 1b2. User inputs in the client index again.
     * 1b3. Repeat steps 1b1-1b2 until the input is a valid index.
 
-      Use case resumes at step 3.
+    Use case resumes at step 3.
 
 ### **Use case: UC04 - View a client's information**
 
@@ -556,11 +556,11 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Extensions**
 
-* 2a. No client matches the specified name
+* 2a. No client matches the specified name.
     
     * 2a1. SWEE shows that there are no clients matching the specified name.
 
-        Use case ends.
+    Use case ends.
 
 ### **Use case: UC07 - Find a client by Tag**
 
@@ -574,11 +574,11 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Extensions**
 
-* 2a. No client matches the specified tag
+* 2a. No client matches the specified tag.
 
     * 2a1. SWEE shows that there are no clients matching the specified tag.
 
-      Use case ends.
+    Use case ends.
 
 ### **Use case: UC08 - Schedule an appointment**
 
@@ -596,10 +596,10 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * 2a. The user's given input format is invalid.
 
     * 2a1. SWEE shows an error message.
-    * 2a2. User inputs in the client's index and appointment details again
+    * 2a2. User inputs in the client's index and appointment details again.
     * 2a3. Repeat steps 2a1-2a2 until the input is in the correct format.
 
-      Use case resumes at step 3.
+    Use case resumes at step 3.
 
 ### **Use case: UC09 - Unschedule an appointment**
 
@@ -617,10 +617,10 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * 2a. The user's given input format is invalid.
 
     * 2a1. SWEE shows an error message.
-    * 2a2. User inputs in the client's index and appointment index again
+    * 2a2. User inputs in the client's index and appointment index again.
     * 2a3. Repeat steps 2a1-2a2 until the input is in the correct format.
 
-        Use case resumes at step 3.
+    Use case resumes at step 3.
 
 ### Non-Functional Requirements
 

@@ -461,9 +461,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
     * 2a1. SWEE prompts user to input the client's details in the correct format.
     * 2a2. User inputs in the client's details again.
-    * 2a3 repeat steps 1a1-1a2 until the input is in the correct format.
+    * 2a3. Repeat steps 1a1-1a2 until the input is in the correct format.
 
-        Use case resumes at step 2.
+        Use case resumes at step 3.
 
 ### **Use case: UC02 - Delete a client**
 
@@ -480,7 +480,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
     Use case ends.
 
-* 1b. The given index is invalid.
+* 1b. The given client index is invalid.
 
     * 1b1. SWEE shows an error message.
 
@@ -491,7 +491,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1. User request to view a specific client's information in the list.
-2. SWEE displays the client's information to the user.
+2. User inputs the index of the client to view.
+3. SWEE displays the client's information to the user.
 
     Use case ends.
 
@@ -501,9 +502,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
     Use case ends.
 
-* 1b. The given index is invalid.
+* 2a. The given client index is invalid.
 
-    * 1b1. SWEE shows an error message.
+    * 2a1. SWEE shows an error message.
     
     Use case resumes at step 1.
 
@@ -552,7 +553,55 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case ends.
 
-### **Use case: UC07 - 
+### **Use case: UC07 - Schedule an appointment**
+
+**MSS**
+
+1. User requests to add a new appointment for a specific client.
+2. User inputs in appointment details.
+3. SWEE updates the specified client with the newly added appointment.
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. The given client index is invalid.
+
+    * 2a1. SWEE shows an error message.
+
+        Use case resumes at step 2.
+
+* 2b. The given input format for the appointment is invalid.
+
+    * 2b1. SWEE prompts user to input the client's details in the correct format.
+    * 2b2. User inputs in the client's details again.
+    * 2b3. Repeat steps 2a1-2a2 until the input is in the correct format.
+
+      Use case resumes at step 3.
+
+### **Use case: UC07 - Unschedule an appointment**
+
+**MSS**
+
+1. User requests to delete an existing appointment for a specific client.
+2. User inputs in the client and appointment index.
+3. SWEE updates the specified client by deleting the specified appointment.
+
+   Use case ends.
+
+**Extensions**
+
+* 2a. The given client index is invalid.
+
+    * 2a1. SWEE shows an error message.
+
+        Use case resumes at step 2.
+
+  * 2b. The given appointment index is invalid.
+
+      * 2b1. SWEE shows an error message
+    
+        Use case resumes at step 2.
 
 ### Non-Functional Requirements
 

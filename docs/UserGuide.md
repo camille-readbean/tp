@@ -348,13 +348,6 @@ Examples:
 * `add --name=John Doe --phone=98765432 --email=johnd@example.com --addr=John street, block 123, #01-01 --note=Daughter is caretaker`
   * `add --name=Jane Doe --phone=92933578 --email=janed@example.sg --addr=Amy street, block 123, #11-02 --tags=Disabled --tags=SeekingAssistance --note=NA`
 
-### Listing all clients : `list`
-
-Shows a list of all clients in the address book.
-
-Format: `list`
-
-
 <div class="page-break"></div>
 
 ### Editing a client : `edit`
@@ -379,6 +372,21 @@ Examples:
 
 <div class="page-break"></div>
 
+### Deleting a client : `del`
+
+Deletes the specified client from the address book.
+
+Format: `del INDEX`
+
+* Deletes the client at the specified `INDEX`.
+* The index refers to the index number shown in the displayed client list.
+* The index **must be a positive integer** 1, 2, 3, …​
+
+Examples:
+* `list` followed by `del 2` deletes the 2nd client in the address book.
+* `find Betsy` followed by `del 1` deletes the 1st client in the results of the `find` command.
+
+
 ### Viewing a client's Information: `view`
 Displays the saved information about a client.
 
@@ -392,6 +400,15 @@ Examples:
 * `list` followed by `view 2` displays the information of the 2nd client in the address book.
 * `find Betsy` followed by `del 1` displays the information of
    the 1st client in the results of the `find` command.
+
+### Listing all clients : `list`
+
+Shows a list of all clients in the address book.
+
+Format: `list`
+
+
+<div class="page-break"></div>
 
 ### Locating clients by name: `find-name`
 
@@ -437,36 +454,6 @@ Examples:
 
 <div class="page-break"></div>
 
-### Deleting a client : `del`
-
-Deletes the specified client from the address book.
-
-Format: `del INDEX`
-
-* Deletes the client at the specified `INDEX`.
-* The index refers to the index number shown in the displayed client list.
-* The index **must be a positive integer** 1, 2, 3, …​
-
-Examples:
-* `list` followed by `del 2` deletes the 2nd client in the address book.
-* `find Betsy` followed by `del 1` deletes the 1st client in the results of the `find` command.
-
-### Clearing all entries : `clear`
-
-Clears **all** entries from the address book.
-Use this command with caution!
-
-Format: `clear`
-
-### Exiting the program : `exit`
-
-Exits the program and closes the window.
-
-Format: `exit`
-
-
-<div class="page-break"></div>
-
 ### Scheduling an appointment: `sched`
 
 Schedules an appointment for a client.
@@ -499,6 +486,22 @@ Format: `unsched INDEX --appt=APPT_INDEX`
 Example:
 * `unsched 1 --appt=2` unschedules the appointment at index 2 for the client at index 1.<br>
   ![result for unschedule appointment](images/UnscheduleAppointmentResult.png)
+
+
+<div class="page-break"></div>
+
+### Clearing all entries : `clear`
+
+Clears **all** entries from the address book.
+Use this command with caution!
+
+Format: `clear`
+
+### Exiting the program : `exit`
+
+Exits the program and closes the window.
+
+Format: `exit`
 
 
 <div class="page-break"></div>

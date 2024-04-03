@@ -451,13 +451,13 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 1. User requests to add a client.
 2. User inputs details of the client.
 3. SWEE adds the client as a contact.
-4. SWEE lists out all current contacts that have been saved (UC04).
+4. SWEE lists out all current contacts that have been saved (UC05).
 
     Use case ends.
 
 **Extensions**
 
-* 2a. The user's input format for the client's details is invalid.
+* 2a. The user's given input format for the client's details is invalid.
 
     * 2a1. SWEE prompts user to input the client's details in the correct format.
     * 2a2. User inputs in the client's details again.
@@ -465,7 +465,29 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
         Use case resumes at step 3.
 
-### **Use case: UC02 - Delete a client**
+
+### **Use case: UC02 - Edit a client**
+
+**MSS**
+
+1. USer requests to edit a client's information.
+2. User inputs the fields to be edited.
+3. SWEE changed the client's information.
+4. SWEE lists out all current contacts that have been saved (UC05).
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. The user's given input format is invalid.
+
+    * 2a1. SWEE shows an error message.
+    * 2a2. User inputs in the client's index and edited details again
+    * 2a3. Repeat steps 2a1-2a2 until the input is in the correct format.
+
+      Use case resumes at step 3.
+
+### **Use case: UC03 - Delete a client**
 
 **MSS**
 
@@ -489,7 +511,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case resumes at step 3.
 
-### **Use case: UC03 - View a client's information**
+### **Use case: UC04 - View a client's information**
 
 **MSS**
 
@@ -513,7 +535,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     
     Use case resumes at step 3.
 
-### **Use case: UC04 - List all saved clients**
+### **Use case: UC05 - List all saved clients**
 
 **MSS**
 
@@ -522,7 +544,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
     Use case ends.
 
-### **Use case: UC05 - Find a client by name**
+### **Use case: UC06 - Find a client by name**
 
 **MSS**
 
@@ -540,7 +562,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
         Use case ends.
 
-### **Use case: UC06 - Find a client by Tag**
+### **Use case: UC07 - Find a client by Tag**
 
 **MSS**
 
@@ -558,41 +580,35 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case ends.
 
-### **Use case: UC07 - Schedule an appointment**
+### **Use case: UC08 - Schedule an appointment**
 
 **MSS**
 
 1. User requests to add a new appointment for a specific client.
 2. User inputs in appointment details.
 3. SWEE updates the specified client with the newly added appointment.
+4. SWEE lists out all current contacts that have been saved (UC05).
 
     Use case ends.
 
 **Extensions**
 
-* 2a. The given client index is invalid.
+* 2a. The user's given input format is invalid.
 
     * 2a1. SWEE shows an error message.
-    * 2a2. User inputs in the client's index again.
-    * 2a3. Repeat steps 2a1-2a2 until the input is a valid index.
-
-        Use case resumes at step 3.
-
-* 2b. The given input format for the appointment is invalid.
-
-    * 2b1. SWEE prompts user to input the client's details in the correct format.
-    * 2b2. User inputs in the client's details again.
-    * 2b3. Repeat steps 2a1-2a2 until the input is in the correct format.
+    * 2a2. User inputs in the client's index and appointment details again
+    * 2a3. Repeat steps 2a1-2a2 until the input is in the correct format.
 
       Use case resumes at step 3.
 
-### **Use case: UC08 - Unschedule an appointment**
+### **Use case: UC09 - Unschedule an appointment**
 
 **MSS**
 
 1. User requests to delete an existing appointment for a specific client.
 2. User inputs in the client and appointment index.
 3. SWEE updates the specified client by deleting the specified appointment.
+4. SWEE lists out all current contacts that have been saved (UC05).
 
    Use case ends.
 

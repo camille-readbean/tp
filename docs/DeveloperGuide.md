@@ -444,11 +444,11 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 (For all use cases below, the **System** is the `SWEE` and the **Actor** is the `user`, unless specified otherwise)
 
-**Use case: UC01 - Add a client's contact in SWEE**
+### **Use case: UC01 - Add a new client into SWEE**
 
 **MSS**
 
-1. User requests to add a client's contact.
+1. User requests to add a client.
 2. User inputs details of the client.
 3. SWEE adds the client as a contact.
 4. SWEE lists out all current contacts that have been saved (UC04).
@@ -457,54 +457,102 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Extensions**
 
-* 1a. The user's input format for the client's details is invalid.
+* 2a. The user's input format for the client's details is invalid.
 
-    * 1a1. SWEE prompts user to input the client's details in the correct format.
-    * 1a2. User inputs in the client's details again.
-    * 1a3 repeat steps 1a1-1a2 until the input is in the correct format.
+    * 2a1. SWEE prompts user to input the client's details in the correct format.
+    * 2a2. User inputs in the client's details again.
+    * 2a3 repeat steps 1a1-1a2 until the input is in the correct format.
 
         Use case resumes at step 2.
 
-**Use case: UC02 - Delete a client**
+### **Use case: UC02 - Delete a client**
 
 **MSS**
 
-1. SWEE shows a list of clients (UC04).
-2. User requests to delete a specific client in the list.
-3. AddressBook deletes the client.
+1. User requests to delete a specific client in the list.
+2. SWEE deletes the client.
 
     Use case ends.
 
 **Extensions**
 
-* 2a. The list is empty.
-
-  Use case ends.
-
-* 3a. The given index is invalid.
-
-    * 3a1. SWEE shows an error message.
-
-      Use case resumes at step 2.
-
-**Use case: UC03 - View a client's contact**
-
-**MSS**
-
-1.  SWEE shows the list of clients (UC04).
-2.  User selects which client's contact to view.
-3.  SWEE displays the client's information to the user.
+* 1a. The list is empty.
 
     Use case ends.
 
-**Use case: UC04 - List all saved client contacts**
+* 1b. The given index is invalid.
+
+    * 1b1. SWEE shows an error message.
+
+      Use case resumes at step 1.
+
+### **Use case: UC03 - View a client's information**
 
 **MSS**
 
-1.  User requests to see the list of all current client contacts in SWEE.
-2.  SWEE presents the user with all the current saved contacts in alphabetical order.
+1. User request to view a specific client's information in the list.
+2. SWEE displays the client's information to the user.
 
     Use case ends.
+
+**Extensions**
+
+* 1a. The list is empty.
+
+    Use case ends.
+
+* 1b. The given index is invalid.
+
+    * 1b1. SWEE shows an error message.
+    
+    Use case resumes at step 1.
+
+### **Use case: UC04 - List all saved clients**
+
+**MSS**
+
+1.  User requests to see the list of all current clients in SWEE.
+2.  SWEE presents the user with all the currently saved clients in alphabetical order.
+
+    Use case ends.
+
+### **Use case: UC05 - Find a client by name**
+
+**MSS**
+
+1. User requests to search for the client by name.
+2. User inputs name.
+3. SWEE returns all clients that match the specified name.
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. No client matches the specified name
+    
+    * 2a1. SWEE shows that there are no clients matching the specified name.
+
+        Use case ends.
+
+### **Use case: UC06 - Find a client by Tag**
+
+**MSS**
+
+1. User requests to search for the client by tag.
+2. User inputs tag.
+3. SWEE returns all clients that match the specified tag.
+
+   Use case ends.
+
+**Extensions**
+
+* 2a. No client matches the specified tag
+
+    * 2a1. SWEE shows that there are no clients matching the specified tag.
+
+      Use case ends.
+
+### **Use case: UC07 - 
 
 ### Non-Functional Requirements
 

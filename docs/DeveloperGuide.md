@@ -163,7 +163,7 @@ This section describes how the add commands work which will serve as a basic und
 **AddCommandParser** : [`AddCommandParser.java`](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/logic/parser/AddCommandParser.java)
 **AddCommand** : [`AddCommand.java`](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/logic/commands/AddCommand.java)
 
-The sequence diagram below illustrates the interactions within the `Logic` component, taking `execute("add --name=Name --phone=2103 --email=hello@Test --addr=Address --tags=hello --tags=Hi")` API call as an example.
+The sequence diagram below illustrates the interactions within the `Logic` component, taking `execute("add --name=Name --phone=2103 --email=hello@Test --addr=Address --tags=hello --tags=Hi" --note=NA)` API call as an example.
 
 ![Interactions Inside the Logic Component for the `add [ARGS]` Command](images/AddSequenceDiagram.png)
 
@@ -175,7 +175,7 @@ How an `add` command is executed.
 1. When Logic is called upon to execute a command, it is passed to an `AddressBookParser`.
    object which in turn creates a parser that matches the command `AddCommandParser`).
    and uses it to parse the arguments passed to the command.
-2. `AddCommand` will check that the fields; `name`, `phone`, `email`, and `address`.
+2. `AddCommand` will check that the fields: `name`, `phone`, `email`, `address` and `note` are present.
    The prefixes for these options are defined in [CliSyntax.java](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/logic/parser/CliSyntax.java).
     1. Parsing of the arguments is done by [`ArgumentTokenizer.java`](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/logic/parser/ArgumentTokenizer.java) (not shown here).
     2. This returns a [`ArgumentMultiMap`](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/fd570551588e8c9cf372ca6bc87d3c3e5e01b40a/src/main/java/seedu/address/logic/parser/ArgumentMultimap.java#L20) which supports further operations.  

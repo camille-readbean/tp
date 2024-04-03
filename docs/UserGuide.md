@@ -249,7 +249,7 @@ exit
 #### Scheduling an appointment for clients
 
 Observe that Natasha (index 5) has no appointments. We will schedule an appointment.  
-Make **sure to set the date after today**.
+Make sure to **set the date after today**.
 
 ```
 sched 5 --title=Lunch Gathering --from=14/05/2024 15:00 --to=14/05/2024 15:20 --addr=Suntec City 
@@ -304,7 +304,7 @@ edit 6 --note=Recently had dinner and he told me that he wants to be a doc next 
 
 Action | Format, Examples
 --------|------------------
-**Add** a client | `add --name=NAME --phone=PHONE_NUMBER --email=EMAIL --addr=ADDRESS --note=NOTE [--tags=TAG]…​` <br> e.g., `add --name=James Ho --phone=22224444 --email=jamesho@example.com --addr=123, Clementi Rd, 1234665 --tags=friend --tags=colleague --note= Allergic to seafood`
+**Add** a client | `add --name=NAME --phone=PHONE_NUMBER --email=EMAIL --addr=ADDRESS [--tags=TAG] --note=NOTE​` <br> e.g., `add --name=James Ho --phone=22224444 --email=jamesho@example.com --addr=123, Clementi Rd, 1234665 --tags=friend --tags=colleague --note= Allergic to seafood`
 **Clear** delete all clients in the app | `clear`
 **Delete** a client | `del INDEX`<br> e.g., `del 3`
 **Edit** a client's detail | `edit INDEX [--name=NAME] [--phone=PHONE_NUMBER] [--email=EMAIL] [--addr=ADDRESS] [--note=NOTE] [--tags=TAG]…​`<br> e.g.,`edit 2 --name=James Lee --email=jameslee@example.com`
@@ -335,17 +335,18 @@ Format: `help`
 
 Adds a client to the address book.
 
-Format: `add --name=NAME --phone=PHONE_NUMBER --email=EMAIL --addr=ADDRESS [--tags=TAG]…​`
+Format: `add --name=NAME --phone=PHONE_NUMBER --email=EMAIL --addr=ADDRESS [--tags=TAG] --note=NOTES`
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 A client can have any number of tags (including 0)
 </div>
 
-**Important**: You cannot leave tags empty, i.e. `add --tags=` with nothing for the tags. 
+**Important**: You cannot leave tags empty, i.e. `add --tags=` with nothing for the tags.
+Additionally, note is a compulsory field. If you have nothing to write for note, write `--note=NA`.
 
 Examples:
-* `add --name=John Doe --phone=98765432 --email=johnd@example.com --addr=John street, block 123, #01-01`
-  * `add --name=Jane Doe --phone=92933578 --email=janed@example.sg --addr=Amy street, block 123, #11-02 --tags=Disabled --tags=SeekingAssistance`
+* `add --name=John Doe --phone=98765432 --email=johnd@example.com --addr=John street, block 123, #01-01 --note=Daughter is caretaker`
+  * `add --name=Jane Doe --phone=92933578 --email=janed@example.sg --addr=Amy street, block 123, #11-02 --tags=Disabled --tags=SeekingAssistance --note=NA`
 
 ### Listing all clients : `list`
 
@@ -360,9 +361,9 @@ Format: `list`
 
 Edits an existing client in the address book.
 
-Format: `edit INDEX [--name=NAME] [--phone=PHONE] [--email=EMAIL] [--addr=ADDRESS] [--tags=TAG]…​`
+Format: `edit INDEX [--name=NAME] [--phone=PHONE] [--email=EMAIL] [--addr=ADDRESS] [--tags=TAG] [--note=NOTES]​`
 
-* Edits the client at the specified `INDEX`. The index refers to the index number shown in the displayed client list. The index **must be a positive integer** 1, 2, 3, …​
+* Edits the client at the specified `INDEX`. The index refers to the index number shown in the currently displayed client list. The index **must be a positive integer** 1, 2, 3, …​
 * At least one of the optional fields must be provided.
 * Existing values will be updated to the input values.
 * When editing tags for a client, any pre-existing tags will be directly replaced with the new ones provided in the command.<br>
@@ -452,13 +453,14 @@ Examples:
 
 ### Clearing all entries : `clear`
 
-Clears all entries from the address book.
+Clears **all** entries from the address book.
+Use this command with caution!
 
 Format: `clear`
 
 ### Exiting the program : `exit`
 
-Exits the program.
+Exits the program and closes the window.
 
 Format: `exit`
 

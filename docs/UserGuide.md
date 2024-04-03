@@ -487,15 +487,15 @@ Example:
 
 ### Unscheduling an appointment: `unsched`
 
-Unschedules an appontment for a client.
+Unschedules an appointment for a client.
 
-Furmat: `unsched INDEX --appt=APPT_INDEX`
+Format: `unsched INDEX --appt=APPT_INDEX`
 
-* `APPT_INDEX` refers to the indx of the appointment for that specific client.
-* The `INDEX` and `APPT_INDEX` must be postive integers.
+* `APPT_INDEX` refers to the index of the appointment for that specific client.
+* The `INDEX` and `APPT_INDEX` must be positive integers.
 
 Example:
-* `unsched 1 --appt=2` unschedules the appointment at index 2 for the klient at index 1.<br>
+* `unsched 1 --appt=2` unschedules the appointment at index 2 for the client at index 1.<br>
   ![result for unschedule appointment](images/UnscheduleAppointmentResult.png)
 
 

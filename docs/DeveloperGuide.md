@@ -163,7 +163,7 @@ This section describes how the add commands work which will serve as a basic und
 **AddCommandParser** : [`AddCommandParser.java`](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/logic/parser/AddCommandParser.java)
 **AddCommand** : [`AddCommand.java`](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/logic/commands/AddCommand.java)
 
-The sequence diagram below illustrates the interactions within the `Logic` component, taking `execute("add --name=Name --phone=2103 --email=hello@Test --addr=Address --tags=hello --tags=Hi")` API call as an example.
+The sequence diagram below illustrates the interactions within the `Logic` component, taking `execute("add --name=Name --phone=2103 --email=hello@Test --addr=Address --tags=hello --tags=Hi" --note=NA)` API call as an example.
 
 ![Interactions Inside the Logic Component for the `add [ARGS]` Command](images/AddSequenceDiagram.png)
 
@@ -171,11 +171,11 @@ The sequence diagram below illustrates the interactions within the `Logic` compo
 </div>
 Note: `[ARGS]` refer to the arguments of the add command that have been parsed. It have been shortened for brevity
 
-How an `add` command is executed.
+How an `add` command is executed:
 1. When Logic is called upon to execute a command, it is passed to an `AddressBookParser`.
    object which in turn creates a parser that matches the command `AddCommandParser`).
    and uses it to parse the arguments passed to the command.
-2. `AddCommand` will check that the fields; `name`, `phone`, `email`, and `address`.
+2. `AddCommand` will check that the fields: `name`, `phone`, `email`, `address` and `note` are present.
    The prefixes for these options are defined in [CliSyntax.java](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/logic/parser/CliSyntax.java).
     1. Parsing of the arguments is done by [`ArgumentTokenizer.java`](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/logic/parser/ArgumentTokenizer.java) (not shown here).
     2. This returns a [`ArgumentMultiMap`](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/fd570551588e8c9cf372ca6bc87d3c3e5e01b40a/src/main/java/seedu/address/logic/parser/ArgumentMultimap.java#L20) which supports further operations.  
@@ -205,7 +205,7 @@ The Object, Sequence and Activity UML diagrams belows shows the objects created 
 
 ![](images/ViewActivityDiagram.png)
 
-How a `view` command is executed.
+How a `view` command is executed:
 1. User Input Parsing
    1. When the user enters a command, it is first parsed by the `AddressBookParser`.
    2. The `parseCommand(String userInput)` method in `AddressBookParser` splits the user input into the command word and arguments using a regular expression.
@@ -233,7 +233,7 @@ The Sequence and Activity UML diagrams belows shows the objects created as well 
 
 ![](images/DeleteActivityDiagram.png)
 
-How a `delete` command is executed.
+How a `delete` command is executed:
 1. User Input Parsing
    1. When the user enters a command, it is first parsed by the `AddressBookParser`.
    2. The `parseCommand(String userInput)` method in `AddressBookParser` splits the user input into the command word and arguments using a regular expression.
@@ -265,7 +265,7 @@ The Sequence and Activity UML diagrams belows shows the objects created as well 
 
 ![](images/FindTagActivityDiagram.png)
 
-How a `find-tag` command is executed.
+How a `find-tag` command is executed:
 1. The User inputs a command in the format of "find-tag [TAG]" to find clients by tag.
    1. `LogicManager` receives the user command and parses the command to the `AddressBookParser`.
    2. `AddressBookParser` parses this command to the `FindTagCommandParser`.
@@ -444,67 +444,184 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 (For all use cases below, the **System** is the `SWEE` and the **Actor** is the `user`, unless specified otherwise)
 
-**Use case: UC01 - Add a client's contact in SWEE**
+### **Use case: UC01 - Add a new client into SWEE**
 
 **MSS**
 
-1. User requests to add a client's contact.
+1. User requests to add a client.
 2. User inputs details of the client.
 3. SWEE adds the client as a contact.
-4. SWEE lists out all current contacts that have been saved (UC04).
+4. SWEE lists out all current contacts that have been saved (UC05).
 
     Use case ends.
 
 **Extensions**
 
-* 1a. The user's input format for the client's details is invalid.
+* 2a. The user's given input format for the client's details is invalid.
 
-    * 1a1. SWEE prompts user to input the client's details in the correct format.
-    * 1a2. User inputs in the client's details again.
-    * 1a3 repeat steps 1a1-1a2 until the input is in the correct format.
+    * 2a1. SWEE prompts user to input the client's details in the correct format.
+    * 2a2. User inputs in the client's details again.
+    * 2a3. Repeat steps 1a1-1a2 until the input is in the correct format.
 
-        Use case resumes at step 2.
+        Use case resumes at step 3.
 
-**Use case: UC02 - Delete a client**
+
+### **Use case: UC02 - Edit a client**
 
 **MSS**
 
-1. SWEE shows a list of clients (UC04).
-2. User requests to delete a specific client in the list.
-3. AddressBook deletes the client.
+1. User requests to edit a client's information.
+2. User inputs the fields to be edited.
+3. SWEE changes the client's information.
+4. SWEE lists out all current contacts that have been saved (UC05).
 
     Use case ends.
 
 **Extensions**
 
-* 2a. The list is empty.
+* 2a. The user's given input format is invalid.
 
-  Use case ends.
+    * 2a1. SWEE shows an error message.
+    * 2a2. User inputs in the client's index and edited details again.
+    * 2a3. Repeat steps 2a1-2a2 until the input is in the correct format.
 
-* 3a. The given index is invalid.
+      Use case resumes at step 3.
 
-    * 3a1. SWEE shows an error message.
-
-      Use case resumes at step 2.
-
-**Use case: UC03 - View a client's contact**
+### **Use case: UC03 - Delete a client**
 
 **MSS**
 
-1.  SWEE shows the list of clients (UC04).
-2.  User selects which client's contact to view.
-3.  SWEE displays the client's information to the user.
+1. User requests to delete a specific client in the list.
+2. User inputs the index of the client to delete.
+2. SWEE deletes the client.
 
     Use case ends.
 
-**Use case: UC04 - List all saved client contacts**
+**Extensions**
+
+* 1a. The list is empty.
+    * 1a1. SWEE shows an error message.
+
+    Use case ends.
+
+* 1b. The given client index is invalid.
+
+    * 1b1. SWEE shows an error message.
+    * 1b2. User inputs in the client index again.
+    * 1b3. Repeat steps 1b1-1b2 until the input is a valid index.
+
+    Use case resumes at step 3.
+
+### **Use case: UC04 - View a client's information**
 
 **MSS**
 
-1.  User requests to see the list of all current client contacts in SWEE.
-2.  SWEE presents the user with all the current saved contacts in alphabetical order.
+1. User request to view a specific client's information in the list.
+2. User inputs the index of the client to view.
+3. SWEE displays the client's information to the user.
 
     Use case ends.
+
+**Extensions**
+
+* 1a. The list is empty.
+
+    Use case ends.
+
+* 2a. The given client index is invalid.
+
+    * 2a1. SWEE shows an error message.
+    * 2a2. User inputs in the client index again.
+    * 2a3. Repeat steps 2a1-2a2 until the input is a valid index.
+    
+    Use case resumes at step 3.
+
+### **Use case: UC05 - List all saved clients**
+
+**MSS**
+
+1.  User requests to see the list of all current clients in SWEE.
+2.  SWEE presents the user with all the currently saved clients in alphabetical order.
+
+    Use case ends.
+
+### **Use case: UC06 - Find a client by name**
+
+**MSS**
+
+1. User requests to search for the client by name.
+2. User inputs name.
+3. SWEE returns all clients that match the specified name.
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. No client matches the specified name.
+    
+    * 2a1. SWEE shows that there are no clients matching the specified name.
+
+    Use case ends.
+
+### **Use case: UC07 - Find a client by Tag**
+
+**MSS**
+
+1. User requests to search for the client by tag.
+2. User inputs tag.
+3. SWEE returns all clients that match the specified tag.
+
+   Use case ends.
+
+**Extensions**
+
+* 2a. No client matches the specified tag.
+
+    * 2a1. SWEE shows that there are no clients matching the specified tag.
+
+    Use case ends.
+
+### **Use case: UC08 - Schedule an appointment**
+
+**MSS**
+
+1. User requests to add a new appointment for a specific client.
+2. User inputs in appointment details.
+3. SWEE updates the specified client with the newly added appointment.
+4. SWEE lists out all current contacts that have been saved (UC05).
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. The user's given input format is invalid.
+
+    * 2a1. SWEE shows an error message.
+    * 2a2. User inputs in the client's index and appointment details again.
+    * 2a3. Repeat steps 2a1-2a2 until the input is in the correct format.
+
+    Use case resumes at step 3.
+
+### **Use case: UC09 - Unschedule an appointment**
+
+**MSS**
+
+1. User requests to delete an existing appointment for a specific client.
+2. User inputs in the client and appointment index.
+3. SWEE updates the specified client by deleting the specified appointment.
+4. SWEE lists out all current contacts that have been saved (UC05).
+
+   Use case ends.
+
+**Extensions**
+
+* 2a. The user's given input format is invalid.
+
+    * 2a1. SWEE shows an error message.
+    * 2a2. User inputs in the client's index and appointment index again.
+    * 2a3. Repeat steps 2a1-2a2 until the input is in the correct format.
+
+    Use case resumes at step 3.
 
 ### Non-Functional Requirements
 

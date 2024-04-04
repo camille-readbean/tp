@@ -5,13 +5,13 @@ title: User Guide
 
 Social Worker's Efficiency Enhancer (**SWEE**) is a **desktop application for managing your contact details, optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI).  
 If you can type fast, SWEE can get your contact management tasks done faster than traditional GUI apps.  
-This is ideal as you do not often bring a mouse out with you on site visits to clients or on the go. 
+This is ideal as you do not often bring a mouse out with you on site visits to clients or on the go.
 <br>
 ## Who is it for and what can it do for me?
-This application is intended for people involved with social work, social workers, volunteers, and community partners who 
-have a need to manage contacts and their associated information. We offer a quick way for you to store their name, address, 
-phone number, email and notes about them. We also support tagging contacts for easier searching. Additionally, we offer a way to 
-keep track of upcoming appointments with them. 
+This application is intended for people involved with social work, social workers, volunteers, and community partners who
+have a need to manage contacts and their associated information. We offer a quick way for you to store their name, address,
+phone number, email and notes about them. We also support tagging contacts for easier searching. Additionally, we offer a way to
+keep track of upcoming appointments with them.
 
 
 <div class="page-break"></div>
@@ -20,7 +20,7 @@ keep track of upcoming appointments with them.
 
 ## Table of contents
 * Table of Contents
-{:toc}
+  {:toc}
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -43,7 +43,7 @@ keep track of upcoming appointments with them.
 | GUI                  | Graphical User Interface, the desktop application the user sees                                                                                                 |
 | CLI / Command line   | An application that presents a text only interface, e.g. PowerShell, cmd, Terminal on Windows, Bash or Shell in Linux, Terminal in MacOS.                       |
 
-💡🚨 Note that some screenshots may be outdated as the application constantly evolves. However, you will still be able to get the full use and understanding from the information displayed in the GUI. 
+💡🚨 Note that some screenshots may be outdated as the application constantly evolves. However, you will still be able to get the full use and understanding from the information displayed in the GUI.
 
 <div class="page-break"></div>
 
@@ -56,14 +56,14 @@ keep track of upcoming appointments with them.
 
 1. Copy the jar file to the folder you want to use as the _home folder_ for your AddressBook.
 
-   1. Open the application in a way that suits your operating system. For example, on Windows, you can just double-click the file.<br>
-      Shortly after, a graphical interface (GUI) like the one shown below should pop up. Take note that the app already includes some example data for you to see.<br>
-      ![Ui](images/Ui.png)
-   2. On first launch, it will present you with some example clients to show you a rough idea of how clients will look like.<br>
-      Feel free to delete them and add your own. They are used in the [New User tutorial](#new-user-tutorial).
-   3. This _home folder_ will contain files generated and used by SWEE.
-   4. 🚨 In case double clicking does not work, open a command line terminal in the home directory and run
-      `java -jar SWEE.jar`
+    1. Open the application in a way that suits your operating system. For example, on Windows, you can just double-click the file.<br>
+       Shortly after, a graphical interface (GUI) like the one shown below should pop up. Take note that the app already includes some example data for you to see.<br>
+       ![Ui](images/Ui.png)
+    2. On first launch, it will present you with some example clients to show you a rough idea of how clients will look like.<br>
+       Feel free to delete them and add your own. They are used in the [New User tutorial](#new-user-tutorial).
+    3. This _home folder_ will contain files generated and used by SWEE.
+    4. 🚨 In case double clicking does not work, open a command line terminal in the home directory and run
+       `java -jar SWEE.jar`
 
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Refer to the [New user tutorial](#new-user-tutorial)
@@ -79,19 +79,19 @@ keep track of upcoming appointments with them.
 ### New User Tutorial
 
 If you are a new user you can follow this tutorial and get a quick rundown of the application and its core features!  
-This assumes a fresh installation of SWEE with the example clients serving as an example.  
+This assumes a fresh installation of SWEE with the example clients serving as an example.
 
 #### Introduction to the user interface
 ![](images/UiAnnotated.png)
 
 The user interface is primarily divided into 4 regions are shown by the different boxes.
 
-1. This is the Command Box. Commands are typed here and carried out by the application. 
+1. This is the Command Box. Commands are typed here and carried out by the application.
 2. Messages from the command that was run are displayed here. If the command runs into a problem, it will display here as well.
    For example if the user typed in an invalid command or something unexpected caused the program to not work.
 3. This is the client list. Clients are displayed here in cards, see below. It is scrollable meaning you can navigate down and up like a webpage or word document.
-4. A Client card holds information relevant to each client. The number beside the names of each user is the index. 
-   This index is used in some commands to specify the client being edited. The words in brown boxes are tags a 
+4. A Client card holds information relevant to each client. The number beside the names of each user is the index.
+   This index is used in some commands to specify the client being edited. The words in brown boxes are tags a
    client have. It shows all their details along with the number of appointments and next upcoming appointment if any.
 
 ---
@@ -134,13 +134,13 @@ add --name=Theodore Koo --phone=98001715 --email=theodore@example.com
 1. `add` This is the command for adding new contacts
 2. `--name=Theodore Koo` specifies the name parameter as Theodore Koo
 3. `--phone=98001715` specifies the phone number.
-4. `--email=theodore@example.com` specifies the email parameter as `theodore@example.com`. 
-5. `--addr=Prince Street, Block 144, #19-14` indicates the address parameter. You are providing the address as `Prince Street, Block 144, Apartment 19-14`. 
-6. `--tags=Disabled` is used to assign a tag or label to the contact. In this case, you're labeling or tagging the contact as 'Disabled'. 
+4. `--email=theodore@example.com` specifies the email parameter as `theodore@example.com`.
+5. `--addr=Prince Street, Block 144, #19-14` indicates the address parameter. You are providing the address as `Prince Street, Block 144, Apartment 19-14`.
+6. `--tags=Disabled` is used to assign a tag or label to the contact. In this case, you're labeling or tagging the contact as 'Disabled'.
 7. `--note=Lactose Intolerant` specifies a note to be attached to this contact's information. The note here is 'Lactose Intolerant'.
-   This is useful to attach additional information about an user. 
+   This is useful to attach additional information about an user.
 
-You should see something similar to below. 
+You should see something similar to below.
 
 ![](images/new-user-tutorial/addCommand.png)
 
@@ -175,7 +175,7 @@ find-name theo
 
 1. `find-name` This is the command for finding a client by their name.
 2. `Theo` specifies the name parameter as Theo. This sets the keyword for the search.
-   1. It is possible to have more than 1 word, see [`find-name`](#locating-clients-by-name-find-name).
+    1. It is possible to have more than 1 word, see [`find-name`](#locating-clients-by-name-find-name).
 3. The client list will now display every client whose name contains at least one word in the keywords given.
 
 ![](images/new-user-tutorial/findNameCommand.png)
@@ -192,7 +192,7 @@ view 1
 
 1. `view` This is the command for viewing a specific client.
 2. The index is based on the current displayed clients.
-3. The information is shown in the command result box. 
+3. The information is shown in the command result box.
 
 [//]: # (![]&#40;images/new-user-tutorial/findNameCommand.png&#41;)
 
@@ -209,7 +209,7 @@ del 1
 
 1. `del` This is the command for deleting a specific client.
 2. The index is based on the current displayed clients.
-   1. 💡 Observe that for commands using client index, it is always the index of the currently displayed clients.
+    1. 💡 Observe that for commands using client index, it is always the index of the currently displayed clients.
 3. The command shows the name of the client being deleted in the command result box.
 
 [//]: # (![]&#40;images/new-user-tutorial/findNameCommand.png&#41;)
@@ -219,7 +219,7 @@ del 1
 
 #### Listing all clients
 
-Now with an empty list, we run a command to show **all** clients. 
+Now with an empty list, we run a command to show **all** clients.
 
 ```
 list
@@ -249,7 +249,7 @@ exit
 #### Scheduling an appointment for clients
 
 Observe that Natasha (index 5) has no appointments. We will schedule an appointment.  
-Make **sure to set the date after today**.
+Make sure to **set the date after today**.
 
 ```
 sched 5 --title=Lunch Gathering --from=14/05/2024 15:00 --to=14/05/2024 15:20 --addr=Suntec City 
@@ -257,7 +257,7 @@ sched 5 --title=Lunch Gathering --from=14/05/2024 15:00 --to=14/05/2024 15:20 --
 
 1. `sched` This is the command for scheduling an appointment for a client.
 2. `5` is the index of Natasha.
-3. `--title=` is used to indicate the title of the appointment. 
+3. `--title=` is used to indicate the title of the appointment.
 4. `--from=` and `--to=` specifies the start and ending date and time respectively.
 5. The format is `dd/MM/yyyy HH:mm`: days/Months/year Hour:Minutes. The hours are in 24 hours format.
 6. If you set the date to be in the future, you will realise the display of next appointment have changed as well.
@@ -295,7 +295,7 @@ edit 6 --note=Recently had dinner and he told me that he wants to be a doc next 
 1. `edit` This is the command for editing a client.
 2. `6` is the index of Serval Landau.
 3. `--note=` specifies the new note to store.
-4. This can be longer than 1 word, making it ideal to store detailed notes. 
+4. This can be longer than 1 word, making it ideal to store detailed notes.
 
 <div class="page-break"></div>
 
@@ -304,7 +304,7 @@ edit 6 --note=Recently had dinner and he told me that he wants to be a doc next 
 
 Action | Format, Examples
 --------|------------------
-**Add** a client | `add --name=NAME --phone=PHONE_NUMBER --email=EMAIL --addr=ADDRESS --note=NOTE [--tags=TAG]…​` <br> e.g., `add --name=James Ho --phone=22224444 --email=jamesho@example.com --addr=123, Clementi Rd, 1234665 --tags=friend --tags=colleague --note= Allergic to seafood`
+**Add** a client | `add --name=NAME --phone=PHONE_NUMBER --email=EMAIL --addr=ADDRESS [--tags=TAG] --note=NOTE​` <br> e.g., `add --name=James Ho --phone=22224444 --email=jamesho@example.com --addr=123, Clementi Rd, 1234665 --tags=friend --tags=colleague --note= Allergic to seafood`
 **Clear** delete all clients in the app | `clear`
 **Delete** a client | `del INDEX`<br> e.g., `del 3`
 **Edit** a client's detail | `edit INDEX [--name=NAME] [--phone=PHONE_NUMBER] [--email=EMAIL] [--addr=ADDRESS] [--note=NOTE] [--tags=TAG]…​`<br> e.g.,`edit 2 --name=James Lee --email=jameslee@example.com`
@@ -335,17 +335,18 @@ Format: `help`
 
 Adds a client to the address book.
 
-Format: `add --name=NAME --phone=PHONE_NUMBER --email=EMAIL --addr=ADDRESS [--tags=TAG]…​`
+Format: `add --name=NAME --phone=PHONE_NUMBER --email=EMAIL --addr=ADDRESS [--tags=TAG] --note=NOTES`
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 A client can have any number of tags (including 0)
 </div>
 
-**Important**: You cannot leave tags empty, i.e. `add --tags=` with nothing for the tags. 
+**Important**: You cannot leave tags empty, i.e. `add --tags=` with nothing for the tags.
+Additionally, note is a compulsory field. If you have nothing to write for note, write `--note=NA`.
 
 Examples:
-* `add --name=John Doe --phone=98765432 --email=johnd@example.com --addr=John street, block 123, #01-01`
-  * `add --name=Jane Doe --phone=92933578 --email=janed@example.sg --addr=Amy street, block 123, #11-02 --tags=Disabled --tags=SeekingAssistance`
+* `add --name=John Doe --phone=98765432 --email=johnd@example.com --addr=John street, block 123, #01-01 --note=Daughter is caretaker`
+    * `add --name=Jane Doe --phone=92933578 --email=janed@example.sg --addr=Amy street, block 123, #11-02 --tags=Disabled --tags=SeekingAssistance --note=NA`
 
 ### Listing all clients : `list`
 
@@ -360,16 +361,16 @@ Format: `list`
 
 Edits an existing client in the address book.
 
-Format: `edit INDEX [--name=NAME] [--phone=PHONE] [--email=EMAIL] [--addr=ADDRESS] [--tags=TAG]…​`
+Format: `edit INDEX [--name=NAME] [--phone=PHONE] [--email=EMAIL] [--addr=ADDRESS] [--tags=TAG] [--note=NOTES]​`
 
-* Edits the client at the specified `INDEX`. The index refers to the index number shown in the displayed client list. The index **must be a positive integer** 1, 2, 3, …​
+* Edits the client at the specified `INDEX`. The index refers to the index number shown in the currently displayed client list. The index **must be a positive integer** 1, 2, 3, …​
 * At least one of the optional fields must be provided.
 * Existing values will be updated to the input values.
 * When editing tags for a client, any pre-existing tags will be directly replaced with the new ones provided in the command.<br>
   This means that the tag update is not cumulative; unless a tag is specified in the new command, it will not be retained from the previous set of tags.<br>
   If the tag option is not specified, i.e. `--tags=`, the existing tags will be left as is
 * You can remove all the client’s tags by typing `--tags=` without
-    specifying any tags after it.
+  specifying any tags after it.
 
 Examples:
 *  `edit 1 --phone=91234567 --email=johndoe@example.com` Edits the phone number and email address of the 1st client to be `91234567` and `johndoe@example.com` respectively.
@@ -389,8 +390,8 @@ Format: `view INDEX`
 
 Examples:
 * `list` followed by `view 2` displays the information of the 2nd client in the address book.
-* `find Betsy` followed by `del 1` displays the information of
-   the 1st client in the results of the `find` command.
+* `find Betsy` followed by `view 1` displays the information of
+  the 1st client in the results of the `find` command.
 
 ### Locating clients by name: `find-name`
 
@@ -452,15 +453,52 @@ Examples:
 
 ### Clearing all entries : `clear`
 
-Clears all entries from the address book.
+Clears **all** entries from the address book.
+Use this command with caution!
 
 Format: `clear`
 
 ### Exiting the program : `exit`
 
-Exits the program.
+Exits the program and closes the window.
 
 Format: `exit`
+
+
+<div class="page-break"></div>
+
+### Scheduling an appointment: `sched`
+
+Schedules an appointment for a client.
+
+Format: `sched INDEX --title=TITLE --from=START --to=END --addr=ADDRESS `
+
+* The `INDEX` must be a positive integer.
+* The `START` and `END` dates/times must be in the format `dd/MM/yyyy HH:mm`.
+* The `END` date/time should not be earlier than the `START` date/time.
+* To view all the appointments for a client use `view INDEX`
+
+Example:
+* `sched 1 --title=Meeting --from=05/04/2024 17:00 --to=05/04/2024 18:00 --addr=Meeting Room A, 358 Clementi Ave 2 #01-285 Singapore 120358` adds the specified appointment for the client at index 1.<br>
+  ![result for schedule appointment](images/ScheduleAppointmentResult.png)
+* `view 1` will return all the scheduled appointments for the client at index 1.<br>
+  ![result for view appointments](images/ViewAppointmentsResult.png)
+
+
+<div class="page-break"></div>
+
+### Unscheduling an appointment: `unsched`
+
+Unschedules an appointment for a client.
+
+Format: `unsched INDEX --appt=APPT_INDEX`
+
+* `APPT_INDEX` refers to the index of the appointment for that specific client.
+* The `INDEX` and `APPT_INDEX` must be positive integers.
+
+Example:
+* `unsched 1 --appt=2` unschedules the appointment at index 2 for the client at index 1.<br>
+  ![result for unschedule appointment](images/UnscheduleAppointmentResult.png)
 
 
 <div class="page-break"></div>
@@ -496,4 +534,3 @@ Furthermore, certain edits can cause the SWEE to behave in unexpected ways (e.g.
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 
 --------------------------------------------------------------------------------------------------------------------
-

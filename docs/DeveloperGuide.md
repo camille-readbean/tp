@@ -500,6 +500,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **Extensions**
 
 * 1a. The list is empty.
+    * 1a1. SWEE shows an error message.
 
     Use case ends.
 

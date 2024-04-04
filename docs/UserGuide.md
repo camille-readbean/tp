@@ -390,7 +390,7 @@ Format: `view INDEX`
 
 Examples:
 * `list` followed by `view 2` displays the information of the 2nd client in the address book.
-* `find Betsy` followed by `del 1` displays the information of
+* `find Betsy` followed by `view 1` displays the information of
   the 1st client in the results of the `find` command.
 
 ### Locating clients by name: `find-name`

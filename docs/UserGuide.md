@@ -79,7 +79,8 @@ keep track of upcoming appointments with them.
 ### New User Tutorial
 
 If you are a new user you can follow this tutorial and get a quick rundown of the application and its core features!  
-This assumes a fresh installation of SWEE with the example clients serving as an example.
+This assumes a fresh installation of SWEE with the example clients serving as an example.<br><br>
+**For a detailed rundown of each command, please refer to the [Features](#features) section that is after this tutorial.** <br><br>
 
 #### Introduction to the user interface
 ![](images/UiAnnotated.png)
@@ -167,7 +168,7 @@ edit 7 --name=Theo --tags=WalkingImpediment
 
 #### Finding a client by name
 
-Now we find clients by a name.
+Now, we will find clients by their name.
 
 ```
 find-name theo
@@ -179,6 +180,20 @@ find-name theo
 3. The client list will now display every client whose name contains at least one word in the keywords given.
 
 ![](images/new-user-tutorial/findNameCommand.png)
+
+#### Finding a client by tag
+
+Similarly, we can also find clients by their assigned tags.
+
+```
+find-tag WalkingImpediment
+```
+
+1. `find-tag` This is the command for finding a client by their name.
+2. `WalkingImpediment` specifies the tag parameter as WalkingImpediment. This sets the keyword for the search.
+   1. It is possible to have more than 1 tag, see [`find-tag`](#locating-clients-by-tag-find-tag).
+3. The client list will now display every client whose name contains at least one word in the keywords given.<br>
+    In this case, the exact same client will be shown as he is the only client with the `WalkingImpediment` tag.
 
 <div class="page-break"></div>
 

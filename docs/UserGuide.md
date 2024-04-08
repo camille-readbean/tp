@@ -490,6 +490,8 @@ Format: `sched INDEX --title=TITLE --from=START --to=END --addr=ADDRESS `
 
 * The `INDEX` must be a positive integer.
 * The `START` and `END` dates/times must be in the format `dd/MM/yyyy HH:mm`.
+* The dates/times can be earlier than the current date/time.
+  * This is an intended feature so that past appointments can be tracked as well.
 * The `END` date/time should not be earlier than the `START` date/time.
 * To view all the appointments for a client use `view INDEX`
 

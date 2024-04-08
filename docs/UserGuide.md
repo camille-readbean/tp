@@ -20,7 +20,7 @@ keep track of upcoming appointments with them.
 
 ## Table of contents
 * Table of Contents
-  {:toc}
+{:toc}
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -131,8 +131,8 @@ add --name=Theodore Koo --phone=98001715 --email=theodore@example.com
 --addr=Prince Street, Block 144, #19-14 --tags=Disabled --note=Lactose Intolerant
 </code>
 
-1. `add` This is the command for adding new contacts
-2. `--name=Theodore Koo` specifies the name parameter as Theodore Koo
+1. `add` This is the command for adding new contacts.
+2. `--name=Theodore Koo` specifies the name parameter as Theodore Koo.
 3. `--phone=98001715` specifies the phone number.
 4. `--email=theodore@example.com` specifies the email parameter as `theodore@example.com`.
 5. `--addr=Prince Street, Block 144, #19-14` indicates the address parameter. You are providing the address as `Prince Street, Block 144, Apartment 19-14`.
@@ -159,7 +159,7 @@ edit 7 --name=Theo --tags=WalkingImpediment
 1. `edit` This is the command for editing a client.
 2. `7` refers to the index of the client we are editing.
 3. `--name=Theo` specifies the name parameter as Theo. This sets the client's new name.
-4. `--tags=WalkingImpediment` removes all existing tags and Theo now only have this tag.
+4. `--tags=WalkingImpediment` removes all existing tags and Theo now only has this tag.
 
 ![](images/new-user-tutorial/editCommand.png)
 
@@ -252,7 +252,7 @@ Observe that Natasha (index 5) has no appointments. We will schedule an appointm
 Make sure to **set the date after today**.
 
 ```
-sched 5 --title=Lunch Gathering --from=14/05/2024 15:00 --to=14/05/2024 15:20 --addr=Suntec City 
+sched 5 --title=Lunch Gathering --from=14/05/2024 15:00 --to=14/05/2024 15:20 --addr=Suntec City
 ```
 
 1. `sched` This is the command for scheduling an appointment for a client.
@@ -280,22 +280,6 @@ unsched 2 --appt=2
 2. `2` is the index of Natasha.
 3. `--appt=` specifies the index of the appointment to unschedule. In this case 2.
 4. Notice that Hu Tao's total number of appointments decreased and she no longer has an upcoming appointment.
-
-<div class="page-break"></div>
-
-
-#### Editing notes of clients
-
-We will add a new note to Serval Landau (index 6).
-
-```
-edit 6 --note=Recently had dinner and he told me that he wants to be a doc next time  
-```
-
-1. `edit` This is the command for editing a client.
-2. `6` is the index of Serval Landau.
-3. `--note=` specifies the new note to store.
-4. This can be longer than 1 word, making it ideal to store detailed notes.
 
 <div class="page-break"></div>
 
@@ -341,8 +325,12 @@ Format: `add --name=NAME --phone=PHONE_NUMBER --email=EMAIL --addr=ADDRESS [--ta
 A client can have any number of tags (including 0)
 </div>
 
-**Important**: You cannot leave tags empty, i.e. `add --tags=` with nothing for the tags.
-Additionally, note is a compulsory field. If you have nothing to write for note, write `--note=NA`.
+**Important**:
+* You cannot leave tags empty, i.e. `add --tags=` with nothing for the tags.
+* Note is a compulsory field. If you have nothing to write for note, write `--note=NA`.
+* If you have more than one client with the same name, please differentiate them by giving them different names.
+  * For example, you could include the clients' last names.
+* Please do not input any hyphens or spaces in the phone number field. Just input the phone number as a continuous string of numbers.
 
 Examples:
 * `add --name=John Doe --phone=98765432 --email=johnd@example.com --addr=John street, block 123, #01-01 --note=Daughter is caretaker`
@@ -368,7 +356,7 @@ Format: `edit INDEX [--name=NAME] [--phone=PHONE] [--email=EMAIL] [--addr=ADDRES
 * Existing values will be updated to the input values.
 * When editing tags for a client, any pre-existing tags will be directly replaced with the new ones provided in the command.<br>
   This means that the tag update is not cumulative; unless a tag is specified in the new command, it will not be retained from the previous set of tags.<br>
-  If the tag option is not specified, i.e. `--tags=`, the existing tags will be left as is
+  If the tag option is not specified, i.e. `--tags=`, the existing tags will be left as is.
 * You can remove all the client’s tags by typing `--tags=` without
   specifying any tags after it.
 
@@ -392,6 +380,8 @@ Examples:
 * `list` followed by `view 2` displays the information of the 2nd client in the address book.
 * `find Betsy` followed by `view 1` displays the information of
   the 1st client in the results of the `find` command.
+
+<div class="page-break"></div>
 
 ### Locating clients by name: `find-name`
 
@@ -475,8 +465,8 @@ Format: `sched INDEX --title=TITLE --from=START --to=END --addr=ADDRESS `
 
 * The `INDEX` must be a positive integer.
 * The `START` and `END` dates/times must be in the format `dd/MM/yyyy HH:mm`.
-* The `END` date/time should not be earlier than the `START` date/time.
-* To view all the appointments for a client use `view INDEX`
+* The `END` date/time should not be earlier than, but can be equal to the `START` date/time.
+* To view all the appointments for a client use `view INDEX`.
 
 Example:
 * `sched 1 --title=Meeting --from=05/04/2024 17:00 --to=05/04/2024 18:00 --addr=Meeting Room A, 358 Clementi Ave 2 #01-285 Singapore 120358` adds the specified appointment for the client at index 1.<br>

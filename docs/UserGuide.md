@@ -361,6 +361,10 @@ A client can have any number of tags (including 0)
 * Note is a compulsory field. If you have nothing to write for note, write `--note=NA`.
 * Note cannot take in multiple entries e.g. `--note=Urgent --note=Complex`.
   * This will only assign the latest note i.e. only `Complex` is assigned.
+* If you have more than one client with the same name, please differentiate them by giving them different names.
+    * For example, you could include the clients' last names.
+    * Note that clients with different names but same phone number, email or address can be added, as multiple clients might share such information.
+* Please do not input any hyphens or spaces in the phone number field. Just input the phone number as a continuous string of numbers.
 
 Examples:
 * `add --name=John Doe --phone=98765432 --email=johnd@example.com --addr=John street, block 123, #01-01 --note=Daughter is caretaker`

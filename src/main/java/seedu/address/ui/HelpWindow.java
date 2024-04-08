@@ -17,6 +17,8 @@ import seedu.address.logic.commands.ExitCommand;
 import seedu.address.logic.commands.FindCommand;
 import seedu.address.logic.commands.FindTagCommand;
 import seedu.address.logic.commands.ListCommand;
+import seedu.address.logic.commands.ScheduleCommand;
+import seedu.address.logic.commands.UnscheduleCommand;
 import seedu.address.logic.commands.ViewCommand;
 
 /**
@@ -33,6 +35,8 @@ public class HelpWindow extends UiPart<Stage> {
                                                         + FindCommand.MESSAGE_USAGE + "\n\n"
                                                         + FindTagCommand.MESSAGE_USAGE + "\n\n"
                                                         + ListCommand.MESSAGE_USAGE + "\n\n"
+                                                        + ScheduleCommand.MESSAGE_USAGE + "\n\n"
+                                                        + UnscheduleCommand.MESSAGE_USAGE + "\n\n"
                                                         + ViewCommand.MESSAGE_USAGE + "\n\n";
     public static final String HELP_MESSAGE = "Refer to the user guide: " + USERGUIDE_URL;
 

@@ -106,7 +106,7 @@ public class Client {
         }
         if (zbIndex < 0 || zbIndex >= appointments.size()) {
             throw new IndexOutOfBoundsException("The appointment index: "
-                    + index.getOneBased() + " provided is invalid: ");
+                    + index.getOneBased() + " provided is invalid. ");
         }
         return appointments.get(zbIndex);
     }

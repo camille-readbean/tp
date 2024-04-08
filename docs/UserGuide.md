@@ -356,8 +356,11 @@ Format: `add --name=NAME --phone=PHONE_NUMBER --email=EMAIL --addr=ADDRESS [--ta
 A client can have any number of tags (including 0)
 </div>
 
-**Important**: You cannot leave tags empty, i.e. `add --tags=` with nothing for the tags.
-Additionally, note is a compulsory field. If you have nothing to write for note, write `--note=NA`.
+**Important**
+* You cannot leave tags empty, i.e. `add --tags=` with nothing for the tags.
+* Note is a compulsory field. If you have nothing to write for note, write `--note=NA`.
+* Note cannot take in multiple entries e.g. `--note=Urgent --note=Complex`.
+  * This will only assign the latest note i.e. only `Complex` is assigned.
 
 Examples:
 * `add --name=John Doe --phone=98765432 --email=johnd@example.com --addr=John street, block 123, #01-01 --note=Daughter is caretaker`
@@ -386,6 +389,8 @@ Format: `edit INDEX [--name=NAME] [--phone=PHONE] [--email=EMAIL] [--addr=ADDRES
   If the tag option is not specified, i.e. `--tags=`, the existing tags will be left as is
 * You can remove all the client’s tags by typing `--tags=` without
   specifying any tags after it.
+* Note cannot take in multiple entries e.g. `--note=Urgent --note=Complex`.
+    * This will only assign the latest note i.e. only `Complex` is assigned.
 
 Examples:
 *  `edit 1 --phone=91234567 --email=johndoe@example.com` Edits the phone number and email address of the 1st client to be `91234567` and `johndoe@example.com` respectively.

@@ -252,7 +252,7 @@ Observe that Natasha (index 5) has no appointments. We will schedule an appointm
 Make sure to **set the date after today**.
 
 ```
-sched 5 --title=Lunch Gathering --from=14/05/2024 15:00 --to=14/05/2024 15:20 --addr=Suntec City
+sched 5 --title=Lunch --from=14/05/2024 15:00 --to=14/05/2024 15:20 --addr=VivoCity
 ```
 
 1. `sched` This is the command for scheduling an appointment for a client.
@@ -330,6 +330,7 @@ A client can have any number of tags (including 0)
 * Note is a compulsory field. If you have nothing to write for note, write `--note=NA`.
 * If you have more than one client with the same name, please differentiate them by giving them different names.
   * For example, you could include the clients' last names.
+  * Note that clients with different names but same phone number, email or address can be added, as multiple clients might share such information.
 * Please do not input any hyphens or spaces in the phone number field. Just input the phone number as a continuous string of numbers.
 
 Examples:
@@ -466,6 +467,7 @@ Format: `sched INDEX --title=TITLE --from=START --to=END --addr=ADDRESS `
 * The `INDEX` must be a positive integer.
 * The `START` and `END` dates/times must be in the format `dd/MM/yyyy HH:mm`.
 * The `END` date/time should not be earlier than, but can be equal to the `START` date/time.
+* It is possible to add appointments whose `START` and `END` times have already passed (for record-keeping purposes).
 * To view all the appointments for a client use `view INDEX`.
 
 Example:

@@ -416,7 +416,7 @@ Format: `find-name KEYWORD [MORE_KEYWORDS]`
 
 * The search is case-insensitive. e.g `hans` will match `Hans`
 * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
-* Only the name is searched.
+* Only the name of the client is searched.
 * Only full words will be matched e.g. `Han` will not match `Hans`
 * Clients matching at least one keyword will be returned (i.e. `OR` search).
   e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
@@ -437,7 +437,7 @@ Format: `find-tag KEYWORD [MORE_KEYWORDS]`
 
 * The search is case-insensitive. e.g. `disabled` will match `Disabled`
 * The order of the keywords does not matter e.g. `disabled risky` will match `risky disabled`
-* Only the Tag is searched.
+* Only the tag(s) of the client is searched.
 * Only full words will be matched e.g. `dis` will not match `disabled`
 * Clients matching at least one keyword will be returned (i.e. at least one is present)<br>
   e.g. `disabled risky` will return clients that has at least one tag that is `disabled` or `risky`.<br>

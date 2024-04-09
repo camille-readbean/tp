@@ -556,6 +556,8 @@ Furthermore, certain edits can cause the SWEE to behave in unexpected ways (e.g.
 
 3. **When adding and editing a new client**, the client's information may be cut off due to the maximum screen size. For parameters of length **less than 130 characters**, the full parameter can be viewed if the application is in full screen mode (the above information was tested on a Macbook Air, the length may differ according to laptop size).
 
-4. It is possible to enter invalid dates such as **31/02/2025** (February usually only have 28 days on non leap years). Currently, the system will attempt to set it to a nearest valid date instead of rejecting the "invalid" date.<br>For example, any day beyond the last valid day-of-month will be set to the last valid day-of-month.
+4. It is possible to enter invalid dates such as **31/02/2025** (February usually only has 28 days on non leap years). Currently, the system will attempt to set it to the nearest valid date instead of rejecting the "invalid" date.<br>For example, any day beyond the last valid day-of-month will be set to the last valid day-of-month.
+
+5. **On MacOS, when the application is in full screen mode and the help command is run**, the help window will open in full screen as well. When the help window is closed, all application windows will be minimised.
 
 --------------------------------------------------------------------------------------------------------------------

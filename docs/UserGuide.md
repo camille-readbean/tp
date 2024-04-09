@@ -543,4 +543,6 @@ Furthermore, certain edits can cause the SWEE to behave in unexpected ways (e.g.
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 
+2. **When adding tags that are longer than 202 characters**, the tag itself and tags below it may be unable to be displayed properly and can be cut off due to the maximum screen size. For tags of length **less than 200 characters**, the full tag can be viewed if the application is in full screen mode (as tested on a Macbook Air, the length may differ according to laptop size).
+
 --------------------------------------------------------------------------------------------------------------------

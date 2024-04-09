@@ -192,7 +192,7 @@ find-tag WalkingImpediment
 1. `find-tag` This is the command for finding a client by their name.
 2. `WalkingImpediment` specifies the tag parameter as WalkingImpediment. This sets the keyword for the search.
    1. It is possible to have more than 1 tag, see [`find-tag`](#locating-clients-by-tag-find-tag).
-3. The client list will now display every client whose name contains at least one word in the keywords given.<br>
+3. The client list will now display every client whose tag contains at least one word in the keywords given.<br>
     In this case, the exact same client will be shown as he is the only client with the `WalkingImpediment` tag.
 
 <div class="page-break"></div>

@@ -347,6 +347,7 @@ A client can have any number of tags (including 0)
 * If you have more than one client with the same name, please differentiate them by giving them different names.
     * For example, you could include the clients' last names.
     * Note that clients with different names but same phone number, email or address can be added, as multiple clients might share such information.
+* Names should only contain alphanumeric characters and spaces.
 * Please do not input any hyphens or spaces in the phone number field. Just input the phone number as a continuous string of numbers.
 
 Examples:

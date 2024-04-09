@@ -79,7 +79,8 @@ keep track of upcoming appointments with them.
 ### New User Tutorial
 
 If you are a new user you can follow this tutorial and get a quick rundown of the application and its core features!  
-This assumes a fresh installation of SWEE with the example clients serving as an example.
+This assumes a fresh installation of SWEE with the example clients serving as an example.<br><br>
+**For a detailed rundown of each command, please refer to the [Features](#features) section that is after this tutorial.** <br><br>
 
 #### Introduction to the user interface
 ![](images/UiAnnotated.png)
@@ -167,7 +168,7 @@ edit 7 --name=Theo --tags=WalkingImpediment
 
 #### Finding a client by name
 
-Now we find clients by a name.
+Now, we will find clients by their name.
 
 ```
 find-name theo
@@ -179,6 +180,20 @@ find-name theo
 3. The client list will now display every client whose name contains at least one word in the keywords given.
 
 ![](images/new-user-tutorial/findNameCommand.png)
+
+#### Finding a client by tag
+
+Similarly, we can also find clients by their assigned tags.
+
+```
+find-tag WalkingImpediment
+```
+
+1. `find-tag` This is the command for finding a client by their name.
+2. `WalkingImpediment` specifies the tag parameter as WalkingImpediment. This sets the keyword for the search.
+   1. It is possible to have more than 1 tag, see [`find-tag`](#locating-clients-by-tag-find-tag).
+3. The client list will now display every client whose name contains at least one word in the keywords given.<br>
+    In this case, the exact same client will be shown as he is the only client with the `WalkingImpediment` tag.
 
 <div class="page-break"></div>
 
@@ -325,12 +340,13 @@ Format: `add --name=NAME --phone=PHONE_NUMBER --email=EMAIL --addr=ADDRESS [--ta
 A client can have any number of tags (including 0)
 </div>
 
-**Important**:
+**Important**
 * You cannot leave tags empty, i.e. `add --tags=` with nothing for the tags.
 * Note is a compulsory field. If you have nothing to write for note, write `--note=NA`.
+* Note cannot take in multiple entries e.g. `--note=Urgent --note=Complex`.
 * If you have more than one client with the same name, please differentiate them by giving them different names.
-  * For example, you could include the clients' last names.
-  * Note that clients with different names but same phone number, email or address can be added, as multiple clients might share such information.
+    * For example, you could include the clients' last names.
+    * Note that clients with different names but same phone number, email or address can be added, as multiple clients might share such information.
 * Please do not input any hyphens or spaces in the phone number field. Just input the phone number as a continuous string of numbers.
 
 Examples:
@@ -360,6 +376,8 @@ Format: `edit INDEX [--name=NAME] [--phone=PHONE] [--email=EMAIL] [--addr=ADDRES
   If the tag option is not specified, i.e. `--tags=`, the existing tags will be left as is.
 * You can remove all the client’s tags by typing `--tags=` without
   specifying any tags after it.
+* Note cannot take in multiple entries e.g. `--note=Urgent --note=Complex`.
+    * This will only assign the latest note i.e. only `Complex` is assigned.
 
 Examples:
 *  `edit 1 --phone=91234567 --email=johndoe@example.com` Edits the phone number and email address of the 1st client to be `91234567` and `johndoe@example.com` respectively.
@@ -392,7 +410,7 @@ Format: `find-name KEYWORD [MORE_KEYWORDS]`
 
 * The search is case-insensitive. e.g `hans` will match `Hans`
 * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
-* Only the name is searched.
+* Only the name of the client is searched.
 * Only full words will be matched e.g. `Han` will not match `Hans`
 * Clients matching at least one keyword will be returned (i.e. `OR` search).
   e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
@@ -413,7 +431,7 @@ Format: `find-tag KEYWORD [MORE_KEYWORDS]`
 
 * The search is case-insensitive. e.g. `disabled` will match `Disabled`
 * The order of the keywords does not matter e.g. `disabled risky` will match `risky disabled`
-* Only the Tag is searched.
+* Only the tag(s) of the client is searched.
 * Only full words will be matched e.g. `dis` will not match `disabled`
 * Clients matching at least one keyword will be returned (i.e. at least one is present)<br>
   e.g. `disabled risky` will return clients that has at least one tag that is `disabled` or `risky`.<br>

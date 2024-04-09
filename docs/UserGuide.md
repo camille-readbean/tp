@@ -487,7 +487,7 @@ Format: `sched INDEX --title=TITLE --from=START --to=END --addr=ADDRESS `
 * The `END` date/time should not be earlier than, but can be equal to the `START` date/time.
 * It is possible to add appointments whose `START` and `END` times have already passed (for record-keeping purposes).
 * To view all the appointments for a client use `view INDEX`.
-* Clients can have duplicate appointments under them.
+* A client can have multiple appointments at the same time at the same location with the same title as we do not want to limit what the user can or cannot add.
 
 Example:
 * `sched 1 --title=Meeting --from=05/04/2024 17:00 --to=05/04/2024 18:00 --addr=Meeting Room A, 358 Clementi Ave 2 #01-285 Singapore 120358` adds the specified appointment for the client at index 1.<br>

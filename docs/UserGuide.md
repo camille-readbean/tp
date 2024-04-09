@@ -348,7 +348,7 @@ A client can have any number of tags (including 0)
     * For example, you could include the clients' last names.
     * Note that clients with different names but same phone number, email or address can be added, as multiple clients might share such information.
 * Names should only contain alphanumeric characters and spaces.
-* Please do not input any hyphens or spaces in the phone number field. Just input the phone number as a continuous string of numbers.
+* Please do not input any hyphens or spaces in the phone number field. Just input the phone number as a continuous string of numbers with at least 3 digits.
 
 Examples:
 * `add --name=John Doe --phone=98765432 --email=johnd@example.com --addr=John street, block 123, #01-01 --note=Daughter is caretaker`
@@ -379,6 +379,7 @@ Format: `edit INDEX [--name=NAME] [--phone=PHONE] [--email=EMAIL] [--addr=ADDRES
   specifying any tags after it.
 * Note cannot take in multiple entries e.g. `--note=Urgent --note=Complex`.
     * This will only assign the latest note i.e. only `Complex` is assigned.
+* Please do not input any hyphens or spaces in the phone number field. Just input the phone number as a continuous string of numbers with at least 3 digits.
 
 Examples:
 *  `edit 1 --phone=91234567 --email=johndoe@example.com` Edits the phone number and email address of the 1st client to be `91234567` and `johndoe@example.com` respectively.

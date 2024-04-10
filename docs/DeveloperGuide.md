@@ -133,7 +133,8 @@ The `Model` component,
 <div markdown="span" class="alert alert-info">:information_source: **Note:** An alternative (arguably, a more OOP) model is given below. It has a `Tag` list in the `AddressBook`, which `Client` references. This allows `AddressBook` to only require one `Tag` object per unique tag, instead of each `Client` needing their own `Tag` objects.<br>
 
 <img src="images/BetterModelClassDiagram.png" width="450" />
-
+<br>
+Note that this image omitted note and appointment 
 </div>
 
 
@@ -293,6 +294,13 @@ The date and time of `from` and `to` are stored in `LocalDateTime` and truncated
 
 #### Class Diagram
 
+![Appointment Class Diagram](images/AppointmentClassDiagram.png)
+
+<div markdown="span" class="alert alert-info">
+:information_source:
+Note: The red square is PlantUML for `private` access modifier. <br>
+Details not relevant to the appointments scheduling functionality is omitted.
+</div>
 
 [//]: # (### \[Proposed\] Undo/redo feature)
 

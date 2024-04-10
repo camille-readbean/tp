@@ -1,0 +1,22 @@
+@startuml
+class Client {
+    - appointments : List<Appointment>
+
+    + getAppointment(Index index) : Appointment
+    + hasAppointment(Appointment appointment) : boolean
+    + withNewAppointment(Appointment newAppointment) : Client
+    + removeAppointment(int index) : Client
+    + getNumberOfAppointments() : int
+    + getNextUpcomingAppointment() : Optional<Appointment>
+}
+
+class Appointment {
+    - LocalDateTime from
+    - LocalDateTime to
+    - String title
+    - Address address
+}
+
+
+Client "1" --> "*" Appointment : has >
+@enduml

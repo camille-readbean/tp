@@ -750,7 +750,10 @@ testers are expected to do more *exploratory* testing.
 
 1. Run through the entire new user tutorial [in `User Guide > Quick Start > New User Tutorial`](https://ay2324s2-cs2103t-t17-1.github.io/tp/UserGuide.html#new-user-tutorial).
 
-2. The guide will take you through all essential features of SWEE.
+   1. The guide will take you through all essential features of SWEE.
+   2. Each section can exist as a self-contained test case of a feature.
+   3. Each section give a brief overview of what to expect.
+   4. Expected: Successful running of all valid commands demonstrated in the User Guide.
 
 [//]: # (### Saving data)
 

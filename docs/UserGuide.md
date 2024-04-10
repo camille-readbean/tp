@@ -488,7 +488,7 @@ Schedules an appointment for a client.
 
 Format: `sched INDEX --title=TITLE --from=START --to=END --addr=ADDRESS `
 
-* The `INDEX` must be a positive integer.
+* The `INDEX` must be a positive integer and a valid client index.
 * The `START` and `END` dates/times must be in the format `dd/MM/yyyy HH:mm`.
 * The `END` date/time should not be earlier than, but can be equal to the `START` date/time.
 * It is possible to add appointments whose `START` and `END` times have already passed (for record-keeping purposes).
@@ -518,7 +518,7 @@ Unschedules an appointment for a client.
 Format: `unsched INDEX --appt=APPT_INDEX`
 
 * `APPT_INDEX` refers to the index of the appointment for that specific client.
-* The `INDEX` and `APPT_INDEX` must be positive integers.
+* The `INDEX` and `APPT_INDEX` must be positive integers and valid indexes of the client and appointment respectively.
 
 Example:
 * `unsched 1 --appt=2` unschedules the appointment at index 2 for the client at index 1.<br>

@@ -224,9 +224,9 @@ How a `view` command is executed:
 
 ### Delete command
 
-This section describes how the `delete` command works and is implemented.
+This section describes how the `del` command works and is implemented.
 
-The Sequence and Activity UML diagrams belows shows the objects created as well as their interactions (e.g. method calls) when the `delete` command is activated.
+The Sequence and Activity UML diagrams belows shows the objects created as well as their interactions (e.g. method calls) when the `del` command is activated.
 
 #### Sequence Diagram
 
@@ -236,7 +236,7 @@ The Sequence and Activity UML diagrams belows shows the objects created as well 
 
 ![](images/DeleteActivityDiagram.png)
 
-How a `delete` command is executed:
+How a `del` command is executed:
 1. User Input Parsing
    1. When the user enters a command, it is first parsed by the `AddressBookParser`.
    2. The `parseCommand(String userInput)` method in `AddressBookParser` splits the user input into the command word and arguments using a regular expression.

@@ -45,7 +45,7 @@ deactivate ABP
 
 LM -> dc : execute(m)
 activate dc
-dc -> m ++ : deleteClient(toDelete) 
+dc -> m ++ : deleteClient(toDelete)
 m --> dc --
 
 create r

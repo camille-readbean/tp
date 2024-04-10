@@ -477,15 +477,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* *`    | Social Worker with a diverse range of clients           | Add a tag to selected clients                     | Highlight any important information about the client's current status             |
 | `* *`    | Social Worker with a diverse range of clients           | Delete tags from selected clients                 | Remove any tags which no longer apply to the client                               |
 | `* *`    | Social Worker with a diverse range of clients           | View the tag attached to the selected clients     | Readily identify the information I wanted to highlight about the client           |
-| `* *`    | Social Worker who has clients with specific needs       | Add a tag to selected appointments                | Highlight the type and nature of appointment                                      |
-| `* *`    | Social Worker who has clients with specific needs       | Delete tags from selected appointments            | Remove any tags that are not relevant to the appointment anymore                  |
-| `* *`    | Social Worker who has clients with specific needs       | View the tag attached to the specific appointment | Readily identify the type and nature of appointment                               |
 | `* *`    | Social Worker                                           | Edit a client's information                       | Update the contact if there are any changes to a client's information             |
-| `* *`    | Social Worker                                           | Edit an appointment's information                 | Update the appointment if there are any changes to its details                    |
 | `*`      | Social Worker with many clients                         | Search for a client by name                       | Efficiently find a client without having to scroll through the address book       |
 | `*`      | Social Worker with many clients                         | Search for clients by their tags                  | Categorise clients who share a common tag                                         |
-| `*`      | Social Worker with many appointments                    | Search for an appointment by name                 | Efficiently find an appointment without having to scroll through the address book |
-| `*`      | Social Worker with many appointments                    | Search for appointments by their tags             | Categorise appointments who share a common tag                                    |
 | `*`      | Social Worker with clients that have medical records    | Add information of their medical history          | Keep track of any known conditions, allergies or medications                      |
 
 
@@ -694,6 +688,15 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 --------------------------------------------------------------------------------------------------------------------
 
+## **Appendix: Planned Enhancements**
+
+**Team size: 5**
+
+1. Allow editing appointment information, i.e. changing the title, address or date/times.
+2. Use strict datetime resolver, so it will reject invalid dates like "31/02/2024" instead of trying to fit to the nearest valid date.
+
+--------------------------------------------------------------------------------------------------------------------
+
 ## **Appendix: Instructions for manual testing**
 
 Given below are instructions to test the app manually.
@@ -739,7 +742,7 @@ testers are expected to do more *exploratory* testing.
 
 1. Run through the entire new user tutorial [in `User Guide > Quick Start > New User Tutorial`](https://ay2324s2-cs2103t-t17-1.github.io/tp/UserGuide.html#new-user-tutorial).
 
-1. The guide will take you through all essential features of SWEE.
+2. The guide will take you through all essential features of SWEE.
 
 [//]: # (### Saving data)
 

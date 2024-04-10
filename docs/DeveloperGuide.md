@@ -278,21 +278,21 @@ How a `find-tag` command is executed:
    2. A `CommandResult` is generated and returned to `MainWindow`.
 3. `MainWindow` creates a `CommandBox` with the resulting command output, listing our all clients with the specified tag.
 
-### Schedule command
+### Appointments
 
-#### Work in progress Implementation
-To keep things simple, client will keep an immutable ArrayList of Appointments
-Hence the way to schedule will functionally work like a combination of the existing add and edit command:
-  * Adding an appointment
-  * Editing a client to include the new appointments
-As we added new fields, edit command need to be edited to carry over 
+To keep things simple, `Client` will keep an immutable `ArrayList` of [`Appointment`](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/model/appointment/Appointment.java) (this is to preserve the immutability of Client).  
+This list is maintained in sorted order according to `Appointment::compareTo` (`Appointment` implements `Comparable<Appointment>`) which is currently defined as increasing from then to date and time. 
+There are only two methods for modifying the appointments, all of which will preserve the order when inserting or removing.  
+<br>
+Two helper methods within [Client](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/model/client/Client.java), `withNewAppointment` and `removeAppointment`, are provided to add and remove an appointment from the Client's list respectively.  
+Within Appointment itself, it reuses the `Address` class that is also used in `Client` for validation.    
+It is guaranteed that the fields, `from` come before or be the same as `to`.<br>  
+<br>
+The date and time of `from` and `to` are stored in `LocalDateTime` and truncated to the `minute` level. I.e. seconds and any units smaller than that are ignored.  
+ 
 
-#### Stuff to be updated: TODO
-1. Edit Command
-2. View command changed to reflect appointments (UI)
-3. Add a view (upcoming) appointments
-4. Deleting an appointment
-5. Moidying storage to ensure appointments are stored
+#### Class Diagram
+
 
 [//]: # (### \[Proposed\] Undo/redo feature)
 

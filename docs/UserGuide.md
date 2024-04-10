@@ -7,6 +7,7 @@ Social Worker's Efficiency Enhancer (**SWEE**) is a **desktop application for ma
 If you can type fast, SWEE can get your contact management tasks done faster than traditional GUI apps.
 This is ideal as you do not often bring a mouse out with you on site visits to clients or on the go.
 <br>
+
 ## Who is it for and what can it do for me?
 This application is intended for people involved with social work, social workers, volunteers, and community partners who
 have a need to manage contacts and their associated information. We offer a quick way for you to store their name, address,
@@ -14,7 +15,7 @@ phone number, email and notes about them. We also support tagging contacts for e
 keep track of upcoming appointments with them.
 
 
-<div class="page-break"></div>
+<div style="page-break-after: always;"></div>
 
 ---
 
@@ -24,7 +25,7 @@ keep track of upcoming appointments with them.
 
 --------------------------------------------------------------------------------------------------------------------
 
-<div class="page-break"></div>
+<div style="page-break-after: always;"></div>
 
 ## Quick start
 
@@ -45,7 +46,7 @@ keep track of upcoming appointments with them.
 
 💡🚨 Note that some screenshots may be outdated as the application constantly evolves. However, you will still be able to get the full use and understanding from the information displayed in the GUI.
 
-<div class="page-break"></div>
+<div style="page-break-after: always;"></div>
 
 ### Setting up the application
 
@@ -74,7 +75,7 @@ keep track of upcoming appointments with them.
 
 --------------------------------------------------------------------------------------------------------------------
 
-<div class="page-break"></div>
+<div style="page-break-after: always;"></div>
 
 ### New User Tutorial
 
@@ -96,7 +97,7 @@ The user interface is primarily divided into 4 regions are shown by the differen
    client have. It shows all their details along with the number of appointments and next upcoming appointment if any.
 
 ---
-<div class="page-break"></div>
+<div style="page-break-after: always;"></div>
 
 <div markdown="block" class="alert alert-info">
 
@@ -121,7 +122,7 @@ The user interface is primarily divided into 4 regions are shown by the differen
 </div>
 
 
-<div class="page-break"></div>
+<div style="page-break-after: always;"></div>
 
 #### Adding a new client
 
@@ -147,7 +148,7 @@ You should see something similar to below.
 
 If you scroll to the bottom, you should see the client card of the newly added client.
 
-<div class="page-break"></div>
+<div style="page-break-after: always;"></div>
 
 #### Editing a client
 
@@ -164,7 +165,7 @@ edit 7 --name=Theo --tags=WalkingImpediment
 
 ![](images/new-user-tutorial/editCommand.png)
 
-<div class="page-break"></div>
+<div style="page-break-after: always;"></div>
 
 #### Finding a client by name
 
@@ -181,6 +182,8 @@ find-name theo
 
 ![](images/new-user-tutorial/findNameCommand.png)
 
+<div style="page-break-after: always;"></div>
+
 #### Finding a client by tag
 
 Similarly, we can also find clients by their assigned tags.
@@ -195,7 +198,7 @@ find-tag WalkingImpediment
 3. The client list will now display every client whose tag contains at least one word in the keywords given.<br>
     In this case, the exact same client will be shown as he is the only client with the `WalkingImpediment` tag.
 
-<div class="page-break"></div>
+<div style="page-break-after: always;"></div>
 
 #### Viewing a client
 
@@ -211,7 +214,7 @@ view 1
 
 [//]: # (![]&#40;images/new-user-tutorial/findNameCommand.png&#41;)
 
-<div class="page-break"></div>
+<div style="page-break-after: always;"></div>
 
 
 #### Deleting a client
@@ -229,7 +232,7 @@ del 1
 
 [//]: # (![]&#40;images/new-user-tutorial/findNameCommand.png&#41;)
 
-<div class="page-break"></div>
+<div style="page-break-after: always;"></div>
 
 
 #### Listing all clients
@@ -244,7 +247,7 @@ list
 
 [//]: # (![]&#40;images/new-user-tutorial/findNameCommand.png&#41;)
 
-<div class="page-break"></div>
+<div style="page-break-after: always;"></div>
 
 
 #### Exiting SWEE
@@ -258,7 +261,7 @@ exit
 1. `exit` This is the command for exiting the application.
 2. Open the application again. The clients are still there.
 
-<div class="page-break"></div>
+<div style="page-break-after: always;"></div>
 
 
 #### Scheduling an appointment for clients
@@ -280,7 +283,7 @@ sched 5 --title=Lunch --from=14/05/2024 15:00 --to=14/05/2024 15:20 --addr=VivoC
 8. To see all of a client's appointment use the `view` command, try `view 2` to see Hu Tao's appointments.
 
 
-<div class="page-break"></div>
+<div style="page-break-after: always;"></div>
 
 
 #### Unscheduling an appointment for clients
@@ -296,7 +299,7 @@ unsched 2 --appt=2
 3. `--appt=` specifies the index of the appointment to unschedule. In this case 2.
 4. Notice that Hu Tao's total number of appointments decreased and she no longer has an upcoming appointment.
 
-<div class="page-break"></div>
+<div style="page-break-after: always;"></div>
 
 
 ## Summary of Commands
@@ -315,7 +318,7 @@ Action | Format, Examples
 **Unschedules** an appointment | `unsched CLIENT_INDEX --appt=APPT_INDEX`<br> e.g., `unsched 1 --appt=2`
 **Help** show help with link to this guide | `help`
 
-<div class="page-break"></div>
+<div style="page-break-after: always;"></div>
 
 ## Features
 
@@ -328,7 +331,7 @@ Shows a message explaning how to access the help page.
 Format: `help`
 
 
-<div class="page-break"></div>
+<div style="page-break-after: always;"></div>
 
 ### Adding a client: `add`
 
@@ -352,7 +355,7 @@ A client can have any number of tags (including 0)
 
 Examples:
 * `add --name=John Doe --phone=98765432 --email=johnd@example.com --addr=John street, block 123, #01-01 --note=Daughter is caretaker`
-    * `add --name=Jane Doe --phone=92933578 --email=janed@example.sg --addr=Amy street, block 123, #11-02 --tags=Disabled --tags=SeekingAssistance --note=NA`
+* `add --name=Jane Doe --phone=92933578 --email=janed@example.sg --addr=Amy street, block 123, #11-02 --tags=Disabled --tags=SeekingAssistance --note=NA`
 
 ### Listing all clients : `list`
 
@@ -361,7 +364,7 @@ Shows a list of all clients in the address book.
 Format: `list`
 
 
-<div class="page-break"></div>
+<div style="page-break-after: always;"></div>
 
 ### Editing a client : `edit`
 
@@ -386,7 +389,7 @@ Examples:
 *  `edit 2 --name=Betsy Crower --tags=` Edits the name of the 2nd client to be `Betsy Crower` and clears all existing tags.
 
 
-<div class="page-break"></div>
+<div style="page-break-after: always;"></div>
 
 ### Viewing a client's Information: `view`
 Displays the saved information about a client.
@@ -402,7 +405,7 @@ Examples:
 * `find Betsy` followed by `view 1` displays the information of
   the 1st client in the results of the `find` command.
 
-<div class="page-break"></div>
+<div style="page-break-after: always;"></div>
 
 ### Locating clients by name: `find-name`
 
@@ -423,7 +426,7 @@ Examples:
   ![result for 'find alex david'](images/findAlexDavidResult.png)
 
 
-<div class="page-break"></div>
+<div style="page-break-after: always;"></div>
 
 ### Locating clients by tag: `find-tag`
 
@@ -447,7 +450,7 @@ Examples:
   ![result for 'find-tag disabled schizophrenic'](images/FindTagDisabledSchizophrenicResult.png)
 
 
-<div class="page-break"></div>
+<div style="page-break-after: always;"></div>
 
 ### Deleting a client : `del`
 
@@ -477,7 +480,7 @@ Exits the program and closes the window.
 Format: `exit`
 
 
-<div class="page-break"></div>
+<div style="page-break-after: always;"></div>
 
 ### Scheduling an appointment: `sched`
 
@@ -506,7 +509,7 @@ Example:
 <br>
   ![next appointment](images/NextAppointment.png)
 
-<div class="page-break"></div>
+<div style="page-break-after: always;"></div>
 
 ### Unscheduling an appointment: `unsched`
 
@@ -522,7 +525,7 @@ Example:
   ![result for unschedule appointment](images/UnscheduleAppointmentResult.png)
 
 
-<div class="page-break"></div>
+<div style="page-break-after: always;"></div>
 
 ### Saving the data
 
@@ -541,7 +544,7 @@ Furthermore, certain edits can cause the SWEE to behave in unexpected ways (e.g.
 --------------------------------------------------------------------------------------------------------------------
 
 
-<div class="page-break"></div>
+<div style="page-break-after: always;"></div>
 
 ## FAQ
 

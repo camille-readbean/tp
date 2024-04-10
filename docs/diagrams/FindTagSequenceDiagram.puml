@@ -19,7 +19,7 @@ box "<color #white> Storage </color>" #E41F36
 participant "<color #white> :Storage </color>" as S #9D0012
 end box
 
-[-> LM: execute("find-tag[TAG]")
+[-> LM: execute("find-tag [TAG]")
 activate LM
 LM -> ABP : parseCommand("find-tag [TAG]")
 activate ABP

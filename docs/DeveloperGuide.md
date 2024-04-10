@@ -10,6 +10,9 @@ title: Developer Guide
 ## **Acknowledgements**
 
 * This project is based on (forked from) the AddressBook-Level3 project created by the [SE-EDU initiative](https://se-education.org)
+* Libraries used: [JavaFX](https://openjfx.io/), [Jackson](https://github.com/FasterXML/jackson), [JUnit5](https://github.com/junit-team/junit5)
+* AI Usage: ChatGPT by OpenAI, Github Copilot
+  * Used to answer design questions and write skeleton code.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -36,7 +39,7 @@ Given below is a quick overview of main components and how they interact with ea
 
 **Main components of the architecture**
 
-**`Main`** (consisting of classes [`Main`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/Main.java) and [`MainApp`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/MainApp.java)) is in charge of the app launch and shut down.
+**`Main`** (consisting of classes [`Main`](https://github.com/AY2324S2-CS2103T-T17-1/tp/tree/master/src/main/java/seedu/address/Main.java) and [`MainApp`](https://github.com/AY2324S2-CS2103T-T17-1/tp/tree/master/src/main/java/seedu/address/MainApp.java)) is in charge of the app launch and shut down.
 * At app launch, it initializes the other components in the correct sequence, and connects them up with each other.
 * At shut down, it shuts down the other components and invokes cleanup methods where necessary.
 
@@ -68,13 +71,13 @@ The sections below give more details of each component.
 
 ### UI component
 
-The **API** of this component is specified in [`Ui.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/Ui.java)
+The **API** of this component is specified in [`Ui.java`](https://github.com/AY2324S2-CS2103T-T17-1/tp/tree/master/src/main/java/seedu/address/ui/Ui.java)
 
 ![Structure of the UI Component](images/UiClassDiagram.png)
 
 The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `ClientListPanel`, `StatusBarFooter` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which captures the commonalities between classes that represent parts of the visible GUI.
 
-The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the [`MainWindow`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/MainWindow.java) is specified in [`MainWindow.fxml`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/resources/view/MainWindow.fxml)
+The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the [`MainWindow`](https://github.com/AY2324S2-CS2103T-T17-1/tp/tree/master/src/main/java/seedu/address/ui/MainWindow.java) is specified in [`MainWindow.fxml`](https://github.com/AY2324S2-CS2103T-T17-1/tp/tree/master/src/main/resources/view/MainWindow.fxml)
 
 The `UI` component,
 
@@ -85,7 +88,7 @@ The `UI` component,
 
 ### Logic component
 
-**API** : [`Logic.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/logic/Logic.java)
+**API** : [`Logic.java`](https://github.com/AY2324S2-CS2103T-T17-1/tp/tree/master/src/main/java/seedu/address/logic/Logic.java)
 
 Here's a (partial) class diagram of the `Logic` component:
 
@@ -115,9 +118,9 @@ How the parsing works:
 * All `XYZCommandParser` classes (e.g., `AddCommandParser`, `DeleteCommandParser`, ...) inherit from the `Parser` interface so that they can be treated similarly where possible e.g, during testing.
 
 ### Model component
-**API** : [`Model.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/model/Model.java)
+**API** : [`Model.java`](https://github.com/AY2324S2-CS2103T-T17-1/tp/tree/master/src/main/java/seedu/address/model/Model.java)
 
-<img src="images/ModelClassDiagram.png" width="450" />
+![](images/ModelClassDiagram.png)
 
 
 The `Model` component,
@@ -130,13 +133,14 @@ The `Model` component,
 <div markdown="span" class="alert alert-info">:information_source: **Note:** An alternative (arguably, a more OOP) model is given below. It has a `Tag` list in the `AddressBook`, which `Client` references. This allows `AddressBook` to only require one `Tag` object per unique tag, instead of each `Client` needing their own `Tag` objects.<br>
 
 <img src="images/BetterModelClassDiagram.png" width="450" />
-
+<br>
+Note that this image omitted note and appointment 
 </div>
 
 
 ### Storage component
 
-**API** : [`Storage.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/storage/Storage.java)
+**API** : [`Storage.java`](https://github.com/AY2324S2-CS2103T-T17-1/tp/tree/master/src/main/java/seedu/address/storage/Storage.java)
 
 <img src="images/StorageClassDiagram.png" width="550" />
 
@@ -163,7 +167,7 @@ This section describes how the add commands work which will serve as a basic und
 **AddCommandParser** : [`AddCommandParser.java`](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/logic/parser/AddCommandParser.java)
 **AddCommand** : [`AddCommand.java`](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/logic/commands/AddCommand.java)
 
-The sequence diagram below illustrates the interactions within the `Logic` component, taking `execute("add --name=Name --phone=2103 --email=hello@Test --addr=Address --tags=hello --tags=Hi" --note=NA)` API call as an example.
+The sequence diagram below illustrates the interactions within the `Logic` component, taking `execute("add --name=Name --phone=2103 --email=hello@Test --addr=Address --tags=hello --tags=Hi --note=NA")` API call as an example.
 
 ![Interactions Inside the Logic Component for the `add [ARGS]` Command](images/AddSequenceDiagram.png)
 
@@ -221,9 +225,9 @@ How a `view` command is executed:
 
 ### Delete command
 
-This section describes how the `delete` command works and is implemented.
+This section describes how the `del` command works and is implemented.
 
-The Sequence and Activity UML diagrams belows shows the objects created as well as their interactions (e.g. method calls) when the `delete` command is activated.
+The Sequence and Activity UML diagrams belows shows the objects created as well as their interactions (e.g. method calls) when the `del` command is activated.
 
 #### Sequence Diagram
 
@@ -233,7 +237,7 @@ The Sequence and Activity UML diagrams belows shows the objects created as well 
 
 ![](images/DeleteActivityDiagram.png)
 
-How a `delete` command is executed:
+How a `del` command is executed:
 1. User Input Parsing
    1. When the user enters a command, it is first parsed by the `AddressBookParser`.
    2. The `parseCommand(String userInput)` method in `AddressBookParser` splits the user input into the command word and arguments using a regular expression.
@@ -275,109 +279,164 @@ How a `find-tag` command is executed:
    2. A `CommandResult` is generated and returned to `MainWindow`.
 3. `MainWindow` creates a `CommandBox` with the resulting command output, listing our all clients with the specified tag.
 
-### Schedule command
+### Appointments
 
-#### Work in progress Implementation
-To keep things simple, client will keep an immutable ArrayList of Appointments
-Hence the way to schedule will functionally work like a combination of the existing add and edit command:
-  * Adding an appointment
-  * Editing a client to include the new appointments
-As we added new fields, edit command need to be edited to carry over.
+To keep things simple, `Client` will keep an immutable `ArrayList` of [`Appointment`](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/model/appointment/Appointment.java) (this is to preserve the immutability of Client).  
+This list is maintained in sorted order according to `Appointment::compareTo` (`Appointment` implements `Comparable<Appointment>`) which is currently defined as increasing from then to date and time. 
+There are only two methods for modifying the appointments, all of which will preserve the order when inserting or removing.  
+<br>
+Two helper methods within [Client](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/model/client/Client.java), `withNewAppointment` and `removeAppointment`, are provided to add and remove an appointment from the Client's list respectively.  
+These helper methods essentially creates a copy of the existing list, modify it and create a new instance of Client with the new modified list.  
+Within Appointment itself, it reuses the `Address` class that is also used in `Client`. Parsing wise, it should behave the same as in any other command.      
+It is guaranteed that the fields, `from` come before or is the same as `to`.<br>  
+<br>
+The date and time of `from` and `to` are stored in `LocalDateTime` and truncated to the `minute` level. I.e. seconds and any units smaller than that are ignored.  
+ 
 
-#### Stuff to be updated: TODO
-1. Edit Command
-2. View command changed to reflect appointments (UI)
-3. Add a view (upcoming) appointments
-4. Deleting an appointment
-5. Moidying storage to ensure appointments are stored
+#### Class Diagram
 
-### \[Proposed\] Undo/redo feature
+![Appointment Class Diagram](images/AppointmentClassDiagram.png)
 
-#### Proposed Implementation
-
-The proposed undo/redo mechanism is facilitated by `VersionedAddressBook`. It extends `AddressBook` with an undo/redo history, stored internally as an `addressBookStateList` and `currentStatePointer`. Additionally, it implements the following operations:
-
-* `VersionedAddressBook#commit()` — Saves the current address book state in its history.
-* `VersionedAddressBook#undo()` — Restores the previous address book state from its history.
-* `VersionedAddressBook#redo()` — Restores a previously undone address book state from its history.
-
-These operations are exposed in the `Model` interface as `Model#commitAddressBook()`, `Model#undoAddressBook()` and `Model#redoAddressBook()` respectively.
-
-Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.
-
-Step 1. The user launches the application for the first time. The `VersionedAddressBook` will be initialized with the initial address book state, and the `currentStatePointer` pointing to that single address book state.
-
-![UndoRedoState0](images/UndoRedoState0.png)
-
-Step 2. The user executes `delete 5` command to delete the 5th client in the address book. The `delete` command calls `Model#commitAddressBook()`, causing the modified state of the address book after the `delete 5` command executes to be saved in the `addressBookStateList`, and the `currentStatePointer` is shifted to the newly inserted address book state.
-
-![UndoRedoState1](images/UndoRedoState1.png)
-
-Step 3. The user executes `add n/David …​` to add a new client. The `add` command also calls `Model#commitAddressBook()`, causing another modified address book state to be saved into the `addressBookStateList`.
-
-![UndoRedoState2](images/UndoRedoState2.png)
-
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If a command fails its execution, it will not call `Model#commitAddressBook()`, so the address book state will not be saved into the `addressBookStateList`.
-
+<div markdown="span" class="alert alert-info">
+:information_source:
+Note: The red square is PlantUML for `private` access modifier. <br>
+Details not relevant to the appointments scheduling functionality is omitted.
 </div>
 
-Step 4. The user now decides that adding the client was a mistake, and decides to undo that action by executing the `undo` command. The `undo` command will call `Model#undoAddressBook()`, which will shift the `currentStatePointer` once to the left, pointing it to the previous address book state, and restores the address book to that state.
+[//]: # (### \[Proposed\] Undo/redo feature)
 
-![UndoRedoState3](images/UndoRedoState3.png)
+[//]: # ()
+[//]: # (#### Proposed Implementation)
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If the `currentStatePointer` is at index 0, pointing to the initial AddressBook state, then there are no previous AddressBook states to restore. The `undo` command uses `Model#canUndoAddressBook()` to check if this is the case. If so, it will return an error to the user rather
-than attempting to perform the undo.
+[//]: # ()
+[//]: # (The proposed undo/redo mechanism is facilitated by `VersionedAddressBook`. It extends `AddressBook` with an undo/redo history, stored internally as an `addressBookStateList` and `currentStatePointer`. Additionally, it implements the following operations:)
 
-</div>
+[//]: # ()
+[//]: # (* `VersionedAddressBook#commit&#40;&#41;` — Saves the current address book state in its history.)
 
-The following sequence diagram shows how an undo operation goes through the `Logic` component:
+[//]: # (* `VersionedAddressBook#undo&#40;&#41;` — Restores the previous address book state from its history.)
 
-![UndoSequenceDiagram](images/UndoSequenceDiagram-Logic.png)
+[//]: # (* `VersionedAddressBook#redo&#40;&#41;` — Restores a previously undone address book state from its history.)
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `UndoCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+[//]: # ()
+[//]: # (These operations are exposed in the `Model` interface as `Model#commitAddressBook&#40;&#41;`, `Model#undoAddressBook&#40;&#41;` and `Model#redoAddressBook&#40;&#41;` respectively.)
 
-</div>
+[//]: # ()
+[//]: # (Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.)
 
-Similarly, how an undo operation goes through the `Model` component is shown below:
+[//]: # ()
+[//]: # (Step 1. The user launches the application for the first time. The `VersionedAddressBook` will be initialized with the initial address book state, and the `currentStatePointer` pointing to that single address book state.)
 
-![UndoSequenceDiagram](images/UndoSequenceDiagram-Model.png)
+[//]: # ()
+[//]: # (![UndoRedoState0]&#40;images/UndoRedoState0.png&#41;)
 
-The `redo` command does the opposite — it calls `Model#redoAddressBook()`, which shifts the `currentStatePointer` once to the right, pointing to the previously undone state, and restores the address book to that state.
+[//]: # ()
+[//]: # (Step 2. The user executes `delete 5` command to delete the 5th client in the address book. The `delete` command calls `Model#commitAddressBook&#40;&#41;`, causing the modified state of the address book after the `delete 5` command executes to be saved in the `addressBookStateList`, and the `currentStatePointer` is shifted to the newly inserted address book state.)
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If the `currentStatePointer` is at index `addressBookStateList.size() - 1`, pointing to the latest address book state, then there are no undone AddressBook states to restore. The `redo` command uses `Model#canRedoAddressBook()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
+[//]: # ()
+[//]: # (![UndoRedoState1]&#40;images/UndoRedoState1.png&#41;)
 
-</div>
+[//]: # ()
+[//]: # (Step 3. The user executes `add n/David …​` to add a new client. The `add` command also calls `Model#commitAddressBook&#40;&#41;`, causing another modified address book state to be saved into the `addressBookStateList`.)
 
-Step 5. The user then decides to execute the command `list`. Commands that do not modify the address book, such as `list`, will usually not call `Model#commitAddressBook()`, `Model#undoAddressBook()` or `Model#redoAddressBook()`. Thus, the `addressBookStateList` remains unchanged.
+[//]: # ()
+[//]: # (![UndoRedoState2]&#40;images/UndoRedoState2.png&#41;)
 
-![UndoRedoState4](images/UndoRedoState4.png)
+[//]: # ()
+[//]: # (<div markdown="span" class="alert alert-info">:information_source: **Note:** If a command fails its execution, it will not call `Model#commitAddressBook&#40;&#41;`, so the address book state will not be saved into the `addressBookStateList`.)
 
-Step 6. The user executes `clear`, which calls `Model#commitAddressBook()`. Since the `currentStatePointer` is not pointing at the end of the `addressBookStateList`, all address book states after the `currentStatePointer` will be purged. Reason: It no longer makes sense to redo the `add n/David …​` command. This is the behavior that most modern desktop applications follow.
+[//]: # ()
+[//]: # (</div>)
 
-![UndoRedoState5](images/UndoRedoState5.png)
+[//]: # ()
+[//]: # (Step 4. The user now decides that adding the client was a mistake, and decides to undo that action by executing the `undo` command. The `undo` command will call `Model#undoAddressBook&#40;&#41;`, which will shift the `currentStatePointer` once to the left, pointing it to the previous address book state, and restores the address book to that state.)
 
-The following activity diagram summarizes what happens when a user executes a new command:
+[//]: # ()
+[//]: # (![UndoRedoState3]&#40;images/UndoRedoState3.png&#41;)
 
-![](images/CommitActivityDiagram.png)
+[//]: # ()
+[//]: # (<div markdown="span" class="alert alert-info">:information_source: **Note:** If the `currentStatePointer` is at index 0, pointing to the initial AddressBook state, then there are no previous AddressBook states to restore. The `undo` command uses `Model#canUndoAddressBook&#40;&#41;` to check if this is the case. If so, it will return an error to the user rather)
 
-#### Design considerations:
+[//]: # (than attempting to perform the undo.)
 
-**Aspect: How undo & redo executes:**
+[//]: # ()
+[//]: # (</div>)
 
-* **Alternative 1 (current choice):** Saves the entire address book.
-  * Pros: Easy to implement.
-  * Cons: May have performance issues in terms of memory usage.
+[//]: # ()
+[//]: # (The following sequence diagram shows how an undo operation goes through the `Logic` component:)
 
-* **Alternative 2:** Individual command knows how to undo/redo by
-  itself.
-  * Pros: Will use less memory (e.g. for `delete`, just save the client being deleted).
-  * Cons: We must ensure that the implementation of each individual command are correct.
+[//]: # ()
+[//]: # (![UndoSequenceDiagram]&#40;images/UndoSequenceDiagram-Logic.png&#41;)
 
-_{more aspects and alternatives to be added}_
+[//]: # ()
+[//]: # (<div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `UndoCommand` should end at the destroy marker &#40;X&#41; but due to a limitation of PlantUML, the lifeline reaches the end of diagram.)
 
-### \[Proposed\] Data archiving
+[//]: # ()
+[//]: # (</div>)
 
-_{Explain here how the data archiving feature will be implemented}_
+[//]: # ()
+[//]: # (Similarly, how an undo operation goes through the `Model` component is shown below:)
+
+[//]: # ()
+[//]: # (![UndoSequenceDiagram]&#40;images/UndoSequenceDiagram-Model.png&#41;)
+
+[//]: # ()
+[//]: # (The `redo` command does the opposite — it calls `Model#redoAddressBook&#40;&#41;`, which shifts the `currentStatePointer` once to the right, pointing to the previously undone state, and restores the address book to that state.)
+
+[//]: # ()
+[//]: # (<div markdown="span" class="alert alert-info">:information_source: **Note:** If the `currentStatePointer` is at index `addressBookStateList.size&#40;&#41; - 1`, pointing to the latest address book state, then there are no undone AddressBook states to restore. The `redo` command uses `Model#canRedoAddressBook&#40;&#41;` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.)
+
+[//]: # ()
+[//]: # (</div>)
+
+[//]: # ()
+[//]: # (Step 5. The user then decides to execute the command `list`. Commands that do not modify the address book, such as `list`, will usually not call `Model#commitAddressBook&#40;&#41;`, `Model#undoAddressBook&#40;&#41;` or `Model#redoAddressBook&#40;&#41;`. Thus, the `addressBookStateList` remains unchanged.)
+
+[//]: # ()
+[//]: # (![UndoRedoState4]&#40;images/UndoRedoState4.png&#41;)
+
+[//]: # ()
+[//]: # (Step 6. The user executes `clear`, which calls `Model#commitAddressBook&#40;&#41;`. Since the `currentStatePointer` is not pointing at the end of the `addressBookStateList`, all address book states after the `currentStatePointer` will be purged. Reason: It no longer makes sense to redo the `add n/David …​` command. This is the behavior that most modern desktop applications follow.)
+
+[//]: # ()
+[//]: # (![UndoRedoState5]&#40;images/UndoRedoState5.png&#41;)
+
+[//]: # ()
+[//]: # (The following activity diagram summarizes what happens when a user executes a new command:)
+
+[//]: # ()
+[//]: # (![]&#40;images/CommitActivityDiagram.png&#41;)
+
+[//]: # ()
+[//]: # (#### Design considerations:)
+
+[//]: # ()
+[//]: # (**Aspect: How undo & redo executes:**)
+
+[//]: # ()
+[//]: # (* **Alternative 1 &#40;current choice&#41;:** Saves the entire address book.)
+
+[//]: # (  * Pros: Easy to implement.)
+
+[//]: # (  * Cons: May have performance issues in terms of memory usage.)
+
+[//]: # ()
+[//]: # (* **Alternative 2:** Individual command knows how to undo/redo by)
+
+[//]: # (  itself.)
+
+[//]: # (  * Pros: Will use less memory &#40;e.g. for `delete`, just save the client being deleted&#41;.)
+
+[//]: # (  * Cons: We must ensure that the implementation of each individual command are correct.)
+
+[//]: # ()
+[//]: # (_{more aspects and alternatives to be added}_)
+
+[//]: # ()
+[//]: # (### \[Proposed\] Data archiving)
+
+[//]: # ()
+[//]: # (_{Explain here how the data archiving feature will be implemented}_)
 
 
 --------------------------------------------------------------------------------------------------------------------
@@ -427,22 +486,15 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* *`    | Social Worker with a diverse range of clients           | Add a tag to selected clients                     | Highlight any important information about the client's current status             |
 | `* *`    | Social Worker with a diverse range of clients           | Delete tags from selected clients                 | Remove any tags which no longer apply to the client                               |
 | `* *`    | Social Worker with a diverse range of clients           | View the tag attached to the selected clients     | Readily identify the information I wanted to highlight about the client           |
-| `* *`    | Social Worker who has clients with specific needs       | Add a tag to selected appointments                | Highlight the type and nature of appointment                                      |
-| `* *`    | Social Worker who has clients with specific needs       | Delete tags from selected appointments            | Remove any tags that are not relevant to the appointment anymore                  |
-| `* *`    | Social Worker who has clients with specific needs       | View the tag attached to the specific appointment | Readily identify the type and nature of appointment                               |
 | `* *`    | Social Worker                                           | Edit a client's information                       | Update the contact if there are any changes to a client's information             |
-| `* *`    | Social Worker                                           | Edit an appointment's information                 | Update the appointment if there are any changes to its details                    |
 | `*`      | Social Worker with many clients                         | Search for a client by name                       | Efficiently find a client without having to scroll through the address book       |
 | `*`      | Social Worker with many clients                         | Search for clients by their tags                  | Categorise clients who share a common tag                                         |
-| `*`      | Social Worker with many appointments                    | Search for an appointment by name                 | Efficiently find an appointment without having to scroll through the address book |
-| `*`      | Social Worker with many appointments                    | Search for appointments by their tags             | Categorise appointments who share a common tag                                    |
 | `*`      | Social Worker with clients that have medical records    | Add information of their medical history          | Keep track of any known conditions, allergies or medications                      |
 
-*{More to be added}*
 
 ### Use cases
 
-(For all use cases below, the **System** is the `SWEE` and the **Actor** is the `user`, unless specified otherwise)
+(For all use cases below, the **System** is `SWEE` and the **Actor** is the `user`, unless specified otherwise)
 
 ### **Use case: UC01 - Add a new client into SWEE**
 
@@ -626,12 +678,14 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 ### Non-Functional Requirements
 
 1.  Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
-2.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
-3.  Should have an intuitive and user-friendly interface, making it easy for the user to navigate, input, and retrieve client information and appointments efficiently.
-4.  Should come with comprehensive documentation and user support to assist users in using the app effectively and troubleshooting any issues that may arise.
-5.  Should be stable and dependable, minimizing the risk of crashes or data loss, and ensuring that appointments and client information are accurately stored and retrieved.
-6.  Should be able to accomodate the growing number of clients and appointments without a significant decrease in performance or usability.
+2.  Should come in a standalone JAR file that does not require anything beyond Java 11 to run (i.e. installing additional libraries or frameworks).
+3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+4.  Should have an intuitive and user-friendly interface, making it easy for the user to navigate, input, and retrieve client information and appointments efficiently.
+5.  Should come with comprehensive documentation and user support to assist users in using the app effectively and troubleshooting any issues that may arise.
+6.  Should be stable and dependable, minimizing the risk of crashes or data loss, and ensuring that appointments and client information are accurately stored and retrieved.
+7.  Should be able to accommodate the growing number of clients and appointments without a significant decrease in performance or usability.
 
+*{More to be added}*
 
 ### Glossary
 
@@ -640,6 +694,15 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * **Private contact detail**: A contact detail that is not meant to be shared with others
 * **Client**: People who are experiencing various challenges in life and receiving assistance by working with the User
 * **Appointment**: When User meets with the client to assist them
+
+--------------------------------------------------------------------------------------------------------------------
+
+## **Appendix: Planned Enhancements**
+
+**Team size: 5**
+
+1. Allow editing appointment information, i.e. changing the title, address or date/times.
+2. Use strict datetime resolver, so it will reject invalid dates like "31/02/2024" instead of trying to fit to the nearest valid date.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -684,8 +747,19 @@ testers are expected to do more *exploratory* testing.
       Expected: Similar to previous.
 
 
-### Saving data
+### New User tutorial
 
-1. Dealing with missing/corrupted data files
+1. Run through the entire new user tutorial [in `User Guide > Quick Start > New User Tutorial`](https://ay2324s2-cs2103t-t17-1.github.io/tp/UserGuide.html#new-user-tutorial).
 
-   1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
+2. The guide will take you through all essential features of SWEE.
+
+[//]: # (### Saving data)
+
+[//]: # ()
+[//]: # (1. Dealing with missing/corrupted data files)
+
+[//]: # ()
+[//]: # (   1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_)
+
+[//]: # ()
+[//]: # (1. _{ more test cases …​ }_)

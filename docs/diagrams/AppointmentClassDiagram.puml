@@ -1,0 +1,29 @@
+@startuml
+' uncomment the lines below to set icons to `+` and `-` instead
+skinparam classAttributeIconSize 0
+skinparam usecaseAttributeIconSize 0
+
+hide circle
+
+class Client {
+    - appointments : List<Appointment>
+
+    + getAppointment(Index index) : Appointment
+    + getAppointments() : List<Appointment>
+    + hasAppointment(Appointment appointment) : boolean
+    + withNewAppointment(Appointment newAppointment) : Client
+    + removeAppointment(int index) : Client
+    + getNumberOfAppointments() : int
+    + getNextUpcomingAppointment() : Optional<Appointment>
+}
+
+class Appointment {
+    - LocalDateTime from
+    - LocalDateTime to
+    - String title
+    - Address address
+}
+
+
+Client "1" --> "*" Appointment : has >
+@enduml

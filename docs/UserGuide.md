@@ -7,6 +7,7 @@ Social Worker's Efficiency Enhancer (**SWEE**) is a **desktop application for ma
 If you can type fast, SWEE can get your contact management tasks done faster than traditional GUI apps.  
 This is ideal as you do not often bring a mouse out with you on site visits to clients or on the go.
 <br>
+
 ## Who is it for and what can it do for me?
 This application is intended for people involved with social work, social workers, volunteers, and community partners who
 have a need to manage contacts and their associated information. We offer a quick way for you to store their name, address,
@@ -181,6 +182,8 @@ find-name theo
 
 ![](images/new-user-tutorial/findNameCommand.png)
 
+<div class="page-break"></div>
+
 #### Finding a client by tag
 
 Similarly, we can also find clients by their assigned tags.
@@ -352,7 +355,7 @@ A client can have any number of tags (including 0)
 
 Examples:
 * `add --name=John Doe --phone=98765432 --email=johnd@example.com --addr=John street, block 123, #01-01 --note=Daughter is caretaker`
-    * `add --name=Jane Doe --phone=92933578 --email=janed@example.sg --addr=Amy street, block 123, #11-02 --tags=Disabled --tags=SeekingAssistance --note=NA`
+* `add --name=Jane Doe --phone=92933578 --email=janed@example.sg --addr=Amy street, block 123, #11-02 --tags=Disabled --tags=SeekingAssistance --note=NA`
 
 ### Listing all clients : `list`
 

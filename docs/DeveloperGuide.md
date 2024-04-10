@@ -485,7 +485,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 2a2. User inputs in the client's index and edited details again.
     * 2a3. Repeat steps 2a1-2a2 until the input is in the correct format.
 
-      Use case resumes at step 3.
+       Use case resumes at step 3.
 
 ### **Use case: UC03 - Delete a client**
 
@@ -502,7 +502,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * 1a. The list is empty.
     * 1a1. SWEE shows an error message.
 
-    Use case ends.
+       Use case ends.
 
 * 1b. The given client index is invalid.
 
@@ -510,7 +510,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 1b2. User inputs in the client index again.
     * 1b3. Repeat steps 1b1-1b2 until the input is a valid index.
 
-    Use case resumes at step 3.
+       Use case resumes at step 3.
 
 ### **Use case: UC04 - View a client's information**
 
@@ -526,7 +526,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 1a. The list is empty.
 
-    Use case ends.
+       Use case ends.
 
 * 2a. The given client index is invalid.
 
@@ -534,7 +534,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 2a2. User inputs in the client index again.
     * 2a3. Repeat steps 2a1-2a2 until the input is a valid index.
 
-    Use case resumes at step 3.
+          Use case resumes at step 3.
 
 ### **Use case: UC05 - List all saved clients**
 
@@ -561,7 +561,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
     * 2a1. SWEE shows that there are no clients matching the specified name.
 
-    Use case ends.
+       Use case ends.
 
 ### **Use case: UC07 - Find a client by Tag**
 
@@ -579,7 +579,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
     * 2a1. SWEE shows that there are no clients matching the specified tag.
 
-    Use case ends.
+       Use case ends.
 
 ### **Use case: UC08 - Schedule an appointment**
 
@@ -600,7 +600,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 2a2. User inputs in the client's index and appointment details again.
     * 2a3. Repeat steps 2a1-2a2 until the input is in the correct format.
 
-    Use case resumes at step 3.
+       Use case resumes at step 3.
 
 ### **Use case: UC09 - Unschedule an appointment**
 
@@ -621,19 +621,17 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 2a2. User inputs in the client's index and appointment index again.
     * 2a3. Repeat steps 2a1-2a2 until the input is in the correct format.
 
-    Use case resumes at step 3.
+       Use case resumes at step 3.
 
 ### Non-Functional Requirements
 
 1.  Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
-2.  Should be able to hold up to 1000 clients without a noticeable sluggishness in performance for typical usage.
-3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
-4.  Should have an intuitive and user-friendly interface, making it easy for the user to navigate, input, and retrieve client information and appointments efficiently.
-5.  Should come with comprehensive documentation and user support to assist users in using the app effectively and troubleshooting any issues that may arise.
-6.  Should be stable and dependable, minimizing the risk of crashes or data loss, and ensuring that appointments and client information are accurately stored and retrieved.
-7.  Should be able to accomodate the growing number of clients and appointments without a significant decrease in performance or usability.
+2.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+3.  Should have an intuitive and user-friendly interface, making it easy for the user to navigate, input, and retrieve client information and appointments efficiently.
+4.  Should come with comprehensive documentation and user support to assist users in using the app effectively and troubleshooting any issues that may arise.
+5.  Should be stable and dependable, minimizing the risk of crashes or data loss, and ensuring that appointments and client information are accurately stored and retrieved.
+6.  Should be able to accomodate the growing number of clients and appointments without a significant decrease in performance or usability.
 
-*{More to be added}*
 
 ### Glossary
 
@@ -669,7 +667,6 @@ testers are expected to do more *exploratory* testing.
    1. Re-launch the app by double-clicking the jar file.<br>
        Expected: The most recent window size and location is retained.
 
-1. _{ more test cases …​ }_
 
 ### Deleting a client
 
@@ -686,12 +683,9 @@ testers are expected to do more *exploratory* testing.
    1. Other incorrect delete commands to try: `del`, `del x`, `...` (where x is larger than the list size)<br>
       Expected: Similar to previous.
 
-1. _{ more test cases …​ }_
 
 ### Saving data
 
 1. Dealing with missing/corrupted data files
 
    1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
-
-1. _{ more test cases …​ }_

@@ -3,8 +3,8 @@ layout: page
 title: User Guide
 ---
 
-Social Worker's Efficiency Enhancer (**SWEE**) is a **desktop application for managing your contact details, optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI).  
-If you can type fast, SWEE can get your contact management tasks done faster than traditional GUI apps.  
+Social Worker's Efficiency Enhancer (**SWEE**) is a **desktop application for managing your contact details, optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI).
+If you can type fast, SWEE can get your contact management tasks done faster than traditional GUI apps.
 This is ideal as you do not often bring a mouse out with you on site visits to clients or on the go.
 <br>
 
@@ -17,7 +17,7 @@ keep track of upcoming appointments with them.
 
 <div style="page-break-after: always;"></div>
 
---- 
+---
 
 ## Table of contents
 * Table of Contents
@@ -35,10 +35,10 @@ keep track of upcoming appointments with them.
 |----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Java                 | Java is a platform that SWEE is built in, by installing java you give your computer the ability to understand and carry out instructions that make up this app. |
 | Application          | Also known as app or software, in this user guide it mainly refer to the application, SWEE.                                                                     |
-| Parameters / Options | User given specifics for an instruction. For example the index of a client to update. Some parameters are optional meaning they can be left out.                | 
+| Parameters / Options | User given specifics for an instruction. For example the index of a client to update. Some parameters are optional meaning they can be left out.                |
 | Client               | Used interchangeably with contacts, in a social work setting normally refer to the person a social worker is serving.                                           |
 | Keyword              | Refers to a predefined word or series of character used to denote something.                                                                                    |
-| Command              | Instructions for SWEE to do something. They can include keywords and parameters.                                                                                | 
+| Command              | Instructions for SWEE to do something. They can include keywords and parameters.                                                                                |
 | Directory            | Commonly called a folder.                                                                                                                                       |
 | Index                | Refer to the index number of something. If something is the second item, its index is 2.                                                                        |
 | GUI                  | Graphical User Interface, the desktop application the user sees                                                                                                 |
@@ -50,7 +50,7 @@ keep track of upcoming appointments with them.
 
 ### Setting up the application
 
-1. Ensure you have Java `11` or above installed in your Computer. You can find a copy [here](https://adoptium.net/temurin/releases/?version=11).  
+1. Ensure you have Java `11` or above installed in your Computer. You can find a copy [here](https://adoptium.net/temurin/releases/?version=11).
    Java is needed to run the applications.
 
 1. Download the latest `SWEE.jar` from [here](https://github.com/AY2324S2-CS2103T-T17-1/tp/releases). We will refer to it as the jar file or the application from now on.
@@ -79,7 +79,7 @@ keep track of upcoming appointments with them.
 
 ### New User Tutorial
 
-If you are a new user you can follow this tutorial and get a quick rundown of the application and its core features!  
+If you are a new user you can follow this tutorial and get a quick rundown of the application and its core features!
 This assumes a fresh installation of SWEE with the example clients serving as an example.<br><br>
 **For a detailed rundown of each command, please refer to the [Features](#features) section that is after this tutorial.** <br><br>
 
@@ -129,7 +129,7 @@ The user interface is primarily divided into 4 regions are shown by the differen
 Lets start by adding a new client. You can copy the command below for an example:
 
 <code>
-add --name=Theodore Koo --phone=98001715 --email=theodore@example.com  
+add --name=Theodore Koo --phone=98001715 --email=theodore@example.com
 --addr=Prince Street, Block 144, #19-14 --tags=Disabled --note=Lactose Intolerant
 </code>
 
@@ -266,7 +266,7 @@ exit
 
 #### Scheduling an appointment for clients
 
-Observe that Natasha (index 5) has no appointments. We will schedule an appointment.  
+Observe that Natasha (index 5) has no appointments. We will schedule an appointment.
 Make sure to **set the date after today**.
 
 ```
@@ -291,7 +291,7 @@ sched 5 --title=Lunch --from=14/05/2024 15:00 --to=14/05/2024 15:20 --addr=VivoC
 Observe that Hu Tao (index 2) has 2 appointments. We will unschedule an appointment.
 
 ```
-unsched 2 --appt=2 
+unsched 2 --appt=2
 ```
 
 1. `unsched` This is the command for unscheduling an appointment for a client.
@@ -501,7 +501,7 @@ Example:
   ![result for view appointments](images/ViewAppointmentsResult.png)
 * Appointments refer to the total number of appointments the client has, including past and future appointments.
 <br>
-  ![appointments](images/TotalAppointment.png)
+  ![appointments](images/TotalAppointments.png)
 
 * Next appointment refers to the earliest upcoming appointment. If there is no upcoming appointment, 'None!' will be shown.
 <br>

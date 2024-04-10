@@ -161,7 +161,7 @@ This section describes some noteworthy details on how certain features are imple
 
 ### Add command
 
-This section describes how the add commands work which will serve as a basic understanding of how commands are implemented.  
+This section describes how the add commands work which will serve as a basic understanding of how commands are implemented.
 
 **AddressBookParser** : [`AddressBookParser`](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/logic/parser/AddressBookParser.java)
 **AddCommandParser** : [`AddCommandParser.java`](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/logic/parser/AddCommandParser.java)
@@ -182,7 +182,7 @@ How an `add` command is executed:
 2. `AddCommand` will check that the fields: `name`, `phone`, `email`, `address` and `note` are present.
    The prefixes for these options are defined in [CliSyntax.java](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/logic/parser/CliSyntax.java).
     1. Parsing of the arguments is done by [`ArgumentTokenizer.java`](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/logic/parser/ArgumentTokenizer.java) (not shown here).
-    2. This returns a [`ArgumentMultiMap`](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/fd570551588e8c9cf372ca6bc87d3c3e5e01b40a/src/main/java/seedu/address/logic/parser/ArgumentMultimap.java#L20) which supports further operations.  
+    2. This returns a [`ArgumentMultiMap`](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/fd570551588e8c9cf372ca6bc87d3c3e5e01b40a/src/main/java/seedu/address/logic/parser/ArgumentMultimap.java#L20) which supports further operations.
 3. If any of the required prefixes are missing, it will throw a [ParseException](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/logic/parser/exceptions/ParseException.java#L8), which will print a message indicating the correct usage and missing fields, if any.
 4. It will then create the [`Client`](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/model/client/Client.java) to represent the Client to be created.
 5. The `Client` is used as an argument to create an [`AddCommand.java`](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/logic/commands/AddCommand.java).
@@ -584,7 +584,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 2a1. SWEE shows an error message.
     * 2a2. User inputs in the client index again.
     * 2a3. Repeat steps 2a1-2a2 until the input is a valid index.
-    
+
     Use case resumes at step 3.
 
 ### **Use case: UC05 - List all saved clients**
@@ -609,7 +609,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **Extensions**
 
 * 2a. No client matches the specified name.
-    
+
     * 2a1. SWEE shows that there are no clients matching the specified name.
 
     Use case ends.

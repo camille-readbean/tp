@@ -120,7 +120,7 @@ How the parsing works:
 ### Model component
 **API** : [`Model.java`](https://github.com/AY2324S2-CS2103T-T17-1/tp/tree/master/src/main/java/seedu/address/model/Model.java)
 
-<img src="images/ModelClassDiagram.png" width="450" />
+![](images/ModelClassDiagram.png)
 
 
 The `Model` component,

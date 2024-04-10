@@ -442,6 +442,7 @@ Format: `find-tag KEYWORD [MORE_KEYWORDS]`
 Examples:
 * `find-tag disabled` returns all clients who are tagged `disabled`<br>
   ![result for 'find-tag disabled'](images/FindTagDisabledResult.png)
+
 * `find-tag disabled schizophrenic` will return `disabled`, `Schizophrenic`<br>
   ![result for 'find-tag disabled schizophrenic'](images/FindTagDisabledSchizophrenicResult.png)
 
@@ -496,6 +497,7 @@ Example:
   ![result for schedule appointment](images/ScheduleAppointmentResult.png)
 * `view 1` will return all the scheduled appointments for the client at index 1.<br>
   ![result for view appointments](images/ViewAppointmentsResult.png)
+
 * Appointments refer to the total number of appointments the client has, including past and future appointments.
 <br>
   ![appointments](images/TotalAppointments.png)

@@ -299,8 +299,7 @@ The date and time of `from` and `to` are stored in `LocalDateTime` and truncated
 
 <div markdown="span" class="alert alert-info">
 :information_source:
-Note: The red square is PlantUML for `private` access modifier. <br>
-Details not relevant to the appointments scheduling functionality is omitted.
+Note: Details not relevant to the appointments scheduling functionality is omitted.
 </div>
 
 [//]: # (### \[Proposed\] Undo/redo feature)

@@ -577,7 +577,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 1a. The list is empty.
 
-       Use case ends.
+    Use case ends.
 
 * 2a. The given client index is invalid.
 
@@ -585,7 +585,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 2a2. User inputs in the client index again.
     * 2a3. Repeat steps 2a1-2a2 until the input is a valid index.
 
-          Use case resumes at step 3.
+       Use case resumes at step 3.
 
 ### **Use case: UC05 - List all saved clients**
 
@@ -684,7 +684,6 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 6.  Should be stable and dependable, minimizing the risk of crashes or data loss, and ensuring that appointments and client information are accurately stored and retrieved.
 7.  Should be able to accommodate the growing number of clients and appointments without a significant decrease in performance or usability.
 
-*{More to be added}*
 
 ### Glossary
 

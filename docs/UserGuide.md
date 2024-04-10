@@ -498,7 +498,7 @@ Example:
   ![result for view appointments](images/ViewAppointmentsResult.png)
 * Appointments refer to the total number of appointments the client has, including past and future appointments.
 <br>
-  ![appointments](images/TotalAppointment.png)
+  ![appointments](images/TotalAppointments.png)
 
 * Next appointment refers to the earliest upcoming appointment. If there is no upcoming appointment, 'None!' will be shown.
 <br>

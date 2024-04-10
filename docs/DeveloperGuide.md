@@ -286,7 +286,7 @@ This list is maintained in sorted order according to `Appointment::compareTo` (`
 There are only two methods for modifying the appointments, all of which will preserve the order when inserting or removing.  
 <br>
 Two helper methods within [Client](https://github.com/AY2324S2-CS2103T-T17-1/tp/blob/master/src/main/java/seedu/address/model/client/Client.java), `withNewAppointment` and `removeAppointment`, are provided to add and remove an appointment from the Client's list respectively.  
-These helper methods essentially does a copy of the existing list, modify it and create a new instance of Client with the new modified list.  
+These helper methods essentially creates a copy of the existing list, modify it and create a new instance of Client with the new modified list.  
 Within Appointment itself, it reuses the `Address` class that is also used in `Client`. Parsing wise, it should behave the same as in any other command.      
 It is guaranteed that the fields, `from` come before or is the same as `to`.<br>  
 <br>

@@ -299,8 +299,7 @@ The date and time of `from` and `to` are stored in `LocalDateTime` and truncated
 
 <div markdown="span" class="alert alert-info">
 :information_source:
-Note: The red square is PlantUML for `private` access modifier. <br>
-Details not relevant to the appointments scheduling functionality is omitted.
+Note: Details not relevant to the appointments scheduling functionality is omitted.
 </div>
 
 [//]: # (### \[Proposed\] Undo/redo feature)
@@ -578,7 +577,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 1a. The list is empty.
 
-       Use case ends.
+    Use case ends.
 
 * 2a. The given client index is invalid.
 
@@ -586,7 +585,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 2a2. User inputs in the client index again.
     * 2a3. Repeat steps 2a1-2a2 until the input is a valid index.
 
-          Use case resumes at step 3.
+       Use case resumes at step 3.
 
 ### **Use case: UC05 - List all saved clients**
 
@@ -685,7 +684,6 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 6.  Should be stable and dependable, minimizing the risk of crashes or data loss, and ensuring that appointments and client information are accurately stored and retrieved.
 7.  Should be able to accommodate the growing number of clients and appointments without a significant decrease in performance or usability.
 
-*{More to be added}*
 
 ### Glossary
 
@@ -751,7 +749,10 @@ testers are expected to do more *exploratory* testing.
 
 1. Run through the entire new user tutorial [in `User Guide > Quick Start > New User Tutorial`](https://ay2324s2-cs2103t-t17-1.github.io/tp/UserGuide.html#new-user-tutorial).
 
-2. The guide will take you through all essential features of SWEE.
+   1. The guide will take you through all essential features of SWEE.
+   2. Each section can exist as a self-contained test case of a feature.
+   3. Each section give a brief overview of what to expect.
+   4. Expected: Successful running of all valid commands demonstrated in the User Guide.
 
 [//]: # (### Saving data)
 

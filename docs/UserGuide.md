@@ -33,10 +33,10 @@ keep track of upcoming appointments with them.
 
 | Terms                | Meaning                                                                                                                                                         |
 |----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Java                 | Java is a platform that SWEE is built in, by installing java you give your computer the ability to understand and carry out instructions that make up this app. |
-| Application          | Also known as app or software, in this user guide it mainly refer to the application, SWEE.                                                                     |
-| Parameters / Options | User given specifics for an instruction. For example the index of a client to update. Some parameters are optional meaning they can be left out.                |
-| Client               | Used interchangeably with contacts, in a social work setting normally refer to the person a social worker is serving.                                           |
+| Java                 | Java is a platform that SWEE is built in, by installing Java you give your computer the ability to understand and carry out instructions that make up this app. |
+| Application          | Also known as app or software, in this user guide it mainly refers to the application, SWEE.                                                                     |
+| Parameters / Options | User given specifics for an instruction. For example, the index of a client to update. Some parameters are optional meaning they can be left out.                |
+| Client               | Used interchangeably with contacts, in a social work setting, it normally refers to the person a social worker is serving.                                           |
 | Keyword              | Refers to a predefined word or series of character used to denote something.                                                                                    |
 | Command              | Instructions for SWEE to do something. They can include keywords and parameters.                                                                                |
 | Directory            | Commonly called a folder.                                                                                                                                       |
@@ -89,7 +89,7 @@ This assumes a fresh installation of SWEE with the example clients serving as an
 The user interface is primarily divided into 4 regions are shown by the different boxes.
 
 1. This is the Command Box. Commands are typed here and carried out by the application.
-2. Messages from the command that was run are displayed here. If the command runs into a problem, it will display here as well.
+2. Messages from the command that was just ran are displayed here. If the command runs into a problem, it will be displayed here as well.
    For example if the user typed in an invalid command or something unexpected caused the program to not work.
 3. This is the client list. Clients are displayed here in cards, see below. It is scrollable meaning you can navigate down and up like a webpage or word document.
 4. A Client card holds information relevant to each client. The number beside the names of each user is the index.
@@ -391,7 +391,7 @@ Examples:
 
 <div style="page-break-after: always;"></div>
 
-### Viewing a client's Information: `view`
+### Viewing a client's information: `view`
 Displays the saved information about a client.
 
 Format: `view INDEX`

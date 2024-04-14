@@ -205,6 +205,9 @@ The Object, Sequence and Activity UML diagrams belows shows the objects created 
 
 ![](images/ViewSequenceDiagram.png)
 
+<div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `ViewCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline continues till the end of diagram.
+</div>
+
 #### Activity Diagram
 
 ![](images/ViewActivityDiagram.png)
@@ -232,6 +235,9 @@ The Sequence and Activity UML diagrams belows shows the objects created as well 
 #### Sequence Diagram
 
 ![](images/DeleteSequenceDiagram.png)
+
+<div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `DeleteCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline continues till the end of diagram.
+</div>
 
 #### Activity Diagram
 
@@ -264,6 +270,9 @@ The Sequence and Activity UML diagrams belows shows the objects created as well 
 #### Sequence Diagram
 
 ![](images/FindTagSequenceDiagram.png)>
+
+<div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `FindTagCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline continues till the end of diagram.
+</div>
 
 #### Activity Diagram
 
@@ -567,7 +576,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1. User request to view a specific client's information in the list.
+1. User requests to view a specific client's information in the list.
 2. User inputs the index of the client to view.
 3. SWEE displays the client's information to the user.
 
@@ -719,7 +728,7 @@ testers are expected to do more *exploratory* testing.
 
    1. Download the jar file and copy into an empty folder
 
-   1. Double-click the jar file Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
+   1. Double-click the jar file or open a command line terminal in the home directory and run `java -jar SWEE.jar`. Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
 
 1. Saving window preferences
 

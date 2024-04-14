@@ -40,7 +40,7 @@ DCP --> ABP : dc
 deactivate DCP
 destroy DCP
 
-ABP --> LM : ac
+ABP --> LM : dc
 deactivate ABP
 
 LM -> dc : execute(m)

@@ -1,19 +1,21 @@
 @startuml
 skinparam ArrowFontStyle plain
 skinparam FontColor White
+hide footbox
+skinparam sequenceMessageAlign center
 
 box "Logic" #C8C8FA
 participant "<color #white>:LogicManager</color>" as LogicManager #MediumBlue
 participant "<color #white>:AddressBookParser</color>" as AddressBookParser #MediumBlue
 participant "<color #white>:ViewCommandParser</color>" as ViewCommandParser #MediumBlue
-participant "<color #white>ac:ViewCommand</color>" as ViewCommand #MediumBlue
+participant "<color #white>vc:ViewCommand</color>" as ViewCommand #MediumBlue
 participant "<color #white>r:CommandResult</color>" as CommandResult #MediumBlue
 end box
 
-[-> LogicManager : execute("add [ARGS]")
+[-> LogicManager : execute("view [INDEX]")
 activate LogicManager
 
-LogicManager -> AddressBookParser : parseCommand("add [ARGS]")
+LogicManager -> AddressBookParser : parseCommand("view [INDEX]")
 activate AddressBookParser
 
 create ViewCommandParser
@@ -23,7 +25,7 @@ activate ViewCommandParser
 ViewCommandParser --> AddressBookParser
 deactivate ViewCommandParser
 
-AddressBookParser -> ViewCommandParser : parse("[ARGS]")
+AddressBookParser -> ViewCommandParser : parse("[INDEX]")
 activate ViewCommandParser
 
 create ViewCommand
@@ -33,13 +35,13 @@ activate ViewCommand
 ViewCommand --> ViewCommandParser :
 deactivate ViewCommand
 
-ViewCommandParser --> AddressBookParser : ac
+ViewCommandParser --> AddressBookParser : vc
 deactivate ViewCommandParser
 'Hidden arrow to position the destroy marker below the end of the activation bar.
 ViewCommandParser -[hidden]-> AddressBookParser
 destroy ViewCommandParser
 
-AddressBookParser --> LogicManager : ac
+AddressBookParser --> LogicManager : vc
 deactivate AddressBookParser
 
 LogicManager -> ViewCommand : execute(m)
